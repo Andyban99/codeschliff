@@ -219,6 +219,7 @@
   var burger = document.getElementById('burger');
   var mobileNav = document.getElementById('mobileNav');
   function closeMobileNav() {
+    if (!burger || !mobileNav) return;
     burger.classList.remove('is-open');
     burger.setAttribute('aria-expanded', 'false');
     burger.setAttribute('aria-label', 'Menü öffnen');
@@ -227,7 +228,7 @@
     document.body.classList.remove('is-locked');
     if (lenis) lenis.start();
   }
-  burger.addEventListener('click', function () {
+  if (burger && mobileNav) burger.addEventListener('click', function () {
     var open = !mobileNav.classList.contains('is-open');
     burger.classList.toggle('is-open', open);
     burger.setAttribute('aria-expanded', String(open));
@@ -429,9 +430,9 @@
   }
 
   /* ── Leistungen: schwebende Vorschau folgt der Maus ────────── */
-  if (finePointer && !reduced) {
-    var grid = document.getElementById('leistungenGrid');
-    var preview = document.getElementById('preview');
+  var grid = document.getElementById('leistungenGrid');
+  var preview = document.getElementById('preview');
+  if (finePointer && !reduced && grid && preview) {
     var previewVideo = document.getElementById('previewVideo');
     var pX = gsap.quickTo(preview, 'x', { duration: 0.45, ease: 'power3.out' });
     var pY = gsap.quickTo(preview, 'y', { duration: 0.45, ease: 'power3.out' });
@@ -486,6 +487,7 @@
   mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', function () {
     var track = document.getElementById('prozessTrack');
     var bar = document.getElementById('prozessBar');
+    if (!track || !bar) return;
     function amount() { return Math.max(0, track.scrollWidth - window.innerWidth); }
     var tween = gsap.to(track, {
       x: function () { return -amount(); },

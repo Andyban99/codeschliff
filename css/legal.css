@@ -1,0 +1,197 @@
+/* ═══════════════════════════════════════════════════════════════
+   codeschliff — Rechtsseiten
+   Ruhige Lesetypografie auf Basis der Marken-Tokens.
+   Kein Video, keine Inszenierung: hier zählt Lesbarkeit.
+   ═══════════════════════════════════════════════════════════════ */
+
+.legal {
+  max-width: var(--cs-content-max);
+  margin: 0 auto;
+  padding: 0 var(--cs-page-pad) 96px;
+}
+
+.legal__head {
+  padding: 140px 0 64px;
+  border-bottom: 1px solid var(--cs-line);
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.legal__title {
+  font: 700 clamp(38px, 5vw, 64px)/1 'Archivo', sans-serif;
+  letter-spacing: -0.055em;
+  color: var(--cs-ink);
+}
+
+.legal__stand {
+  font: 400 10px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cs-grey-400);
+}
+
+/* Zweispaltig: links Sprungmarken, rechts Text */
+.legal__body {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.legal__toc {
+  position: sticky;
+  top: 104px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  border-left: 1px solid var(--cs-line);
+  padding-left: 18px;
+}
+.legal__toc-label {
+  font: 400 10px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cs-grey-400);
+  margin-bottom: 6px;
+}
+.legal__toc a {
+  font: 400 13px/1.4 'Instrument Sans', sans-serif;
+  color: var(--cs-grey);
+  transition: color 160ms var(--cs-ease);
+}
+.legal__toc a:hover,
+.legal__toc a.is-active { color: var(--cs-signal); }
+
+.legal__content { max-width: 68ch; }
+
+.legal__content section { margin-bottom: 56px; scroll-margin-top: 104px; }
+.legal__content section:last-child { margin-bottom: 0; }
+
+.legal__content h2 {
+  font: 700 26px/1.1 'Archivo', sans-serif;
+  letter-spacing: -0.05em;
+  color: var(--cs-ink);
+  margin: 0 0 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.legal__content h2 .num {
+  font: 400 11px/1 'JetBrains Mono', monospace;
+  color: var(--cs-signal);
+  letter-spacing: 0;
+  flex: none;
+}
+
+.legal__content h3 {
+  font: 700 17px/1.3 'Archivo', sans-serif;
+  letter-spacing: -0.04em;
+  color: var(--cs-ink);
+  margin: 32px 0 12px;
+}
+
+.legal__content p {
+  font: 400 16px/1.7 'Instrument Sans', sans-serif;
+  color: #3E3C37;
+  margin: 0 0 16px;
+}
+.legal__content p:last-child { margin-bottom: 0; }
+
+.legal__content ul,
+.legal__content ol {
+  margin: 0 0 16px;
+  padding-left: 20px;
+  font: 400 16px/1.7 'Instrument Sans', sans-serif;
+  color: #3E3C37;
+}
+.legal__content li { margin-bottom: 8px; }
+.legal__content li::marker { color: var(--cs-signal); }
+
+.legal__content a {
+  color: var(--cs-ink);
+  border-bottom: 1px solid var(--cs-signal);
+  transition: color 160ms var(--cs-ease);
+  overflow-wrap: anywhere;
+}
+.legal__content a:hover { color: var(--cs-signal); }
+
+.legal__content strong { font-weight: 600; color: var(--cs-ink); }
+
+/* Adressblock / Datenblock */
+.legal__data {
+  border-top: 1px solid var(--cs-line);
+  margin: 0 0 16px;
+}
+.legal__data > div {
+  display: flex;
+  gap: 24px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--cs-line-soft);
+}
+.legal__data dt {
+  flex: none;
+  width: 190px;
+  font: 400 10px/1.7 'JetBrains Mono', monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cs-grey);
+}
+.legal__data dd {
+  margin: 0;
+  font: 400 15px/1.6 'Instrument Sans', sans-serif;
+  color: var(--cs-ink);
+}
+
+/* Hinweiskasten für offene Angaben */
+.legal__note {
+  background: var(--cs-error-bg);
+  border-left: 3px solid var(--cs-signal);
+  padding: 14px 16px;
+  margin: 0 0 24px;
+}
+.legal__note p {
+  font: 400 13px/1.6 'Instrument Sans', sans-serif;
+  color: var(--cs-error-text);
+  margin: 0;
+}
+.legal__note strong { color: var(--cs-error-text); }
+
+/* Platzhalter, die vor dem Livegang ersetzt werden müssen */
+.todo {
+  background: rgba(255, 59, 24, 0.12);
+  border-bottom: 1px dashed var(--cs-signal);
+  padding: 1px 5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.86em;
+  color: var(--cs-error-text);
+}
+
+/* Zurück-Leiste */
+.legal__back {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--cs-line);
+}
+
+@media (max-width: 1023px) {
+  .legal__body { grid-template-columns: 1fr; gap: 40px; }
+  .legal__toc {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    border-left: 0;
+    border-top: 1px solid var(--cs-line);
+    padding: 18px 0 0;
+  }
+  .legal__toc-label { width: 100%; margin: 0; }
+}
+
+@media (max-width: 767px) {
+  .legal__head { padding: 110px 0 40px; margin-bottom: 40px; }
+  .legal__data > div { flex-direction: column; gap: 4px; }
+  .legal__data dt { width: auto; }
+}

@@ -898,6 +898,18 @@ html:not(.js) .preloader { display: none; }
   color: var(--cs-ink);
 }
 
+.kontakt__hinweis {
+  font: 400 13px/1.6 'Instrument Sans', sans-serif;
+  color: var(--cs-grey-400);
+  max-width: 48ch;
+}
+.kontakt__hinweis a {
+  color: var(--cs-grey);
+  border-bottom: 1px solid var(--cs-line);
+  transition: color 160ms var(--cs-ease), border-color 160ms var(--cs-ease);
+}
+.kontakt__hinweis a:hover { color: var(--cs-signal); border-color: var(--cs-signal); }
+
 /* Formular */
 .form { display: flex; flex-direction: column; gap: 24px; padding-top: 8px; }
 .form__field { display: flex; flex-direction: column; gap: 8px; }

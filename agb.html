@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allgemeine Geschäftsbedingungen — codeschliff</title>
+  <meta name="description" content="Allgemeine Geschäftsbedingungen von codeschliff für Leistungen im Bereich Gestaltung, Entwicklung und Betrieb digitaler Systeme. Ausschließlich für Unternehmer.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/legal.css">
+  <noscript><style>.cursor, .scroll-progress { display: none !important; }</style></noscript>
+</head>
+<body>
+
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot" id="cursorDot"></div>
+    <div class="cursor__ring" id="cursorRing"><span class="cursor__label" id="cursorLabel"></span></div>
+  </div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="header is-scrolled" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__brand" data-cursor="link" aria-label="codeschliff — zur Startseite">
+        <svg class="logo-mark" width="24" height="24" viewBox="0 0 100 100" aria-hidden="true">
+          <rect width="100" height="100" fill="#0A0A0A"/>
+          <text x="21" y="54" font-size="66" text-anchor="middle" dominant-baseline="central" fill="#FFFFFF">{</text>
+          <rect x="45" y="45" width="10" height="10" fill="#FF3B18"/>
+          <text x="79" y="54" font-size="66" text-anchor="middle" dominant-baseline="central" fill="#FFFFFF">}</text>
+        </svg>
+        <span class="header__wordmark">codeschliff</span>
+      </a>
+      <nav class="header__nav" aria-label="Hauptnavigation">
+        <a href="index.html#arbeiten" class="header__link" data-cursor="link">Arbeiten</a>
+        <a href="index.html#leistungen" class="header__link" data-cursor="link">Leistungen</a>
+        <a href="index.html#studio" class="header__link" data-cursor="link">Studio</a>
+        <a href="index.html#kontakt" class="btn btn--secondary btn--small header__cta" data-cursor="button" data-magnetic>Projekt anfragen</a>
+      </nav>
+      <button class="header__burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <nav class="mobile-nav__list" aria-label="Mobile Navigation">
+      <a href="index.html#arbeiten" class="mobile-nav__link">Arbeiten</a>
+      <a href="index.html#leistungen" class="mobile-nav__link">Leistungen</a>
+      <a href="index.html#studio" class="mobile-nav__link">Studio</a>
+      <a href="index.html#kontakt" class="mobile-nav__link mobile-nav__link--active">Projekt anfragen</a>
+    </nav>
+    <div class="mobile-nav__meta">
+      <span>hallo@codeschliff.de</span>
+      <span>Funchal · Hamburg</span>
+    </div>
+  </div>
+
+  <main class="legal">
+    <div class="legal__head">
+      <div class="label">Rechtliches</div>
+      <h1 class="legal__title">Allgemeine<br>Geschäfts&shy;bedingungen</h1>
+      <div class="legal__stand">Ausschließlich für Unternehmer · Fassung 1.0 · Stand 12.08.2026</div>
+    </div>
+
+    <div class="legal__body">
+      <nav class="legal__toc" aria-label="Inhalt dieser Seite">
+        <div class="legal__toc-label">Inhalt</div>
+        <a href="#geltung">§ 1 Geltungsbereich</a>
+        <a href="#vertragsschluss">§ 2 Vertragsschluss</a>
+        <a href="#leistungen">§ 3 Leistungsumfang</a>
+        <a href="#mitwirkung">§ 4 Mitwirkung</a>
+        <a href="#termine">§ 5 Termine</a>
+        <a href="#verguetung">§ 6 Vergütung</a>
+        <a href="#abnahme">§ 7 Abnahme</a>
+        <a href="#rechte">§ 8 Nutzungsrechte</a>
+        <a href="#dritte">§ 9 Fremdleistungen</a>
+        <a href="#gewaehrleistung">§ 10 Gewährleistung</a>
+        <a href="#haftung">§ 11 Haftung</a>
+        <a href="#vertraulichkeit">§ 12 Vertraulichkeit</a>
+        <a href="#datenschutz">§ 13 Datenschutz</a>
+        <a href="#referenz">§ 14 Referenznennung</a>
+        <a href="#laufzeit">§ 15 Laufzeit</a>
+        <a href="#schluss">§ 16 Schlussbestimmungen</a>
+      </nav>
+
+      <div class="legal__content">
+
+        <section id="geltung">
+          <h2><span class="num">§ 1</span>Geltungsbereich</h2>
+          <p>(1) Diese Allgemeinen Geschäftsbedingungen gelten für sämtliche Verträge zwischen der Zuschuss Piloten Consulting, Unipessoal&nbsp;Lda., Impasse da Murta 3E, 9060-354 Funchal, Madeira, Portugal — auftretend unter der Geschäftsbezeichnung <strong>codeschliff</strong> — nachfolgend „Auftragnehmer", und ihren Auftraggebern, nachfolgend „Auftraggeber".</p>
+          <p>(2) <strong>Der Auftragnehmer schließt Verträge ausschließlich mit Unternehmern im Sinne des §&nbsp;14 BGB, mit juristischen Personen des öffentlichen Rechts sowie mit öffentlich-rechtlichen Sondervermögen.</strong> Verträge mit Verbrauchern im Sinne des §&nbsp;13 BGB kommen nicht zustande. Der Auftraggeber sichert mit Vertragsschluss zu, in Ausübung seiner gewerblichen oder selbständigen beruflichen Tätigkeit zu handeln.</p>
+          <p>(3) Abweichende, entgegenstehende oder ergänzende Geschäftsbedingungen des Auftraggebers werden nicht Vertragsbestandteil, es sei denn, der Auftragnehmer stimmt ihrer Geltung ausdrücklich in Textform zu. Dies gilt auch dann, wenn der Auftragnehmer in Kenntnis solcher Bedingungen die Leistung vorbehaltlos erbringt.</p>
+          <p>(4) Diese Bedingungen gelten in ihrer jeweils gültigen Fassung auch für alle künftigen Geschäfte mit demselben Auftraggeber, ohne dass es eines erneuten Hinweises bedarf.</p>
+        </section>
+
+        <section id="vertragsschluss">
+          <h2><span class="num">§ 2</span>Angebot und Vertragsschluss</h2>
+          <p>(1) Die Darstellung von Leistungen auf der Website des Auftragnehmers stellt kein bindendes Angebot dar, sondern eine Aufforderung zur Abgabe einer Anfrage.</p>
+          <p>(2) Auf Grundlage der Anfrage erstellt der Auftragnehmer ein schriftliches Angebot mit Leistungsbeschreibung, Festpreis und Zeitplan. Angebote sind, sofern nicht anders vermerkt, <strong>14&nbsp;Kalendertage</strong> ab Zugang bindend.</p>
+          <p>(3) Der Vertrag kommt zustande, wenn der Auftraggeber das Angebot innerhalb der Bindungsfrist in Textform annimmt oder der Auftragnehmer eine Auftragsbestätigung in Textform übersendet. Textform im Sinne dieser Bedingungen umfasst ausdrücklich auch E-Mail.</p>
+          <p>(4) Mündliche Nebenabreden bestehen nicht. Änderungen und Ergänzungen des Vertrags bedürfen der Textform.</p>
+        </section>
+
+        <section id="leistungen">
+          <h2><span class="num">§ 3</span>Leistungsumfang</h2>
+          <p>(1) Art und Umfang der Leistungen ergeben sich abschließend aus dem Angebot beziehungsweise der Auftragsbestätigung nebst der dort in Bezug genommenen Leistungsbeschreibung. Leistungen, die dort nicht aufgeführt sind, sind nicht geschuldet.</p>
+          <p>(2) Der Auftragnehmer erbringt Leistungen in den Bereichen Konzeption, Gestaltung, Entwicklung, Anbindung und Betrieb digitaler Systeme, insbesondere Websites, Onlineshops, Portale, CRM-Systeme und Automatisierungen.</p>
+          <p>(3) <strong>Werk- oder Dienstvertrag:</strong> Auf die Erstellung eines konkret umrissenen, abnahmefähigen Werks — etwa einer Website oder eines Shops — findet Werkvertragsrecht Anwendung. Auf laufende Betreuung, Wartung, Beratung und nach Aufwand abgerechnete Tätigkeiten findet Dienstvertragsrecht Anwendung; ein bestimmter Erfolg wird insoweit nicht geschuldet.</p>
+          <p>(4) <strong>Gestalterischer Spielraum:</strong> Innerhalb des vereinbarten Rahmens ist der Auftragnehmer in der gestalterischen und technischen Umsetzung frei. Ein Anspruch auf Umsetzung einer bestimmten, nicht vereinbarten Gestaltungsvariante besteht nicht.</p>
+          <p>(5) <strong>Änderungswünsche:</strong> Wünscht der Auftraggeber nach Vertragsschluss Änderungen am vereinbarten Leistungsumfang, teilt der Auftragnehmer die Auswirkungen auf Vergütung und Zeitplan mit. Die Änderung wird erst nach beiderseitiger Bestätigung in Textform verbindlich. Bis dahin arbeitet der Auftragnehmer auf Grundlage des ursprünglichen Umfangs weiter.</p>
+          <p>(6) <strong>Technische Rahmenbedingungen:</strong> Die Leistungen werden für die im Angebot benannten Browser- und Gerätegenerationen erbracht. Eine Optimierung für abgekündigte oder nicht mehr mit Sicherheitsaktualisierungen versorgte Software ist nicht geschuldet.</p>
+          <p>(7) Eine Gewähr für bestimmte Platzierungen in Suchmaschinen, für bestimmte Besucher- oder Umsatzzahlen oder für sonstige wirtschaftliche Erfolge wird nicht übernommen; diese liegen außerhalb des Einflussbereichs des Auftragnehmers.</p>
+        </section>
+
+        <section id="mitwirkung">
+          <h2><span class="num">§ 4</span>Mitwirkungspflichten des Auftraggebers</h2>
+          <p>(1) Der Auftraggeber stellt dem Auftragnehmer rechtzeitig, vollständig und in geeigneter Form alle für die Leistungserbringung erforderlichen Informationen, Inhalte und Zugänge bereit. Dazu zählen insbesondere Texte, Bilder, Logos, Zugangsdaten zu Hosting, Domains und anzubindenden Systemen sowie die Benennung eines entscheidungsbefugten Ansprechpartners.</p>
+          <p>(2) Der Auftraggeber sichert zu, dass er an allen von ihm beigestellten Inhalten über die erforderlichen Rechte verfügt und dass deren Nutzung keine Rechte Dritter verletzt. Er stellt den Auftragnehmer insoweit von Ansprüchen Dritter frei, einschließlich der angemessenen Kosten der Rechtsverteidigung, sofern der Auftraggeber die Rechtsverletzung zu vertreten hat.</p>
+          <p>(3) Freigaben, Rückmeldungen und Abnahmen erteilt der Auftraggeber ohne schuldhaftes Zögern, spätestens innerhalb von <strong>fünf Werktagen</strong> nach Vorlage, sofern nichts anderes vereinbart ist.</p>
+          <p>(4) Kommt der Auftraggeber seinen Mitwirkungspflichten nicht oder nicht rechtzeitig nach, verlängern sich vereinbarte Fristen angemessen, mindestens um den Zeitraum der Verzögerung. Entstehen dem Auftragnehmer hierdurch nachweislich Mehraufwände, sind diese nach dem vereinbarten Stundensatz zu vergüten.</p>
+        </section>
+
+        <section id="termine">
+          <h2><span class="num">§ 5</span>Termine und Zeitplan</h2>
+          <p>(1) Termine und Fristen sind nur verbindlich, wenn sie ausdrücklich als verbindlich in Textform vereinbart wurden. Im Übrigen handelt es sich um unverbindliche Planwerte.</p>
+          <p>(2) Die vom Auftragnehmer beworbene erste Fassung binnen <strong>14&nbsp;Tagen</strong> bezeichnet den Zeitraum ab vollständigem Vorliegen aller nach §&nbsp;4 erforderlichen Zuarbeiten des Auftraggebers. Sie setzt eine entsprechende Vereinbarung im jeweiligen Angebot voraus und bezieht sich auf einen vorführbaren Zwischenstand, nicht auf die abnahmereife Gesamtleistung.</p>
+          <p>(3) Verzögerungen aufgrund höherer Gewalt, Ausfällen bei Vorleistungserbringern oder sonstiger vom Auftragnehmer nicht zu vertretender Umstände verlängern die Fristen um die Dauer der Behinderung. Der Auftragnehmer informiert den Auftraggeber unverzüglich.</p>
+        </section>
+
+        <section id="verguetung">
+          <h2><span class="num">§ 6</span>Vergütung und Zahlung</h2>
+          <p>(1) <strong>Festpreis:</strong> Projekte werden grundsätzlich zum vor Beginn vereinbarten Festpreis abgerechnet. Der Festpreis deckt den im Angebot beschriebenen Leistungsumfang ab. Zusätzliche Leistungen nach §&nbsp;3 Abs.&nbsp;5 werden gesondert vergütet.</p>
+          <p>(2) Laufende Betreuung und Leistungen ohne festen Umfang werden nach Aufwand zu den im Angebot genannten Sätzen abgerechnet, im Viertelstundentakt.</p>
+          <p>(3) <strong>Umsatzsteuer:</strong> Alle Preise verstehen sich netto ohne Umsatzsteuer. Bei Leistungen an Unternehmer mit Sitz in einem anderen Mitgliedstaat der Europäischen Union geht die Steuerschuld nach dem Reverse-Charge-Verfahren auf den Leistungsempfänger über (Art.&nbsp;196 MwStSystRL; in Deutschland §&nbsp;13&nbsp;b UStG). Der Auftraggeber teilt dem Auftragnehmer hierzu vor Rechnungsstellung seine gültige Umsatzsteuer-Identifikationsnummer mit und trägt die Verantwortung für deren Richtigkeit. Erweist sich die Nummer als ungültig, ist der Auftragnehmer berechtigt, die gesetzlich geschuldete Umsatzsteuer nachzuberechnen.</p>
+          <p>(4) <strong>Zahlungsplan:</strong> Sofern nichts anderes vereinbart ist, werden fällig: 40&nbsp;% des Festpreises bei Auftragserteilung, 30&nbsp;% bei Vorlage der ersten vollständigen Fassung, 30&nbsp;% bei Abnahme.</p>
+          <p>(5) Rechnungen sind ohne Abzug binnen <strong>14&nbsp;Tagen</strong> ab Zugang zur Zahlung fällig. Nach Ablauf gerät der Auftraggeber ohne weitere Mahnung in Verzug.</p>
+          <p>(6) Bei Verzug ist der Auftragnehmer berechtigt, Verzugszinsen in gesetzlicher Höhe zu verlangen sowie die Arbeiten nach vorheriger Ankündigung in Textform bis zum Ausgleich einzustellen. Die Geltendmachung weitergehenden Verzugsschadens bleibt vorbehalten.</p>
+          <p>(7) Die Aufrechnung durch den Auftraggeber ist nur mit unbestrittenen oder rechtskräftig festgestellten Forderungen zulässig. Ein Zurückbehaltungsrecht steht dem Auftraggeber nur wegen Gegenansprüchen aus demselben Vertragsverhältnis zu.</p>
+        </section>
+
+        <section id="abnahme">
+          <h2><span class="num">§ 7</span>Abnahme</h2>
+          <p>(1) Werkleistungen sind nach Fertigstellung abzunehmen. Der Auftragnehmer zeigt die Abnahmebereitschaft in Textform an und stellt die Leistung zur Prüfung bereit.</p>
+          <p>(2) Der Auftraggeber prüft die Leistung binnen <strong>zehn Werktagen</strong> und erklärt die Abnahme in Textform oder benennt konkret die Mängel, die einer Abnahme entgegenstehen.</p>
+          <p>(3) Erfolgt innerhalb dieser Frist weder eine Abnahmeerklärung noch eine Mängelrüge, gilt die Leistung als abgenommen. Der Auftragnehmer weist auf diese Rechtsfolge in der Anzeige nach Absatz&nbsp;1 gesondert hin.</p>
+          <p>(4) Die Abnahme gilt ebenfalls als erfolgt, wenn der Auftraggeber die Leistung produktiv einsetzt, insbesondere durch Veröffentlichung unter einer öffentlich erreichbaren Adresse.</p>
+          <p>(5) Wegen unerheblicher Mängel, die die vertragsgemäße Nutzung nicht beeinträchtigen, darf die Abnahme nicht verweigert werden. Der Anspruch auf Beseitigung solcher Mängel bleibt unberührt.</p>
+          <p>(6) Abgrenzbare Teilleistungen können gesondert abgenommen werden.</p>
+        </section>
+
+        <section id="rechte">
+          <h2><span class="num">§ 8</span>Nutzungsrechte</h2>
+          <p>(1) <strong>Rechteübergang:</strong> Mit vollständiger Zahlung der vereinbarten Vergütung überträgt der Auftragnehmer dem Auftraggeber an allen im Rahmen des Auftrags eigens erstellten Arbeitsergebnissen — insbesondere am Quellcode, an Entwürfen und Gestaltungen — das <strong>räumlich, zeitlich und inhaltlich unbeschränkte, ausschließliche Nutzungsrecht</strong>, einschließlich des Rechts zur Bearbeitung, Weiterentwicklung und Übertragung auf Dritte.</p>
+          <p>(2) <strong>Herausgabe des Quellcodes:</strong> Der Auftragnehmer übergibt dem Auftraggeber mit Abnahme den vollständigen Quellcode der eigens erstellten Arbeitsergebnisse sowie die zu deren Betrieb erforderliche Dokumentation. Eine Bindung an den Auftragnehmer für Betrieb oder Weiterentwicklung besteht nicht.</p>
+          <p>(3) <strong>Vorbestehende Bausteine:</strong> Soweit der Auftragnehmer eigene, bereits vor dem Auftrag vorhandene oder auftragsübergreifend genutzte Bausteine einsetzt, verbleiben die Rechte hieran beim Auftragnehmer. Der Auftraggeber erhält daran ein einfaches, zeitlich und räumlich unbeschränktes Nutzungsrecht im Rahmen des Vertragszwecks. Der Auftragnehmer bleibt berechtigt, diese Bausteine auch für andere Auftraggeber zu verwenden.</p>
+          <p>(4) <strong>Fremdkomponenten:</strong> Für eingesetzte Software Dritter, insbesondere Open-Source-Bibliotheken, Schriften und Erweiterungen, gelten ausschließlich deren jeweilige Lizenzbedingungen. Der Auftragnehmer weist auf wesentliche Lizenzbedingungen hin; die Einhaltung im laufenden Betrieb obliegt dem Auftraggeber.</p>
+          <p>(5) Bis zur vollständigen Zahlung sind sämtliche überlassenen Arbeitsergebnisse nur widerruflich zur Prüfung und internen Verwendung gestattet. Eine produktive Nutzung vor vollständiger Zahlung bedarf der Zustimmung in Textform.</p>
+          <p>(6) Der Auftragnehmer verzichtet auf eine Urhebernennung in den Arbeitsergebnissen, sofern nichts anderes vereinbart ist.</p>
+        </section>
+
+        <section id="dritte">
+          <h2><span class="num">§ 9</span>Fremdleistungen und Unterauftragnehmer</h2>
+          <p>(1) Der Auftragnehmer ist berechtigt, zur Vertragserfüllung Unterauftragnehmer einzusetzen. Für deren Leistungen haftet er wie für eigenes Handeln.</p>
+          <p>(2) Leistungen Dritter, die der Auftragnehmer im Namen und für Rechnung des Auftraggebers beschafft — etwa Hosting, Domains, Lizenzen oder Bildmaterial —, werden nicht Bestandteil der Werkleistung. Für diese gelten die Bedingungen des jeweiligen Anbieters; eine Gewährleistung des Auftragnehmers besteht insoweit nicht.</p>
+          <p>(3) Laufende Kosten für Hosting, Domains und Lizenzen trägt der Auftraggeber, sofern nicht ausdrücklich anders vereinbart.</p>
+        </section>
+
+        <section id="gewaehrleistung">
+          <h2><span class="num">§ 10</span>Gewährleistung</h2>
+          <p>(1) Der Auftragnehmer gewährleistet, dass die Werkleistung bei Abnahme die vertraglich vereinbarte Beschaffenheit aufweist.</p>
+          <p>(2) Bei Mängeln hat der Auftragnehmer das Recht zur Nacherfüllung. Schlägt die Nacherfüllung nach zwei Versuchen fehl, kann der Auftraggeber nach seiner Wahl mindern oder — bei nicht unerheblichen Mängeln — vom Vertrag zurücktreten. Schadensersatzansprüche richten sich nach §&nbsp;11.</p>
+          <p>(3) Die Gewährleistungsfrist beträgt <strong>zwölf Monate</strong> ab Abnahme. Dies gilt nicht bei Vorsatz, arglistigem Verschweigen eines Mangels, bei Verletzung von Leben, Körper oder Gesundheit sowie bei Ansprüchen nach dem Produkthaftungsgesetz; insoweit gelten die gesetzlichen Fristen.</p>
+          <p>(4) Der Auftraggeber hat offensichtliche Mängel unverzüglich, spätestens binnen zehn Werktagen nach Entdeckung, in Textform zu rügen (§&nbsp;377 HGB bleibt unberührt).</p>
+          <p>(5) Keine Mängel sind: Abweichungen, die auf vom Auftraggeber beigestellten Inhalten oder Vorgaben beruhen; Beeinträchtigungen durch Änderungen, die der Auftraggeber oder Dritte ohne Abstimmung an den Arbeitsergebnissen vornehmen; Störungen infolge unsachgemäßer Bedienung oder ungeeigneter Betriebsumgebung; sowie Beeinträchtigungen durch Änderungen an Diensten Dritter, Browsern oder Betriebssystemen nach Abnahme.</p>
+          <p>(6) Softwarefehler lassen sich nach dem Stand der Technik nicht vollständig ausschließen. Eine Gewähr für vollständige Fehlerfreiheit oder ununterbrochene Verfügbarkeit wird nicht übernommen.</p>
+        </section>
+
+        <section id="haftung">
+          <h2><span class="num">§ 11</span>Haftung</h2>
+          <p>(1) Der Auftragnehmer haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit, bei arglistigem Verschweigen eines Mangels, bei Übernahme einer Garantie, bei der Verletzung von Leben, Körper oder Gesundheit sowie nach dem Produkthaftungsgesetz.</p>
+          <p>(2) Bei leicht fahrlässiger Verletzung einer wesentlichen Vertragspflicht — also einer Pflicht, deren Erfüllung die ordnungsgemäße Durchführung des Vertrags überhaupt erst ermöglicht und auf deren Einhaltung der Auftraggeber regelmäßig vertrauen darf — ist die Haftung auf den bei Vertragsschluss vorhersehbaren, vertragstypischen Schaden begrenzt.</p>
+          <p>(3) Im Übrigen ist die Haftung für leichte Fahrlässigkeit ausgeschlossen.</p>
+          <p>(4) Die Haftung nach Absatz&nbsp;2 ist der Höhe nach auf die im betreffenden Projekt vereinbarte Nettovergütung begrenzt, bei Dauerschuldverhältnissen auf die Nettovergütung der letzten zwölf Monate.</p>
+          <p>(5) <strong>Datenverlust:</strong> Für den Verlust von Daten haftet der Auftragnehmer nur bis zu dem Aufwand, der bei ordnungsgemäßer und regelmäßiger Datensicherung durch den Auftraggeber zur Wiederherstellung erforderlich gewesen wäre. Der Auftraggeber ist für angemessene Sicherungen seiner Daten selbst verantwortlich.</p>
+          <p>(6) Die vorstehenden Beschränkungen gelten auch zugunsten der gesetzlichen Vertreter, Mitarbeiter und Erfüllungsgehilfen des Auftragnehmers.</p>
+          <p>(7) Eine Änderung der Beweislast zum Nachteil des Auftraggebers ist mit den vorstehenden Regelungen nicht verbunden.</p>
+        </section>
+
+        <section id="vertraulichkeit">
+          <h2><span class="num">§ 12</span>Vertraulichkeit</h2>
+          <p>(1) Beide Parteien behandeln alle im Rahmen der Zusammenarbeit bekannt gewordenen, als vertraulich gekennzeichneten oder ihrer Natur nach vertraulichen Informationen der jeweils anderen Partei streng vertraulich. Dies gilt auch über das Vertragsende hinaus für die Dauer von drei Jahren.</p>
+          <p>(2) Ausgenommen sind Informationen, die offenkundig sind, die einer Partei bereits vor Mitteilung bekannt waren, die von Dritten rechtmäßig erlangt wurden oder deren Offenlegung gesetzlich oder behördlich angeordnet ist.</p>
+          <p>(3) Zugangsdaten werden ausschließlich über gesicherte Wege übermittelt und nach Projektende auf Verlangen gelöscht.</p>
+        </section>
+
+        <section id="datenschutz">
+          <h2><span class="num">§ 13</span>Datenschutz</h2>
+          <p>(1) Beide Parteien beachten die jeweils anwendbaren datenschutzrechtlichen Bestimmungen, insbesondere die Datenschutz-Grundverordnung.</p>
+          <p>(2) Erhält der Auftragnehmer im Rahmen der Leistungserbringung Zugriff auf personenbezogene Daten, für die der Auftraggeber Verantwortlicher ist, schließen die Parteien vor Beginn der Verarbeitung einen <strong>Vertrag zur Auftragsverarbeitung nach Art.&nbsp;28 DSGVO</strong>. Der Auftragnehmer stellt hierfür ein Muster bereit.</p>
+          <p>(3) Der Auftraggeber bleibt für die datenschutzrechtliche Zulässigkeit der von ihm veranlassten Verarbeitungen verantwortlich, insbesondere für Rechtsgrundlagen, Informationspflichten und Einwilligungen gegenüber den betroffenen Personen.</p>
+          <p>(4) Einzelheiten zur Verarbeitung auf dieser Website ergeben sich aus der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+        </section>
+
+        <section id="referenz">
+          <h2><span class="num">§ 14</span>Referenznennung</h2>
+          <p>(1) Der Auftragnehmer ist berechtigt, die erbrachten Leistungen unter Nennung des Auftraggebers, seines Logos und mit Abbildungen der Arbeitsergebnisse als Referenz zu nennen, insbesondere auf der eigenen Website und in Angebotsunterlagen.</p>
+          <p>(2) Der Auftraggeber kann dieser Nutzung jederzeit in Textform widersprechen. Der Auftragnehmer entfernt die Referenz sodann innerhalb angemessener Frist.</p>
+          <p>(3) Vertrauliche Details des Projekts werden dabei nicht offengelegt.</p>
+        </section>
+
+        <section id="laufzeit">
+          <h2><span class="num">§ 15</span>Laufzeit und Kündigung</h2>
+          <p>(1) Projektverträge enden mit vollständiger Erbringung und Abnahme der Leistung.</p>
+          <p>(2) Dauerschuldverhältnisse, insbesondere Betreuungs- und Wartungsverträge, laufen auf unbestimmte Zeit und können von beiden Seiten mit einer Frist von <strong>drei Monaten zum Monatsende</strong> in Textform gekündigt werden, sofern nichts anderes vereinbart ist.</p>
+          <p>(3) Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt. Ein wichtiger Grund liegt für den Auftragnehmer insbesondere vor, wenn der Auftraggeber trotz Mahnung und angemessener Nachfrist mit einem nicht unerheblichen Teil der Vergütung in Verzug ist.</p>
+          <p>(4) Kündigt der Auftraggeber einen Werkvertrag vor Fertigstellung ohne vom Auftragnehmer zu vertretenden Grund, behält der Auftragnehmer den Anspruch auf die vereinbarte Vergütung; er muss sich jedoch dasjenige anrechnen lassen, was er infolge der Aufhebung des Vertrags an Aufwendungen erspart oder durch anderweitige Verwendung seiner Arbeitskraft erwirbt (§&nbsp;648 BGB).</p>
+          <p>(5) Nach Vertragsende übergibt der Auftragnehmer auf Verlangen alle beim Auftraggeber verbleibenden Arbeitsergebnisse in üblichem Format sowie sämtliche überlassenen Unterlagen und Zugänge.</p>
+        </section>
+
+        <section id="schluss">
+          <h2><span class="num">§ 16</span>Schlussbestimmungen</h2>
+          <p>(1) <strong>Rechtswahl:</strong> Für sämtliche Rechtsbeziehungen zwischen den Parteien gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG) und unter Ausschluss der Vorschriften des Internationalen Privatrechts, soweit diese zur Anwendung fremden Rechts führen würden.</p>
+          <p>(2) <strong>Gerichtsstand:</strong> Ausschließlicher Gerichtsstand für alle Streitigkeiten aus und im Zusammenhang mit diesem Vertrag ist <strong>Hamburg</strong>, sofern der Auftraggeber Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist. Der Auftragnehmer ist daneben berechtigt, am allgemeinen Gerichtsstand des Auftraggebers zu klagen.</p>
+          <p>(3) <strong>Textform:</strong> Änderungen und Ergänzungen dieses Vertrags einschließlich dieser Klausel bedürfen der Textform.</p>
+          <p>(4) <strong>Salvatorische Klausel:</strong> Sollte eine Bestimmung dieser Bedingungen ganz oder teilweise unwirksam oder undurchführbar sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. An die Stelle der unwirksamen Bestimmung tritt die gesetzliche Regelung.</p>
+          <p>(5) <strong>Abtretung:</strong> Die Abtretung von Ansprüchen aus diesem Vertrag durch den Auftraggeber bedarf der Zustimmung des Auftragnehmers in Textform. §&nbsp;354&nbsp;a HGB bleibt unberührt.</p>
+
+          <div class="legal__back">
+            <a href="index.html" class="btn btn--text" data-cursor="link">Zurück zur Startseite<span class="btn__arrow">→</span></a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="glow glow--a" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <svg class="logo-mark" width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <rect width="100" height="100" fill="#FFFFFF"/>
+          <text x="21" y="54" font-size="66" text-anchor="middle" dominant-baseline="central" fill="#0A0A0A">{</text>
+          <rect x="45" y="45" width="10" height="10" fill="#FF3B18"/>
+          <text x="79" y="54" font-size="66" text-anchor="middle" dominant-baseline="central" fill="#0A0A0A">}</text>
+        </svg>
+        <p class="footer__claim">Gebaut, bis nichts<br>mehr hakt<span class="text-signal">.</span></p>
+      </div>
+      <nav class="footer__col" aria-label="Fußnavigation">
+        <div class="footer__col-label">Navigation</div>
+        <a href="index.html#arbeiten" data-cursor="link">Arbeiten</a>
+        <a href="index.html#leistungen" data-cursor="link">Leistungen</a>
+        <a href="index.html#studio" data-cursor="link">Studio</a>
+        <a href="index.html#kontakt" data-cursor="link">Kontakt</a>
+      </nav>
+      <nav class="footer__col" aria-label="Rechtliches">
+        <div class="footer__col-label">Rechtliches</div>
+        <a href="impressum.html" data-cursor="link">Impressum</a>
+        <a href="datenschutz.html" data-cursor="link">Datenschutz</a>
+        <a href="agb.html" data-cursor="link">AGB</a>
+      </nav>
+      <div class="footer__col">
+        <div class="footer__col-label">Direkt</div>
+        <a href="mailto:hallo@codeschliff.de" data-cursor="link">hallo@codeschliff.de</a>
+        <a href="index.html#kontakt" data-cursor="link">Erstgespräch vereinbaren</a>
+      </div>
+    </div>
+    <div class="footer__meta">
+      <span>codeschliff · Zuschuss Piloten Consulting, Unipessoal Lda.</span>
+      <span>Funchal · Hamburg · MMXXVI</span>
+    </div>
+  </footer>
+
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/vendor/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

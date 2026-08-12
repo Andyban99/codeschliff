@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>codeschliff — Software- und Webagentur, Hamburg</title>
+  <title>codeschliff — Software- und Webagentur</title>
   <meta name="description" content="Websites, Shops und interne Systeme. Gestaltung und Entwicklung aus einem Haus, erste Fassung in 14 Tagen, Festpreis. codeschliff — gebaut, bis nichts mehr hakt.">
 
   <meta property="og:title" content="codeschliff — Gebaut, bis nichts mehr hakt.">
@@ -16,10 +16,10 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/InstrumentSans-latin.woff2" as="font" type="font/woff2" crossorigin>
 
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/style.css">
   <noscript><style>.preloader, .cursor, .scroll-progress { display: none !important; }</style></noscript>
@@ -82,7 +82,7 @@
     </nav>
     <div class="mobile-nav__meta">
       <span>hallo@codeschliff.de</span>
-      <span>Hamburg · MMXXVI</span>
+      <span>Funchal · Hamburg</span>
     </div>
   </div>
 
@@ -323,10 +323,11 @@
         <div class="studio__text">
           <div class="label" data-reveal>Studio</div>
           <h2 class="section__title" data-split-lines>Ein Studio für Software,<br>die man gerne benutzt<span class="text-signal">.</span></h2>
-          <p class="studio__copy" data-reveal>codeschliff ist ein kleines Team aus Gestaltung und Entwicklung in Hamburg. Wir übernehmen Projekte komplett: Struktur, Design, Code, Betrieb. Ohne Übergabeverluste, ohne Agentur-Theater — dafür mit einem sichtbaren Stand in jeder Woche.</p>
+          <p class="studio__copy" data-reveal>codeschliff ist ein kleines Team aus Gestaltung und Entwicklung. Wir sitzen auf Madeira und sind für den deutschsprachigen Raum in Hamburg ansprechbar. Projekte übernehmen wir komplett: Struktur, Design, Code, Betrieb. Ohne Übergabeverluste, ohne Agentur-Theater — dafür mit einem sichtbaren Stand in jeder Woche.</p>
           <dl class="datalist" data-reveal-group>
             <div class="datalist__row"><dt>Gegründet</dt><dd>2026</dd></div>
-            <div class="datalist__row"><dt>Standort</dt><dd>Hamburg</dd></div>
+            <div class="datalist__row"><dt>Sitz</dt><dd>Funchal, Madeira</dd></div>
+            <div class="datalist__row"><dt>Ansprechbar in</dt><dd>Hamburg</dd></div>
             <div class="datalist__row"><dt>Team</dt><dd>Gestaltung + Entwicklung</dd></div>
             <div class="datalist__row"><dt>Erstgespräch</dt><dd class="text-signal">kostenlos</dd></div>
           </dl>
@@ -349,7 +350,9 @@
             <div class="datalist__row"><dt>E-Mail</dt><dd><a href="mailto:hallo@codeschliff.de" data-cursor="link">hallo@codeschliff.de</a></dd></div>
             <div class="datalist__row"><dt>Erstgespräch</dt><dd>30 Minuten, unverbindlich</dd></div>
             <div class="datalist__row"><dt>Antwortzeit</dt><dd class="text-signal">ein Werktag</dd></div>
+            <div class="datalist__row"><dt>Wir arbeiten mit</dt><dd>Unternehmen und Behörden</dd></div>
           </dl>
+          <p class="kontakt__hinweis" data-reveal>Unsere Leistungen richten sich ausschließlich an Unternehmer, Behörden und Selbständige. Es gelten unsere <a href="agb.html" data-cursor="link">AGB</a>.</p>
         </div>
         <form class="form" id="kontaktForm" novalidate>
           <div class="form__field">
@@ -378,7 +381,7 @@
             <label class="checkbox">
               <input type="checkbox" id="fDsgvo" name="dsgvo" required>
               <span class="checkbox__mark"></span>
-              <span class="checkbox__text">Ich habe die <a href="#" data-cursor="link">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben einverstanden. *</span>
+              <span class="checkbox__text">Ich habe die <a href="datenschutz.html" data-cursor="link">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage einverstanden. *</span>
             </label>
             <span class="form__error" data-error-for="fDsgvo"></span>
           </div>
@@ -420,8 +423,9 @@
       </nav>
       <nav class="footer__col" aria-label="Rechtliches">
         <div class="footer__col-label">Rechtliches</div>
-        <a href="#" data-cursor="link">Impressum</a>
-        <a href="#" data-cursor="link">Datenschutz</a>
+        <a href="impressum.html" data-cursor="link">Impressum</a>
+        <a href="datenschutz.html" data-cursor="link">Datenschutz</a>
+        <a href="agb.html" data-cursor="link">AGB</a>
       </nav>
       <div class="footer__col">
         <div class="footer__col-label">Direkt</div>
@@ -430,8 +434,8 @@
       </div>
     </div>
     <div class="footer__meta">
-      <span>codeschliff · Software- und Webagentur</span>
-      <span>Hamburg · MMXXVI</span>
+      <span>codeschliff · Zuschuss Piloten Consulting, Unipessoal Lda.</span>
+      <span>Funchal · Hamburg · MMXXVI</span>
     </div>
   </footer>
 
