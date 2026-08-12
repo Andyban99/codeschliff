@@ -1,0 +1,6 @@
+# Rohmaterial der Higgsfield-Generierung (nur lokal, nicht deployen)
+assets/img/src-*.png
+
+# Lokales Werkzeug
+.claude/
+.DS_Store

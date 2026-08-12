@@ -1,0 +1,118 @@
+/* codeschliff — Design Tokens v1.0
+   Quelle: codeschliff Brand Kit.dc.html
+   Einbinden als erste Datei, vor allen Komponenten-Styles. */
+
+:root {
+  /* ---- Farbe ---- */
+  --cs-ink:           #0A0A0A;  /* Tinte: Text, dunkle Flächen, sekundäre Buttons */
+  --cs-ink-700:       #2A2A28;  /* Tinte Hover */
+  --cs-ink-600:       #444442;  /* Tinte Aktiv */
+  --cs-signal:        #FF3B18;  /* Signal: Akzent, primäre Aktion */
+  --cs-signal-800:    #C22B0F;  /* Signal Hover */
+  --cs-signal-900:    #A32309;  /* Signal Aktiv */
+  --cs-grey:          #6B6963;  /* Fließtext sekundär, Navigation inaktiv */
+  --cs-grey-400:      #A9A59A;  /* Labels, Metadaten */
+  --cs-grey-300:      #C4C1B9;  /* Text deaktiviert */
+  --cs-line:          #EAE8E3;  /* Trennlinien, Rahmen */
+  --cs-line-soft:     #F4F2ED;  /* Trennlinien innerhalb von Listen */
+  --cs-surface:       #F6F5F2;  /* Seitenhintergrund außerhalb des Inhalts */
+  --cs-disabled-bg:   #E7E4DE;  /* Button deaktiviert */
+  --cs-paper:         #FFFFFF;
+
+  /* Statusfarben (nur für Systemmeldungen, nicht für Marketing) */
+  --cs-success:       #1E9E5A;
+  --cs-success-bg:    #F2F8F4;
+  --cs-success-text:  #235B3E;
+  --cs-error:         #FF3B18;
+  --cs-error-bg:      #FDF3F1;
+  --cs-error-text:    #8A2410;
+
+  /* Text auf dunklem Grund */
+  --cs-on-dark:       #F2F1EE;
+  --cs-on-dark-mute:  #9A988F;
+  --cs-on-dark-faint: #7E7C76;
+
+  /* ---- Glas (nur auf --cs-ink Grund) ---- */
+  --cs-glass-bg:            rgba(255, 255, 255, 0.06);
+  --cs-glass-bg-hover:      rgba(255, 255, 255, 0.10);
+  --cs-glass-border:        rgba(255, 255, 255, 0.12);
+  --cs-glass-border-hover:  rgba(255, 255, 255, 0.20);
+  --cs-glass-inner:         inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  --cs-glass-blur:          blur(20px) saturate(150%);
+  --cs-glass-shadow:        0 18px 40px rgba(0, 0, 0, 0.5);
+  --cs-glass-accent-bg:     linear-gradient(150deg, rgba(255,59,24,0.22), rgba(255,59,24,0.06));
+  --cs-glass-accent-border: rgba(255, 59, 24, 0.38);
+
+  /* ---- Typografie ---- */
+  --cs-font-display: 'Archivo', system-ui, sans-serif;      /* 700 */
+  --cs-font-body:    'Instrument Sans', system-ui, sans-serif; /* 400, 500, 600 */
+  --cs-font-mono:    'JetBrains Mono', ui-monospace, monospace; /* 400 */
+
+  --cs-text-display:  82px;  --cs-lh-display:  0.93;  --cs-ls-display:  -0.06em;
+  --cs-text-h1:       44px;  --cs-lh-h1:       1.05;  --cs-ls-h1:       -0.055em;
+  --cs-text-h2:       26px;  --cs-lh-h2:       1.10;  --cs-ls-h2:       -0.05em;
+  --cs-text-h3:       20px;  --cs-lh-h3:       1.15;  --cs-ls-h3:       -0.045em;
+  --cs-text-lead:     19px;  --cs-lh-lead:     1.60;
+  --cs-text-body:     16px;  --cs-lh-body:     1.65;
+  --cs-text-small:    14px;  --cs-lh-small:    1.60;
+  --cs-text-label:    11px;  --cs-lh-label:    1.00;  --cs-ls-label:    0.18em;
+  --cs-text-mono-sm:  10px;                            --cs-ls-mono-sm:  0.16em;
+
+  /* ---- Abstand ---- */
+  --cs-space-1:   4px;
+  --cs-space-2:   8px;
+  --cs-space-3:  12px;
+  --cs-space-4:  16px;
+  --cs-space-5:  24px;
+  --cs-space-6:  32px;
+  --cs-space-7:  48px;
+  --cs-space-8:  64px;
+  --cs-space-9:  96px;
+
+  /* ---- Layout ---- */
+  --cs-content-max:   1240px;
+  --cs-gutter:          24px;
+  --cs-page-pad:        44px;  /* Desktop */
+  --cs-page-pad-mob:    20px;
+  --cs-header-height:   72px;
+
+  /* ---- Form ---- */
+  --cs-radius-none:    0;      /* Flächen, Buttons, Karten hell */
+  --cs-radius-glass:  14px;    /* Glaskarten */
+  --cs-radius-pill:  999px;    /* Glaspillen, Schalter */
+
+  --cs-border:        1px solid var(--cs-line);
+  --cs-border-strong: 1px solid var(--cs-ink);
+  --cs-rule-accent:   2px solid var(--cs-signal);
+
+  /* ---- Bewegung ---- */
+  --cs-dur-hover:  160ms;
+  --cs-dur-fade:   240ms;
+  --cs-dur-page:   320ms;
+  --cs-stagger:     60ms;
+  --cs-ease:       cubic-bezier(0.22, 0.61, 0.36, 1); /* ease-out */
+
+  /* ---- Fokus ---- */
+  --cs-focus-outline: 2px solid var(--cs-ink);
+  --cs-focus-offset:  3px;
+  --cs-focus-ring:    0 0 0 3px rgba(255, 59, 24, 0.14); /* Formularfelder */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --cs-text-display: 44px;
+    --cs-text-h1:      30px;
+    --cs-text-h2:      22px;
+    --cs-text-lead:    17px;
+    --cs-page-pad:     var(--cs-page-pad-mob);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --cs-dur-hover: 0ms;
+    --cs-dur-fade:  0ms;
+    --cs-dur-page:  0ms;
+    --cs-stagger:   0ms;
+  }
+}
