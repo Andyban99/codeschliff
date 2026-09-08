@@ -1,0 +1,8 @@
+# codeschliff.de
+User-agent: *
+Allow: /
+
+# Rohmaterial und Werkzeug gehören nicht in den Index.
+Disallow: /tools/
+
+Sitemap: https://codeschliff.de/sitemap.xml

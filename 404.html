@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seite nicht gefunden — codeschliff</title>
+  <meta name="description" content="Diese Seite gibt es nicht (mehr). Zurück zur Startseite von codeschliff.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <!-- Absolute Pfade: die 404 wird unter beliebiger Adresstiefe ausgeliefert. -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--cs-ink);
+      color: var(--cs-on-dark);
+      font: 400 16px/1.65 'Instrument Sans', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      padding: 64px var(--cs-page-pad);
+    }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--cs-signal); color: #FFFFFF; }
+    :focus-visible { outline: 2px solid #FFFFFF; outline-offset: 3px; }
+
+    .nf { max-width: var(--cs-content-max); margin: 0 auto; width: 100%; }
+    .nf__mark { display: block; margin-bottom: 40px; }
+    .nf__label {
+      font: 400 11px/1 'JetBrains Mono', monospace;
+      letter-spacing: var(--cs-ls-label);
+      text-transform: uppercase;
+      color: var(--cs-signal);
+      margin-bottom: 20px;
+    }
+    .nf__title {
+      margin: 0 0 20px;
+      font: 700 var(--cs-text-display)/var(--cs-lh-display) 'Archivo', system-ui, sans-serif;
+      letter-spacing: var(--cs-ls-display);
+    }
+    .nf__lead {
+      margin: 0 0 40px;
+      max-width: 46ch;
+      font-size: var(--cs-text-lead);
+      line-height: var(--cs-lh-lead);
+      color: var(--cs-on-dark-mute);
+    }
+    .nf__links { display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: center; }
+    .nf__btn {
+      display: inline-flex;
+      align-items: center;
+      min-height: 48px;
+      padding: 0 26px;
+      background: var(--cs-signal);
+      color: #FFFFFF;
+      font: 600 15px/1 'Instrument Sans', system-ui, sans-serif;
+      transition: background-color 160ms var(--cs-ease);
+    }
+    .nf__btn:hover { background: var(--cs-signal-800); }
+    .nf__side {
+      font: 400 11px/1 'JetBrains Mono', monospace;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cs-on-dark-faint);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      padding-bottom: 3px;
+      transition: color 160ms var(--cs-ease), border-color 160ms var(--cs-ease);
+    }
+    .nf__side:hover { color: #FFFFFF; border-color: #FFFFFF; }
+  </style>
+</head>
+<body>
+  <main class="nf">
+    <a href="/" aria-label="codeschliff — zur Startseite">
+      <svg class="nf__mark" width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">
+        <rect width="100" height="100" fill="#FFFFFF"/>
+        <text x="21" y="54" font-size="66" text-anchor="middle" dominant-baseline="central" fill="#0A0A0A" font-family="'JetBrains Mono', monospace">{</text>
+        <rect x="45" y="45" width="10" height="10" fill="#FF3B18"/>
+        <text x="79" y="54" font-size="66" text-anchor="middle" dominant-baseline="central" fill="#0A0A0A" font-family="'JetBrains Mono', monospace">}</text>
+      </svg>
+    </a>
+    <div class="nf__label">Fehler 404</div>
+    <h1 class="nf__title">Hier hakt<br>es doch<span style="color:var(--cs-signal)">.</span></h1>
+    <p class="nf__lead">Diese Seite gibt es nicht — oder nicht mehr. Vielleicht hat sich ein Tippfehler in die Adresse geschlichen.</p>
+    <div class="nf__links">
+      <a class="nf__btn" href="/">Zur Startseite</a>
+      <a class="nf__side" href="/#kontakt">Projekt anfragen</a>
+      <a class="nf__side" href="mailto:andrew.banoub@codeschliff.de">andrew.banoub@codeschliff.de</a>
+    </div>
+  </main>
+</body>
+</html>
