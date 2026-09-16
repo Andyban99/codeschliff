@@ -1114,6 +1114,193 @@ html:not(.js) .preloader { display: none; }
 .form__fallback-hint a { color: var(--cs-ink); border-bottom: 1px solid var(--cs-line); }
 .form__fallback-hint a:hover { color: var(--cs-signal); border-color: var(--cs-signal); }
 
+/* ═══════════════ TERMINBUCHUNG ═══════════════
+   Helle Fläche, also: keine Rundungen, 1-px-Linien, Mono-Labels,
+   Archivo für Zahlen. Ausgewählt = Tinte, gebucht = Signal. */
+.kontakt__side { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+.buchung { border: 1px solid var(--cs-line); background: var(--cs-paper); }
+.buchung__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--cs-line);
+}
+.buchung__label,
+.buchung__chosen-label,
+.buchung__foot,
+.buchung__weekdays {
+  font: 400 10px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cs-grey);
+}
+.buchung__steps {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font: 400 10px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cs-grey-300);
+}
+.buchung__steps li { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.buchung__steps li.is-done { color: var(--cs-grey); }
+.buchung__steps li.is-active { color: var(--cs-ink); }
+.buchung__steps li.is-active span { color: var(--cs-signal); }
+.buchung__notice {
+  padding: 12px 22px;
+  font: 400 13px/1.5 'Instrument Sans', sans-serif;
+  color: var(--cs-ink);
+  background: var(--cs-line-soft);
+  border-bottom: 1px solid var(--cs-line);
+}
+.buchung__notice.is-error { background: var(--cs-error-bg); color: var(--cs-error-text); }
+.buchung__notice[hidden],
+.buchung__pick[hidden],
+.buchung__form[hidden],
+.buchung__done[hidden],
+.buchung__offline[hidden],
+.form[hidden] { display: none; }
+
+/* Schritt 1: Tag & Zeit */
+.buchung__pick { display: grid; grid-template-columns: minmax(0, 1fr) 200px; }
+.buchung__cal { padding: 22px; border-right: 1px solid var(--cs-line); }
+.buchung__month { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.buchung__month-name { font: 700 18px/1 'Archivo', sans-serif; letter-spacing: -0.03em; color: var(--cs-ink); }
+.buchung__month-name em { font-style: normal; font-weight: 500; color: var(--cs-grey-400); }
+.buchung__nav {
+  width: 34px; height: 34px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid #D9D6CF;
+  color: var(--cs-ink);
+  font: 500 15px/1 'Instrument Sans', sans-serif;
+  transition: border-color 160ms var(--cs-ease), color 160ms var(--cs-ease);
+}
+.buchung__nav:hover { border-color: var(--cs-ink); }
+.buchung__nav[disabled] { color: var(--cs-grey-300); border-color: var(--cs-line); cursor: default; }
+.buchung__weekdays, .buchung__days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.buchung__weekdays { margin-bottom: 6px; letter-spacing: 0.12em; color: var(--cs-grey-400); text-align: center; }
+.buchung__day {
+  position: relative;
+  aspect-ratio: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  font: 500 14px/1 'Archivo', sans-serif;
+  letter-spacing: -0.02em;
+  color: var(--cs-ink);
+  background: var(--cs-line-soft);
+  border: 1px solid transparent;
+  transition: background-color 160ms var(--cs-ease), color 160ms var(--cs-ease), border-color 160ms var(--cs-ease);
+}
+.buchung__day:hover { border-color: var(--cs-ink); }
+.buchung__day--pad, .buchung__day[disabled] { background: transparent; color: var(--cs-grey-300); cursor: default; }
+.buchung__day[disabled]:hover { border-color: transparent; }
+.buchung__day.is-selected { background: var(--cs-ink); border-color: var(--cs-ink); color: #FFFFFF; }
+.buchung__day.is-today::after {
+  content: '';
+  position: absolute;
+  bottom: 5px; left: 50%;
+  width: 4px; height: 4px;
+  transform: translateX(-50%);
+  background: var(--cs-signal);
+}
+.buchung__day.is-selected.is-today::after { background: #FFFFFF; }
+.buchung__times { padding: 22px 18px; display: flex; flex-direction: column; }
+.buchung__times-head {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 5px;
+  margin-bottom: 12px;
+  font: 500 14px/1.3 'Instrument Sans', sans-serif;
+  color: var(--cs-ink);
+}
+.buchung__tz { font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.08em; color: var(--cs-grey-400); white-space: nowrap; }
+.buchung__slots {
+  display: flex; flex-direction: column; gap: 6px;
+  max-height: 318px; overflow-y: auto; padding-right: 4px;
+  scrollbar-width: thin;
+}
+.buchung__slot {
+  padding: 11px 12px;
+  border: 1px solid #D9D6CF;
+  font: 600 13px/1 'Archivo', sans-serif;
+  color: var(--cs-ink);
+  text-align: center;
+  transition: border-color 160ms var(--cs-ease), background-color 160ms var(--cs-ease), color 160ms var(--cs-ease);
+}
+.buchung__slot:hover { border-color: var(--cs-ink); }
+.buchung__slot.is-selected { background: var(--cs-signal); border-color: var(--cs-signal); color: #FFFFFF; }
+.buchung__empty { font: 400 13px/1.5 'Instrument Sans', sans-serif; color: var(--cs-grey-400); padding: 6px 0; }
+.buchung__foot {
+  grid-column: 1 / -1;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 12px 22px;
+  border-top: 1px solid var(--cs-line);
+  letter-spacing: 0.12em;
+  color: var(--cs-grey-400);
+}
+.buchung__tzpick { display: inline-flex; align-items: center; gap: 10px; }
+.buchung__tzpick select {
+  font: 400 11px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+  color: var(--cs-ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--cs-line);
+  padding: 4px 0;
+  max-width: 190px;
+  cursor: pointer;
+}
+.buchung__tzpick select:focus { outline: none; border-bottom-color: var(--cs-ink); }
+.buchung__status.is-live { color: var(--cs-success-text); }
+
+/* Schritt 2: Daten */
+.buchung__form { padding: 22px; gap: 20px; }
+.buchung__chosen {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 14px 16px;
+  background: var(--cs-line-soft);
+  border-left: 2px solid var(--cs-signal);
+}
+.buchung__chosen-label { display: block; margin-bottom: 6px; }
+.buchung__chosen strong { font: 600 14px/1.4 'Instrument Sans', sans-serif; color: var(--cs-ink); }
+.buchung__change {
+  font: 400 11px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cs-ink);
+  border-bottom: 1px solid var(--cs-ink);
+  padding-bottom: 2px;
+  white-space: nowrap;
+  transition: color 160ms var(--cs-ease), border-color 160ms var(--cs-ease);
+}
+.buchung__change:hover { color: var(--cs-signal); border-color: var(--cs-signal); }
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.buchung__textarea { min-height: 88px; }
+.buchung__actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.buchung__actions-hint { font: 400 12px/1.5 'Instrument Sans', sans-serif; color: var(--cs-grey-400); max-width: 28ch; }
+
+/* Schritt 3 + Rückfall */
+.buchung__done, .buchung__offline { padding: 40px 28px; display: flex; flex-direction: column; gap: 14px; }
+.buchung__done-title { font: 700 40px/1 'Archivo', sans-serif; letter-spacing: -0.05em; color: var(--cs-ink); margin: 0; }
+.buchung__done-when { font: 600 17px/1.4 'Instrument Sans', sans-serif; color: var(--cs-ink); }
+.buchung__done-text, .buchung__offline p { font: 400 14px/1.6 'Instrument Sans', sans-serif; color: #55534D; max-width: 44ch; }
+.buchung__done-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.kontakt__alt { align-self: flex-start; }
+
+@media (max-width: 640px) {
+  .buchung__pick { grid-template-columns: 1fr; }
+  .buchung__cal { border-right: 0; border-bottom: 1px solid var(--cs-line); }
+  .buchung__slots { max-height: none; flex-direction: row; flex-wrap: wrap; padding-right: 0; }
+  .buchung__slot { flex: 1 1 calc(33.333% - 6px); }
+  .buchung__head, .buchung__foot { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .buchung__steps { gap: 12px; flex-wrap: wrap; }
+  .form__row { grid-template-columns: 1fr; }
+  .buchung__done, .buchung__offline { padding: 28px 20px; }
+  .buchung__done-title { font-size: 32px; }
+}
+
 /* ═══════════════ FUSSZEILE ═══════════════ */
 .footer {
   position: relative;
@@ -1255,7 +1442,9 @@ html.js [data-reveal-group] > * {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
-  [data-reveal], [data-reveal-group] > * { opacity: 1; transform: none; }
+  /* Muss die html.js-Regeln oben schlagen (hoehere Spezifitaet), sonst
+     blieben ganze Abschnitte fuer Nutzer mit reduzierter Bewegung unsichtbar. */
+  html.js [data-reveal], html.js [data-reveal-group] > * { opacity: 1; transform: none; }
   .manifest__statement .word { opacity: 1; }
   .preloader { display: none; }
   .cursor { display: none !important; }

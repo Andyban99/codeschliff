@@ -12,6 +12,7 @@ Bewusst ohne Framework: statisches HTML + CSS + Vanilla-JS.
 - `js/main.js` — zwei getrennte Einheiten: Bewegungsschicht und Kontaktformular.
   Das Formular hängt bewusst nicht an GSAP — fällt die Animation aus, trägt es trotzdem.
 - `js/vendor/` — GSAP 3.12 + ScrollTrigger + Lenis 1.1 (lokal, kein CDN)
+- `js/buchung.js` — Terminbuchung (Erstgespräch), spricht direkt mit dem CRM
 - `tools/contact-worker.js` — Endpunkt für den Formularversand (nicht Teil der Auslieferung)
 
 ## Inszenierung
@@ -22,7 +23,34 @@ Maskenöffnung der Manifest-Sektion, mausfolgende Video-Vorschau in den
 Leistungen, gepinnter Horizontal-Lauf im Ablauf, Zähler, Marquees,
 3D-Neigungen. `prefers-reduced-motion: reduce` schaltet alles ab.
 
-## Kontaktformular
+## Terminbuchung (Erstgespräch)
+
+Der Kontaktbereich ist ein Buchungs-Widget: Tag → Uhrzeit → Daten → bestätigt.
+Es spricht die öffentliche Buchungs-API unseres CRM direkt an — **kein iframe**,
+damit die Seite ihr eigenes Gesicht behält:
+
+| Aufruf | Zweck |
+|---|---|
+| `GET  crm.zuschusspiloten.de/api/booking/slots?from&to&source=codeschliff` | freie Termine + Titel/Dauer der Marke |
+| `POST crm.zuschusspiloten.de/api/booking` mit `source: "codeschliff"` | Termin anlegen: CRM-Kalender, Google-Meet-Raum, Bestätigungs-Mails |
+
+Das CRM (Repo `Andyban99/TimoCRM`, Vercel) kennt die Marke `codeschliff` in
+`lib/booking-brands.ts`: eigener Titel, 30 Minuten, Absender
+`andrew.banoub@codeschliff.de`, Mail-Layout im codeschliff-Stil, Storno-Seite
+im codeschliff-Stil. Verfügbarkeit, Kalender und Google-Konto sind dieselben wie
+bei Zuschuss Piloten — ein Mensch, ein Kalender.
+
+Fällt das CRM aus oder klappt eine Buchung nicht, zeigt das Widget das
+klassische Nachrichtenformular (siehe unten). Nichts geht verloren.
+
+**Lokal testen:** CRM mit `npm run dev` auf :3000 starten; `js/buchung.js`
+schaltet auf `localhost` automatisch dorthin um. Das CRM erlaubt
+`http://localhost:4173` als Herkunft nur außerhalb von Production.
+
+**Ausrollen, in dieser Reihenfolge:** erst das CRM (CORS + Marke), dann diese
+Seite. Umgekehrt würde das Widget bis zum CRM-Deploy in den Rückfall laufen.
+
+## Kontaktformular (Nachricht)
 
 Eine statische Seite hat kein Backend, und ein Browser kann kein SMTP sprechen.
 Zugangsdaten dürfen nie in den Quelltext — dieses Repo ist öffentlich. Der
@@ -103,6 +131,10 @@ Jeder Push auf `main` geht live.
 
 ## Offene Punkte
 
+- **Terminbuchung scharf schalten:** im CRM `npx prisma db push` (neue Spalte
+  `bookings.source`), CRM deployen, dann diese Seite. Im CRM unter Einstellungen
+  das Postfach `andrew.banoub@codeschliff.de` als E-Mail-Konto anlegen — sonst
+  gehen codeschliff-Bestätigungen vom Zuschuss-Piloten-Postfach raus.
 - **Endpunkt ausrollen:** `tools/senden.php` bei IONOS hochladen und
   `CONTACT.endpoint` setzen (siehe oben). Bis dahin läuft der Zwischenstand
   über das Mailprogramm des Absenders.
