@@ -1218,7 +1218,7 @@ html:not(.js) .preloader { display: none; }
 .buchung__tz { font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.08em; color: var(--cs-grey-400); white-space: nowrap; }
 .buchung__slots {
   display: flex; flex-direction: column; gap: 6px;
-  max-height: 318px; overflow-y: auto; padding-right: 4px;
+  max-height: 392px; overflow-y: auto; padding-right: 4px;   /* neun Zeiten (09–17 Uhr) ohne Rollen */
   scrollbar-width: thin;
 }
 .buchung__slot {

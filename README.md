@@ -37,8 +37,9 @@ damit die Seite ihr eigenes Gesicht behält:
 Das CRM (Repo `Andyban99/TimoCRM`, Vercel) kennt die Marke `codeschliff` in
 `lib/booking-brands.ts`: eigener Titel, 30 Minuten, Absender
 `andrew.banoub@codeschliff.de`, Mail-Layout im codeschliff-Stil, Storno-Seite
-im codeschliff-Stil. Verfügbarkeit, Kalender und Google-Konto sind dieselben wie
-bei Zuschuss Piloten — ein Mensch, ein Kalender.
+im codeschliff-Stil. Kalender und Google-Konto sind dieselben wie bei Zuschuss Piloten — ein Mensch,
+ein Kalender; nur das Zeitfenster ist je Marke: codeschliff bis 17:00 Uhr
+(Start), Zuschuss Piloten bis 15:00 Uhr.
 
 Fällt das CRM aus oder klappt eine Buchung nicht, zeigt das Widget das
 klassische Nachrichtenformular (siehe unten). Nichts geht verloren.
