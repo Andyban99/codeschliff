@@ -3,6 +3,16 @@
 Marketing-Website der Software- und Webagentur **codeschliff** (Hamburg).
 Basis: Brand Kit v1.0 + Entwurf „4A Schnittstelle" aus dem Design-Handoff.
 
+## Botschaft und Überschrift
+
+Hero-Überschrift seit 13.10.2026: **„Maßarbeit statt Baukasten."** — auf
+Wunsch des Inhabers anstelle des Handoff-Claims „Gebaut, bis nichts mehr
+hakt." (der bleibt Claim im Fuß und in der Teilen-Vorschau). Botschaft:
+individuelle IT-Projekte für Unternehmen — Websites, Shops, automatisierte
+Prozesse — zugeschnitten auf die Abläufe, mit KI dort, wo sie hilft. Die
+gezeigten Arbeiten sind eine **Auswahl** („6 von vielen"), nicht die Gesamtzahl.
+Die frühere „Naht"-Sektion (Manifest) ist entfernt.
+
 ## Stack
 
 Bewusst ohne Framework: statisches HTML + CSS + Vanilla-JS.
@@ -19,8 +29,7 @@ Bewusst ohne Framework: statisches HTML + CSS + Vanilla-JS.
 
 Preloader (Signet baut sich auf), Custom Cursor (Quadratpunkt), Lenis Smooth
 Scroll, ScrollTrigger-Reveals nach Brand-Kit-Werten (240 ms / 60 ms Kaskade),
-Maskenöffnung der Manifest-Sektion, mausfolgende Video-Vorschau in den
-Leistungen, gepinnter Horizontal-Lauf im Ablauf, Zähler, Marquees,
+mausfolgende Bild-Vorschau in den Leistungen, gepinnter Horizontal-Lauf im Ablauf, Zähler, Marquees,
 3D-Neigungen. `prefers-reduced-motion: reduce` schaltet alles ab.
 
 ## Abschnitt „Wer baut" (Gründer)

@@ -85,15 +85,6 @@
     return Array.prototype.slice.call(el.querySelectorAll('.split-line > span'));
   }
 
-  function splitWords(el) {
-    var text = el.textContent;
-    el.setAttribute('aria-label', text);
-    el.innerHTML = text.split(' ').map(function (w) {
-      return '<span class="word" aria-hidden="true">' + w + '</span>';
-    }).join(' ');
-    return Array.prototype.slice.call(el.querySelectorAll('.word'));
-  }
-
   /* ── Preloader + Intro ─────────────────────────────────────── */
   var preloader = document.getElementById('preloader');
   var heroLines = Array.prototype.slice.call(document.querySelectorAll('.hero__line-inner'));
@@ -329,40 +320,6 @@
   }
   velocityMarquee('#marqueeTrack', 26, 33.3334);
   velocityMarquee('#footerMarquee', 38, 50);
-
-  /* ── Manifest: Maske öffnet sich, Worte glühen auf ─────────── */
-  var manifestClip = document.getElementById('manifestClip');
-  var statement = document.getElementById('manifestStatement');
-  if (manifestClip && statement) {
-    var words = splitWords(statement);
-    if (!reduced) {
-      gsap.fromTo(manifestClip,
-        { clipPath: 'inset(9% 7% 9% 7%)' },
-        {
-          clipPath: 'inset(0% 0% 0% 0%)',
-          ease: 'none',
-          scrollTrigger: {
-            trigger: manifestClip,
-            start: 'top 96%',
-            end: 'top 12%',
-            scrub: 0.6
-          }
-        });
-      gsap.to(words, {
-        opacity: 1,
-        stagger: 0.35,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: statement,
-          start: 'top 78%',
-          end: 'top 30%',
-          scrub: 0.4
-        }
-      });
-    } else {
-      words.forEach(function (w) { w.style.opacity = 1; });
-    }
-  }
 
   /* ── Standard-Reveals (240ms, 60ms Kaskade) ────────────────── */
   if (!reduced) {
