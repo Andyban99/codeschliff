@@ -89,7 +89,7 @@
   var preloader = document.getElementById('preloader');
   var heroLines = Array.prototype.slice.call(document.querySelectorAll('.hero__line-inner'));
   var heroRevealEls = Array.prototype.slice.call(document.querySelectorAll('.hero [data-reveal]'));
-  var panel = document.getElementById('heroPanel');
+  var panel = document.querySelector('[data-hero-panel]');
   var panelRows = Array.prototype.slice.call(document.querySelectorAll('[data-panel-row]'));
 
   function introTimeline() {
@@ -101,9 +101,11 @@
       .fromTo(panel,
         { opacity: 0, y: 26 },
         { opacity: 1, y: 0, duration: 0.7 }, 0.3)
-      .fromTo(panelRows,
+    if (panelRows.length) {
+      tl.fromTo(panelRows,
         { opacity: 0, y: 8 },
         { opacity: 1, y: 0, duration: 0.24, stagger: 0.06, clearProps: 'all' }, 0.75);
+    }
     return tl;
   }
 
@@ -277,7 +279,7 @@
   });
 
   /* ── Hero-Panel: 3D-Neigung ────────────────────────────────── */
-  if (finePointer && !reduced && panel) {
+  if (finePointer && !reduced && panel && panel.hasAttribute('data-tilt')) {
     var rx = gsap.quickTo(panel, 'rotationX', { duration: 0.6, ease: 'power2.out' });
     var ry = gsap.quickTo(panel, 'rotationY', { duration: 0.6, ease: 'power2.out' });
     var wrap = panel.parentElement;

@@ -3,15 +3,26 @@
 Marketing-Website der Software- und Webagentur **codeschliff** (Hamburg).
 Basis: Brand Kit v1.0 + Entwurf „4A Schnittstelle" aus dem Design-Handoff.
 
-## Botschaft und Überschrift
+## Botschaft, Hero und Werkbank
 
-Hero-Überschrift seit 13.10.2026: **„Maßarbeit statt Baukasten."** — auf
-Wunsch des Inhabers anstelle des Handoff-Claims „Gebaut, bis nichts mehr
-hakt." (der bleibt Claim im Fuß und in der Teilen-Vorschau). Botschaft:
-individuelle IT-Projekte für Unternehmen — Websites, Shops, automatisierte
-Prozesse — zugeschnitten auf die Abläufe, mit KI dort, wo sie hilft. Die
-gezeigten Arbeiten sind eine **Auswahl** („6 von vielen"), nicht die Gesamtzahl.
-Die frühere „Naht"-Sektion (Manifest) ist entfernt.
+Hero-Überschrift seit 13.10.2026: **„Software nach Maß, die Ihrem Unternehmen
+Arbeit abnimmt."** — explizit statt Slogan, auf Wunsch des Inhabers anstelle
+des Handoff-Claims „Gebaut, bis nichts mehr hakt." (der bleibt im Fuß und in
+der Teilen-Vorschau). Botschaft: individuelle IT-Projekte für Unternehmen —
+Websites, Webshops, Automatisierungen — zugeschnitten auf die Abläufe, mit KI
+dort, wo sie hilft.
+
+Unter dem Text liegt die **Werkbank** (`#buehne`, `js/buehne.js`): eine
+SVG-Bühne mit drei Szenen, die zeigen, was gebaut wird — eine Website setzt
+sich zusammen, ein Shop nimmt eine Bestellung an, eine Automatisierung erledigt
+Lager, Rechnung und Versand ohne Handgriff. Alles Code (GSAP), kein Video.
+Schleife pausiert außerhalb des Sichtfelds; Reiter springen zur Szene; bei
+`prefers-reduced-motion` Standbilder. Ohne JavaScript bleibt Szene 1 stehen.
+Mobil wird der viewBox-Ausschnitt enger gesetzt, damit Schrift lesbar bleibt.
+
+Darunter läuft ein **Kundenlaufband** (Logo + Name; bei Erdelmeier und
+Zuschuss Piloten steckt der Name im Logo). Die gezeigten Arbeiten sind eine
+**Auswahl**, nicht die Gesamtzahl. Die frühere „Naht"-Sektion ist entfernt.
 
 ## Stack
 
@@ -22,6 +33,7 @@ Bewusst ohne Framework: statisches HTML + CSS + Vanilla-JS.
 - `js/main.js` — zwei getrennte Einheiten: Bewegungsschicht und Kontaktformular.
   Das Formular hängt bewusst nicht an GSAP — fällt die Animation aus, trägt es trotzdem.
 - `js/vendor/` — GSAP 3.12 + ScrollTrigger + Lenis 1.1 (lokal, kein CDN)
+- `js/buehne.js` — Werkbank im Hero (drei animierte Szenen, SVG + GSAP)
 - `js/buchung.js` — Terminbuchung (Erstgespräch), spricht direkt mit dem CRM
 - `tools/contact-worker.js` — Endpunkt für den Formularversand (nicht Teil der Auslieferung)
 
