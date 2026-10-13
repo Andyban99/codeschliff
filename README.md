@@ -12,13 +12,13 @@ der Teilen-Vorschau). Botschaft: individuelle IT-Projekte für Unternehmen —
 Websites, Webshops, Automatisierungen — zugeschnitten auf die Abläufe, mit KI
 dort, wo sie hilft.
 
-Unter dem Text liegt das **Kino** (`#kino`, `js/kino.js`): der Markenfilm
+Der Hero ist zweispaltig: links Text (Überschrift bis 60 px, bei allen
+Breiten ohne ungewollten Umbruch gemessen), rechts das **Kino** (`#kino`, `js/kino.js`): der Markenfilm
 (`assets/video/codeschliff.mp4`, 74 s, 6,2 MB, H.264, mit Tonspur) als
-Leinwand in einem randlosen Band aus Tinte. Infoleisten außerhalb des Bildes
+Leinwand in einer Karte aus Tinte, die rechts bis an den Bildschirmrand läuft und sich der Maus leicht entgegenneigt. Infoleisten außerhalb des Bildes
 (der Film trägt eigene Ecklabels): Showreel, Kapitel, Timecode, Fortschritt,
 „Ton an". Autoplay stumm, Pause außerhalb des Sichtfelds; bei
-`prefers-reduced-motion` Start erst auf Klick. Beim Hineinscrollen öffnet sich
-die Leinwand von Inhaltsbreite auf volle Breite. Die frühere SVG-Werkbank ist
+`prefers-reduced-motion` Start erst auf Klick. Die frühere SVG-Werkbank ist
 durch den Film ersetzt.
 
 Seitenfolge seit 13.10.2026: Hero → Was wir machen → Kundenlaufband → Arbeiten → Stimmen → Studio → Kontakt (Leistungen entfernt, war Doppelung zu „Was wir machen"). Kopfzeile: nummerierte Punkte (01 Was wir machen / 02 Arbeiten / 03 Über mich), Status „Frei für neue Projekte", Code-Knopf `{ Erstgespräch }` mit blinkendem Cursor.

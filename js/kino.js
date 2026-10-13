@@ -129,28 +129,4 @@
     zeigeOverlay('Mit Ton abspielen');
   }
 
-  /* ── Scroll: Leinwand oeffnet sich ─────────────────────────── */
-  if (!reduced && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && leinwand && window.innerWidth >= 768) {
-    // Inhaltsbreite als Startmass: so breit wie die Textspalte darueber
-    var rand = function () {
-      var inner = document.querySelector('.hero__inner');
-      if (!inner) return 0;
-      var r = inner.getBoundingClientRect();
-      var pad = parseFloat(getComputedStyle(inner).paddingLeft) || 0;
-      return Math.max(0, (window.innerWidth - (r.width - 2 * pad)) / 2);
-    };
-    gsap.fromTo(leinwand,
-      { clipPath: function () { return 'inset(0px ' + rand() + 'px)'; } },
-      {
-        clipPath: 'inset(0px 0px)',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: kino,
-          start: 'top 85%',
-          end: 'top 25%',
-          scrub: 0.6,
-          invalidateOnRefresh: true
-        }
-      });
-  }
 })();
