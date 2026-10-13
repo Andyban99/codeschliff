@@ -23,6 +23,20 @@ Maskenöffnung der Manifest-Sektion, mausfolgende Video-Vorschau in den
 Leistungen, gepinnter Horizontal-Lauf im Ablauf, Zähler, Marquees,
 3D-Neigungen. `prefers-reduced-motion: reduce` schaltet alles ab.
 
+## Abschnitt „Wer baut" (Gründer)
+
+Zwischen Studio und Kontakt: Porträt links, drei nummerierte Haltungen rechts,
+Zitat, Verweis auf die Terminbuchung. Brand Kit, Bildsprache: **Porträts in
+Schwarzweiß, neutraler Hintergrund** — das Foto ist mit `sips` zugeschnitten
+(4:5), über das Gray-ICC-Profil entsättigt und liegt im Multiply-Modus auf
+`--cs-surface`, damit das Studio-Weiß zum Papierton wird (keine Kante).
+
+```bash
+sips roh.jpg -c 5243 4194 --cropOffset 0 1673 --out crop.jpg
+sips crop.jpg --resampleWidth 1200 -m "/System/Library/ColorSync/Profiles/Generic Gray Profile.icc" \
+  -s format jpeg -s formatOptions 82 --out assets/img/andrew-banoub.jpg
+```
+
 ## Terminbuchung (Erstgespräch)
 
 Der Kontaktbereich ist ein Buchungs-Widget: Tag → Uhrzeit → Daten → bestätigt.

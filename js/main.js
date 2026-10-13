@@ -548,6 +548,23 @@
     return function () { tween.scrollTrigger && tween.scrollTrigger.kill(); tween.kill(); };
   });
 
+  /* ── Wer baut: Vorhang hebt sich, Bild setzt sich ──────────── */
+  var personFrame = document.querySelector('[data-person-frame]');
+  if (personFrame) {
+    if (reduced) {
+      gsap.set(personFrame, { clipPath: 'none' });
+      gsap.set(personFrame.querySelector('img'), { scale: 1 });
+    } else {
+      var personTl = gsap.timeline({
+        defaults: { ease: GS_EASE },
+        scrollTrigger: { trigger: personFrame, start: 'top 82%', once: true }
+      });
+      personTl
+        .fromTo(personFrame, { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: 0.9 }, 0)
+        .fromTo(personFrame.querySelector('img'), { scale: 1.06 }, { scale: 1, duration: 1.2 }, 0);
+    }
+  }
+
   /* ── Studio: Parallaxe im Medienrahmen ─────────────────────── */
   if (!reduced) {
     var pm = document.querySelector('[data-parallax-media] video');
