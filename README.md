@@ -128,8 +128,8 @@ gewandelt. Bei Hover scrollt das Foto im Rahmen (`js/main.js`, Abschnitt
 Kundenlogos liegen in `assets/img/kunden/` und werden einfarbig gezeigt
 (Brand Kit: ruhige Fläche), farbig bei Hover.
 
-**Stimmen** (`#stimmen`) ist gebaut, aber mit `hidden` versteckt, bis die
-Originaltexte der drei Kunden vorliegen. Vorschau: `codeschliff.de/?vorschau`.
+**Stimmen** (`#stimmen`) ist sichtbar; bis die Originaltexte vorliegen, steht
+dort ein neutraler Platzhalter (Klasse `is-platzhalter`, ohne Anführungszeichen).
 
 Die früheren KI-generierten Videos sind entfernt (Stand 13.10.2026).
 
@@ -156,5 +156,5 @@ Jeder Push auf `main` geht live.
   über das Mailprogramm des Absenders.
 - Anwaltliche Prüfung der Rechtstexte steht aus.
 - CRM- und Intranet-Bildschirmfotos von innen (Dashboard) nach gemeinsamer Aufnahme einsetzen.
-- Bewertungstexte von Timo Erdelmeier, Zuru Arifi, Vanessa Dues einsetzen und `#stimmen` einblenden.
+- Bewertungstexte von Timo Erdelmeier, Zuru Arifi, Tobias Meyer einsetzen (Klasse `is-platzhalter` entfernen).
 - Keine Preisangabe auf der Seite, obwohl „Festpreis" beworben wird.
