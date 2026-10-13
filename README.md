@@ -23,7 +23,7 @@ durch den Film ersetzt.
 
 Seitenfolge seit 13.10.2026: Hero → Was wir machen → Kundenlaufband → Arbeiten → Stimmen → Studio → Kontakt (Leistungen entfernt, war Doppelung zu „Was wir machen"). Kopfzeile: nummerierte Punkte (01 Was wir machen / 02 Arbeiten / 03 Über mich), Status „Frei für neue Projekte", Code-Knopf `{ Erstgespräch }` mit blinkendem Cursor.
 
-Nach „Was wir machen" läuft ein **Kundenlaufband** mit den Wortmarken der Kunden in Grau:
+Am unteren Rand des Heros, unter der Zeile „Eine Auswahl unserer Kunden", läuft das **Kundenlaufband** mit den Wortmarken der Kunden in Grau:
 FreshWin, BESTEnergieLaden und reamotion/GRILLOMAX sind Aufnahmen ihrer
 Seitenköpfe (3-fach, Text auf Tinte, Bilder entsättigt, `*-wortmarke.png`),
 Erdelmeier und Zuschuss Piloten liegen als Vektor-Logos vor. Die gezeigten Arbeiten sind eine

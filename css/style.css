@@ -475,20 +475,26 @@ body:has(.mobile-nav.is-open) .header__burger span { background: #FFFFFF; }
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
+.hero__band { margin-top: auto; }   /* Kundenleiste sitzt an der Unterkante des Heros */
+.hero__band-label { max-width: 1600px; margin: 0 auto; padding: 0 var(--cs-page-pad) 14px; }
+.hero__band-label .label { color: var(--cs-grey-400); }
 .hero__inner {
   /* eigener, breiterer Rahmen: der Hero darf mehr Raum nehmen als der Inhalt darunter */
-  max-width: 1480px;
+  max-width: 1600px;
   width: 100%;
   margin: 0 auto;
-  padding: 36px var(--cs-page-pad) 48px;
+  padding: 28px var(--cs-page-pad) 72px;   /* leicht nach oben geruecktes Zentrum */
+  flex: 1;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 56px;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 48px;
   align-items: center;
+  align-content: center;   /* Zeile so hoch wie der Player, nicht wie der Hero */
 }
-.hero__text { display: flex; flex-direction: column; gap: 28px; min-width: 0; padding-bottom: 8px; }
+/* Textspalte so hoch wie der Player: Chip oben buendig, Buttons unten buendig */
+.hero__text { display: flex; flex-direction: column; gap: 26px; min-width: 0; align-self: stretch; }
+.hero__text .hero__actions { margin-top: auto; padding-top: 18px; }
 .hero__kino-wrap { min-width: 0; }
 .chip {
   display: inline-flex;
@@ -513,7 +519,7 @@ body:has(.mobile-nav.is-open) .header__burger span { background: #FFFFFF; }
   50% { box-shadow: 0 0 0 5px rgba(255, 59, 24, 0); }
 }
 .hero__title {
-  font: 700 clamp(40px, 3.8vw, 58px)/0.95 'Archivo', sans-serif;
+  font: 700 clamp(40px, 3.65vw, 56px)/0.95 'Archivo', sans-serif;
   letter-spacing: -0.06em;
   color: var(--cs-ink);
 }
@@ -1013,7 +1019,10 @@ html.js .person__frame img { transform: scale(1.06); }
   .header__status { display: none; }
 }
 @media (max-width: 1119px) {
-  .hero { min-height: 0; display: block; }
+  .hero { min-height: 0; }
+  .hero__inner { flex: none; }
+  .hero__text { align-self: auto; }
+  .hero__text .hero__actions { margin-top: 0; padding-top: 0; }
   .hero__inner { grid-template-columns: minmax(0, 1fr); gap: 40px; padding: 48px var(--cs-page-pad) 44px; }
   .hero__kino-wrap { max-width: 760px; }
   .hero__title { font-size: clamp(40px, 7vw, 64px); }
