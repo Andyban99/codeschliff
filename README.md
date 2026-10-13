@@ -20,8 +20,10 @@ Schleife pausiert außerhalb des Sichtfelds; Reiter springen zur Szene; bei
 `prefers-reduced-motion` Standbilder. Ohne JavaScript bleibt Szene 1 stehen.
 Mobil wird der viewBox-Ausschnitt enger gesetzt, damit Schrift lesbar bleibt.
 
-Darunter läuft ein **Kundenlaufband** (Logo + Name; bei Erdelmeier und
-Zuschuss Piloten steckt der Name im Logo). Die gezeigten Arbeiten sind eine
+Darunter läuft ein **Kundenlaufband** mit den Wortmarken der Kunden in Grau:
+FreshWin, BESTEnergieLaden und reamotion/GRILLOMAX sind Aufnahmen ihrer
+Seitenköpfe (3-fach, Text auf Tinte, Bilder entsättigt, `*-wortmarke.png`),
+Erdelmeier und Zuschuss Piloten liegen als Vektor-Logos vor. Die gezeigten Arbeiten sind eine
 **Auswahl**, nicht die Gesamtzahl. Die frühere „Naht"-Sektion ist entfernt.
 
 ## Stack
