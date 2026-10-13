@@ -1351,9 +1351,10 @@ html.js .system:not(.is-an) .system__vorher s::after { transform: scaleX(0); }
 }
 .phone__view { position: relative; overflow: hidden; aspect-ratio: 9 / 18.5; background: var(--cs-surface); }
 
+/* Plakette „Intern": bei allen internen Projekten unten links */
 .fall__badge {
   position: absolute;
-  top: 44px;
+  bottom: 14px;
   left: 14px;
   display: inline-flex;
   align-items: center;
@@ -1367,7 +1368,6 @@ html.js .system:not(.is-an) .system__vorher s::after { transform: scaleX(0); }
 }
 .fall__badge i { width: 6px; height: 6px; border-radius: 50%; background: var(--cs-signal); }
 /* Unten statt oben, wenn das Bildschirmfoto oben links ein Logo zeigt */
-.fall__badge--unten { top: auto; bottom: 14px; }
 
 .fall__text { display: flex; flex-direction: column; gap: 14px; }
 .fall__meta {
