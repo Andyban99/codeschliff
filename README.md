@@ -12,15 +12,16 @@ der Teilen-Vorschau). Botschaft: individuelle IT-Projekte für Unternehmen —
 Websites, Webshops, Automatisierungen — zugeschnitten auf die Abläufe, mit KI
 dort, wo sie hilft.
 
-Unter dem Text liegt die **Werkbank** (`#buehne`, `js/buehne.js`): eine
-SVG-Bühne mit drei Szenen, die zeigen, was gebaut wird — eine Website setzt
-sich zusammen, ein Shop nimmt eine Bestellung an, eine Automatisierung erledigt
-Lager, Rechnung und Versand ohne Handgriff. Alles Code (GSAP), kein Video.
-Schleife pausiert außerhalb des Sichtfelds; Reiter springen zur Szene; bei
-`prefers-reduced-motion` Standbilder. Ohne JavaScript bleibt Szene 1 stehen.
-Mobil wird der viewBox-Ausschnitt enger gesetzt, damit Schrift lesbar bleibt.
+Unter dem Text liegt das **Kino** (`#kino`, `js/kino.js`): der Markenfilm
+(`assets/video/codeschliff.mp4`, 74 s, 6,2 MB, H.264, mit Tonspur) als
+Leinwand in einem randlosen Band aus Tinte. Infoleisten außerhalb des Bildes
+(der Film trägt eigene Ecklabels): Showreel, Kapitel, Timecode, Fortschritt,
+„Ton an". Autoplay stumm, Pause außerhalb des Sichtfelds; bei
+`prefers-reduced-motion` Start erst auf Klick. Beim Hineinscrollen öffnet sich
+die Leinwand von Inhaltsbreite auf volle Breite. Die frühere SVG-Werkbank ist
+durch den Film ersetzt.
 
-Seitenfolge seit 13.10.2026: Hero → Was wir machen → Kundenlaufband → Arbeiten → Stimmen → Studio → Kontakt (Leistungen entfernt, war Doppelung zu „Was wir machen"). Kopfzeile: nummerierte Punkte, Status „Frei für neue Projekte", Knopf „Erstgespräch".
+Seitenfolge seit 13.10.2026: Hero → Was wir machen → Kundenlaufband → Arbeiten → Stimmen → Studio → Kontakt (Leistungen entfernt, war Doppelung zu „Was wir machen"). Kopfzeile: nummerierte Punkte (01 Was wir machen / 02 Arbeiten / 03 Über mich), Status „Frei für neue Projekte", Code-Knopf `{ Erstgespräch }` mit blinkendem Cursor.
 
 Nach „Was wir machen" läuft ein **Kundenlaufband** mit den Wortmarken der Kunden in Grau:
 FreshWin, BESTEnergieLaden und reamotion/GRILLOMAX sind Aufnahmen ihrer
@@ -37,7 +38,7 @@ Bewusst ohne Framework: statisches HTML + CSS + Vanilla-JS.
 - `js/main.js` — zwei getrennte Einheiten: Bewegungsschicht und Kontaktformular.
   Das Formular hängt bewusst nicht an GSAP — fällt die Animation aus, trägt es trotzdem.
 - `js/vendor/` — GSAP 3.12 + ScrollTrigger + Lenis 1.1 (lokal, kein CDN)
-- `js/buehne.js` — Werkbank im Hero (drei animierte Szenen, SVG + GSAP)
+- `js/kino.js` — Kino im Hero (Markenfilm, Timecode, Ton, Scroll-Öffnung)
 - `js/buchung.js` — Terminbuchung (Erstgespräch), spricht direkt mit dem CRM
 - `tools/contact-worker.js` — Endpunkt für den Formularversand (nicht Teil der Auslieferung)
 

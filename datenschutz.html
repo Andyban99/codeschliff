@@ -43,11 +43,16 @@
       <nav class="header__nav" aria-label="Hauptnavigation">
         <a href="index.html#was" class="header__link" data-cursor="link"><span class="header__num">01</span><span>Was wir machen</span></a>
         <a href="index.html#arbeiten" class="header__link" data-cursor="link"><span class="header__num">02</span><span>Arbeiten</span></a>
-        <a href="index.html#studio" class="header__link" data-cursor="link"><span class="header__num">03</span><span>Studio</span></a>
+        <a href="index.html#studio" class="header__link" data-cursor="link"><span class="header__num">03</span><span>Über mich</span></a>
       </nav>
       <div class="header__side">
         <span class="header__status"><i aria-hidden="true"></i>Frei für neue Projekte</span>
-        <a href="index.html#kontakt" class="btn btn--secondary btn--small header__cta" data-cursor="button" data-magnetic>Erstgespräch<span class="btn__arrow">→</span></a>
+        <a href="index.html#kontakt" class="btn-code header__cta" data-cursor="button" data-magnetic aria-label="Erstgespräch vereinbaren">
+          <span class="btn-code__klammer" aria-hidden="true">{</span>
+          <span class="btn-code__text">Erstgespräch</span>
+          <span class="btn-code__klammer" aria-hidden="true">}</span>
+          <span class="btn-code__cursor" aria-hidden="true"></span>
+        </a>
       </div>
       <button class="header__burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span>
@@ -59,7 +64,7 @@
     <nav class="mobile-nav__list" aria-label="Mobile Navigation">
       <a href="index.html#was" class="mobile-nav__link"><span>01</span>Was wir machen</a>
       <a href="index.html#arbeiten" class="mobile-nav__link"><span>02</span>Arbeiten</a>
-      <a href="index.html#studio" class="mobile-nav__link"><span>03</span>Studio</a>
+      <a href="index.html#studio" class="mobile-nav__link"><span>03</span>Über mich</a>
       <a href="index.html#kontakt" class="mobile-nav__link mobile-nav__link--active"><span>04</span>Erstgespräch</a>
     </nav>
     <div class="mobile-nav__meta">
@@ -206,7 +211,7 @@
         <section id="schriften">
           <h2><span class="num">07</span>Schriften und Bilder</h2>
           <p><strong>Schriften:</strong> Diese Website verwendet die Schriften <em>Archivo</em>, <em>Instrument Sans</em> und <em>JetBrains Mono</em>. Diese sind lokal eingebunden und werden zusammen mit der Seite ausgeliefert. Es wird <strong>keine</strong> Verbindung zu Servern von Google oder anderen Schriftanbietern aufgebaut; Ihre IP-Adresse wird dorthin nicht übermittelt.</p>
-          <p><strong>Bilder:</strong> Die Bilder dieser Website sind ein Porträtfoto des Gründers, Bildschirmfotos von Websites und Anwendungen, die wir für Kunden gebaut haben, sowie Logos dieser Kunden, die mit deren Zustimmung gezeigt werden. Alle Bilder werden direkt mit der Seite ausgeliefert; die gezeigten Kunden-Websites werden beim Aufruf dieser Seite nicht kontaktiert. Eine Einbindung über Videoplattformen findet nicht statt. Es werden dabei keine personenbezogenen Daten an Dritte übertragen.</p>
+          <p><strong>Bilder und Film:</strong> Die Bilder dieser Website sind ein Porträtfoto des Gründers, Bildschirmfotos von Websites und Anwendungen, die wir für Kunden gebaut haben, sowie Logos dieser Kunden, die mit deren Zustimmung gezeigt werden. Der Film auf der Startseite ist eine eigene Produktion; er startet stumm, Ton gibt es nur auf Ihren Klick. Bilder und Film werden direkt mit der Seite ausgeliefert; die gezeigten Kunden-Websites werden beim Aufruf dieser Seite nicht kontaktiert. Eine Einbindung über Videoplattformen findet nicht statt. Es werden dabei keine personenbezogenen Daten an Dritte übertragen.</p>
         </section>
 
         <section id="speicher">
@@ -335,7 +340,7 @@
         <div class="footer__col-label">Navigation</div>
         <a href="index.html#was" data-cursor="link">Was wir machen</a>
         <a href="index.html#arbeiten" data-cursor="link">Arbeiten</a>
-        <a href="index.html#studio" data-cursor="link">Studio</a>
+        <a href="index.html#studio" data-cursor="link">Über mich</a>
         <a href="index.html#kontakt" data-cursor="link">Kontakt</a>
       </nav>
       <nav class="footer__col" aria-label="Rechtliches">
