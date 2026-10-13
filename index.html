@@ -131,7 +131,7 @@
       </a>
       <nav class="header__nav" aria-label="Hauptnavigation">
         <a href="#was" class="header__link" data-cursor="link"><span class="header__num">01</span><span data-scramble>Was wir machen</span></a>
-        <a href="#arbeiten" class="header__link" data-cursor="link"><span class="header__num">02</span><span data-scramble>Arbeiten</span></a>
+        <a href="#arbeiten" class="header__link" data-cursor="link"><span class="header__num">02</span><span data-scramble>Portfolio</span></a>
         <a href="#studio" class="header__link" data-cursor="link"><span class="header__num">03</span><span data-scramble>Über mich</span></a>
       </nav>
       <div class="header__side">
@@ -153,7 +153,7 @@
   <div class="mobile-nav" id="mobileNav" aria-hidden="true">
     <nav class="mobile-nav__list" aria-label="Mobile Navigation">
       <a href="#was" class="mobile-nav__link"><span>01</span>Was wir machen</a>
-      <a href="#arbeiten" class="mobile-nav__link"><span>02</span>Arbeiten</a>
+      <a href="#arbeiten" class="mobile-nav__link"><span>02</span>Portfolio</a>
       <a href="#studio" class="mobile-nav__link"><span>03</span>Über mich</a>
       <a href="#kontakt" class="mobile-nav__link mobile-nav__link--active"><span>04</span>Erstgespräch</a>
     </nav>
@@ -191,16 +191,19 @@
           <div class="grain" aria-hidden="true"></div>
           <div class="glow glow--a" aria-hidden="true"></div>
           <div class="glow glow--b" aria-hidden="true"></div>
-          <div class="kino__leiste kino__leiste--oben" aria-hidden="true">
-            <span class="kino__label"><i></i>Showreel</span>
-            <span class="kino__kapitel" id="kinoKapitel">01 — Auftakt</span>
-            <span class="kino__dauer">74 Sek · ohne Ton gestartet</span>
+          <div class="kino__leiste kino__leiste--oben">
+            <span class="kino__label" aria-hidden="true"><i></i>Showreel</span>
+            <span class="kino__kapitel" id="kinoKapitel" aria-hidden="true">01 — Auftakt</span>
+            <span class="kino__dauer" aria-hidden="true">74 Sek · ohne Ton gestartet</span>
+            <!-- nur in der Grossansicht sichtbar -->
+            <button type="button" class="kino__zu" id="kinoZu" data-cursor="button" aria-label="Grossansicht schliessen"><span>Schließen</span><kbd>Esc</kbd></button>
           </div>
           <div class="kino__leinwand" id="kinoLeinwand">
-            <video id="kinoVideo" src="assets/video/codeschliff.mp4" poster="assets/img/poster-film.jpg" autoplay muted loop playsinline preload="metadata" aria-label="codeschliff Showreel: Websites, Webshops und Automatisierungen, 74 Sekunden"></video>
-            <!-- Grosses Play-Zeichen: schaltet den Ton ein und startet den Film von vorn.
-                 Klick auf das laufende Bild pausiert; pausiert bleibt pausiert. -->
-            <button type="button" class="kino__overlay" id="kinoOverlay" data-cursor="button" aria-label="Film mit Ton von vorn abspielen">
+            <video id="kinoVideo" data-cursor="link" data-cursor-label="ansehen" src="assets/video/codeschliff.mp4" poster="assets/img/poster-film.jpg" autoplay muted loop playsinline preload="metadata" aria-label="codeschliff Showreel: Websites, Webshops und Automatisierungen, 74 Sekunden"></video>
+            <!-- Grosses Play-Zeichen und Klick aufs Bild: holen den Film in die
+                 Grossansicht, mit Ton (beim ersten Mal von vorn). In der
+                 Grossansicht pausiert ein Klick aufs Bild. -->
+            <button type="button" class="kino__overlay" id="kinoOverlay" data-cursor="button" aria-label="Film in Grossansicht mit Ton abspielen">
               <span class="kino__playzeichen" aria-hidden="true"></span>
               <span class="kino__overlay-text" id="kinoOverlayText">Mit Ton abspielen</span>
             </button>
@@ -210,6 +213,7 @@
             <button type="button" class="kino__fortschritt" id="kinoSpur" aria-label="Im Film springen" data-cursor="button"><i id="kinoFortschritt"></i></button>
             <span class="kino__zeit kino__zeit--unten"><span id="kinoZeit">00:00</span> / 01:14</span>
             <button type="button" class="kino__ton" id="kinoTon" aria-pressed="false" data-cursor="button"><i aria-hidden="true"></i><span>Ton an</span></button>
+            <button type="button" class="kino__voll" id="kinoVoll" aria-label="Vollbild" data-cursor="button"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="kino__voll-auf" d="M1.5 5.5v-4h4M10.5 1.5h4v4M14.5 10.5v4h-4M5.5 14.5h-4v-4"/><path class="kino__voll-zu" d="M5.5 1.5v4h-4M14.5 5.5h-4v-4M10.5 14.5v-4h4M1.5 10.5h4v4"/></svg></button>
           </div>
         </div>
         </div>
@@ -346,7 +350,7 @@
         <div class="was__schluss" data-reveal>
           <div>
             <p class="was__frage">Etwas ganz anderes im Kopf<span class="text-signal">?</span></p>
-            <p class="was__antwort">Wenn es sich bauen lässt, bauen wir&nbsp;es.</p>
+            <p class="was__antwort">Schildern Sie uns Ihre Vorstellungen. Das Erstgespräch ist kostenlos und&nbsp;unverbindlich.</p>
           </div>
           <a href="#kontakt" class="btn-code btn-code--hell" data-cursor="button" data-magnetic aria-label="Erstgespräch vereinbaren">
             <span class="btn-code__klammer" aria-hidden="true">{</span>
@@ -361,12 +365,13 @@
     <!-- ══════════════════ ARBEITEN ══════════════════ -->
     <section class="arbeiten section" id="arbeiten">
       <div class="section__head">
-        <div class="label" data-reveal>Arbeiten</div>
+        <div class="label" data-reveal>Portfolio</div>
         <h2 class="section__title" data-split-lines>Eine Auswahl<br>unserer Kundenprojekte<span class="text-signal">.</span></h2>
         <p class="section__lead" data-reveal>Längst nicht alles, was wir bauen, darf an die Öffentlichkeit. Diese Projekte schon: Shops, Werkzeuge, interne Systeme. Echte Bildschirmfotos, keine Attrappen. Fahren Sie mit der Maus über ein Bild: Die Seite&nbsp;scrollt.</p>
       </div>
 
       <div class="faelle">
+      <div class="faelle__gruppe" data-reveal><span>Websites</span><em>01 – 02</em></div>
       <article class="fall fall--breit" id="fall-freshwin" data-reveal>
         <a class="fall__media" href="https://freshwin-preisrechner.vercel.app/" target="_blank" rel="noopener" data-cursor="link" data-cursor-label="öffnen" aria-label="FreshWin Glas- &amp; Gebäudereinigung: Website öffnen (neues Fenster)">
           <div class="browser">
@@ -385,6 +390,25 @@
           </div>
         </div>
       </article>
+      <article class="fall fall--breit fall--spiegel" id="fall-zuschusspiloten" data-reveal>
+        <a class="fall__media" href="https://zuschusspiloten.de/" target="_blank" rel="noopener" data-cursor="link" data-cursor-label="öffnen" aria-label="Zuschuss Piloten: Website öffnen (neues Fenster)">
+          <div class="browser">
+            <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><em>zuschusspiloten.de</em></div>
+            <div class="browser__view" data-scroll-frame><img src="assets/img/arbeiten/zuschusspiloten-desktop.jpg" width="1440" height="2600" alt="Startseite von zuschusspiloten.de mit Förderbeispiel und Förderbereichen" loading="lazy" decoding="async"></div>
+          </div>
+          <div class="phone" aria-hidden="true"><div class="phone__view" data-scroll-frame><img src="assets/img/arbeiten/zuschusspiloten-mobil.jpg" width="600" height="3384" alt="" loading="lazy" decoding="async"></div></div>
+        </a>
+        <div class="fall__text">
+          <div class="fall__meta"><span class="fall__num">02</span><span class="fall__kind">Website · Beratung</span><span class="fall__client">Zuschuss Piloten</span></div>
+          <h3 class="fall__title">Eine Website, die Termine macht<span class="text-signal">.</span></h3>
+          <p class="fall__desc">Fördermittelberatung mit Zuschuss-Check, Terminbuchung direkt aus dem eigenen CRM und einem Kundenportal. Dazu cookieloses Tracking, selbst gebaut&nbsp;— ohne&nbsp;Banner.</p>
+          <div class="fall__foot">
+            <span class="fall__tags"><em>Website</em><em>Terminbuchung</em><em>Kundenportal</em></span>
+            <a class="btn btn--text" href="https://zuschusspiloten.de/" target="_blank" rel="noopener" data-cursor="link">Live ansehen<span class="btn__arrow">↗</span></a>
+          </div>
+        </div>
+      </article>
+      <div class="faelle__gruppe" data-reveal><span>Webshops</span><em>03 – 04</em></div>
       <article class="fall" id="fall-bestenergieladen" data-reveal>
         <a class="fall__media" href="https://bestenergieladen.de/" target="_blank" rel="noopener" data-cursor="link" data-cursor-label="öffnen" aria-label="BESTEnergieLaden: Website öffnen (neues Fenster)">
           <div class="browser">
@@ -393,7 +417,7 @@
           </div>
         </a>
         <div class="fall__text">
-          <div class="fall__meta"><span class="fall__num">02</span><span class="fall__kind">Shop · B2B</span><span class="fall__client">BESTEnergieLaden</span></div>
+          <div class="fall__meta"><span class="fall__num">03</span><span class="fall__kind">Shop · B2B</span><span class="fall__client">BESTEnergieLaden</span></div>
           <h3 class="fall__title">Großhandel, der sich wie ein Shop anfühlt<span class="text-signal">.</span></h3>
           <p class="fall__desc">PV-Zubehör für Installateure: Solarmodule, Wechselrichter, Speicher, Montagesysteme. Händlerkonten werden persönlich freigeschaltet, danach gelten Gewerbekonditionen&nbsp;— Sortiment, Kasse und Konten auf&nbsp;Shopware.</p>
           <div class="fall__foot">
@@ -410,7 +434,7 @@
           </div>
         </a>
         <div class="fall__text">
-          <div class="fall__meta"><span class="fall__num">03</span><span class="fall__kind">Shop · Direktvertrieb</span><span class="fall__client">reamotion · GRILLOMAX</span></div>
+          <div class="fall__meta"><span class="fall__num">04</span><span class="fall__kind">Shop · Direktvertrieb</span><span class="fall__client">reamotion · GRILLOMAX</span></div>
           <h3 class="fall__title">Ein Produkt, das man erklären muss<span class="text-signal">.</span></h3>
           <p class="fall__desc">GRILLOMAX frittiert fettfrei mit Infrarot&nbsp;— das versteht niemand auf den ersten Blick. Der Shop führt mit Video, Ersparnis-Check und Videoberatungs-Termin zum Kauf. Shopware, auf Erklärung&nbsp;gebaut.</p>
           <div class="fall__foot">
@@ -419,6 +443,7 @@
           </div>
         </div>
       </article>
+      <div class="faelle__gruppe" data-reveal><span>CRM &amp; Systeme</span><em>05 – 06</em></div>
       <article class="fall" id="fall-crm" data-reveal>
         <div class="fall__media fall__media--intern">
           <div class="browser">
@@ -428,7 +453,7 @@
           <span class="fall__badge fall__badge--unten"><i></i>Intern · Einblick im Gespräch</span>
         </div>
         <div class="fall__text">
-          <div class="fall__meta"><span class="fall__num">04</span><span class="fall__kind">System · intern</span><span class="fall__client">Zuschuss Piloten</span></div>
+          <div class="fall__meta"><span class="fall__num">05</span><span class="fall__kind">System · intern</span><span class="fall__client">Zuschuss Piloten</span></div>
           <h3 class="fall__title">Ein CRM statt fünf Abos<span class="text-signal">.</span></h3>
           <p class="fall__desc">Pipeline, Kontakte, Aufgaben, Kalender, E-Mail-Postfach, Rechnungen, Buchhaltung&nbsp;— und die Terminbuchung, die Sie unten auf dieser Seite benutzen. Eine Anwendung, auf das Unternehmen zugeschnitten. Next.js, Supabase,&nbsp;Vercel.</p>
           <div class="fall__foot">
@@ -446,30 +471,12 @@
           <span class="fall__badge"><i></i>Intern · Einblick im Gespräch</span>
         </div>
         <div class="fall__text">
-          <div class="fall__meta"><span class="fall__num">05</span><span class="fall__kind">Portal · intern</span><span class="fall__client">Erdelmeier Fördermittelmanagement</span></div>
+          <div class="fall__meta"><span class="fall__num">06</span><span class="fall__kind">Portal · intern</span><span class="fall__client">Erdelmeier Fördermittelmanagement</span></div>
           <h3 class="fall__title">Förderfähigkeit in drei Minuten<span class="text-signal">.</span></h3>
           <p class="fall__desc">Geschäftspartner prüfen Fälle aus ihrem Netzwerk auf GRW-Förderfähigkeit: Branchen-Check gegen die Negativliste, Standort-Check bis auf Gemeindeebene, KMU-Einordnung nach EU-Definition. Strukturiert, nachvollziehbar,&nbsp;diskret.</p>
           <div class="fall__foot">
             <span class="fall__tags"><em>Prüflogik</em><em>Förderkarte</em><em>Partnerzugang</em></span>
             <a class="btn btn--text" href="#kontakt" data-cursor="link">Einblick im Erstgespräch<span class="btn__arrow">→</span></a>
-          </div>
-        </div>
-      </article>
-      <article class="fall fall--breit fall--spiegel" id="fall-zuschusspiloten" data-reveal>
-        <a class="fall__media" href="https://zuschusspiloten.de/" target="_blank" rel="noopener" data-cursor="link" data-cursor-label="öffnen" aria-label="Zuschuss Piloten: Website öffnen (neues Fenster)">
-          <div class="browser">
-            <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><em>zuschusspiloten.de</em></div>
-            <div class="browser__view" data-scroll-frame><img src="assets/img/arbeiten/zuschusspiloten-desktop.jpg" width="1440" height="2600" alt="Startseite von zuschusspiloten.de mit Förderbeispiel und Förderbereichen" loading="lazy" decoding="async"></div>
-          </div>
-          <div class="phone" aria-hidden="true"><div class="phone__view" data-scroll-frame><img src="assets/img/arbeiten/zuschusspiloten-mobil.jpg" width="600" height="3384" alt="" loading="lazy" decoding="async"></div></div>
-        </a>
-        <div class="fall__text">
-          <div class="fall__meta"><span class="fall__num">06</span><span class="fall__kind">Website · Beratung</span><span class="fall__client">Zuschuss Piloten</span></div>
-          <h3 class="fall__title">Eine Website, die Termine macht<span class="text-signal">.</span></h3>
-          <p class="fall__desc">Fördermittelberatung mit Zuschuss-Check, Terminbuchung direkt aus dem eigenen CRM und einem Kundenportal. Dazu cookieloses Tracking, selbst gebaut&nbsp;— ohne&nbsp;Banner.</p>
-          <div class="fall__foot">
-            <span class="fall__tags"><em>Website</em><em>Terminbuchung</em><em>Kundenportal</em></span>
-            <a class="btn btn--text" href="https://zuschusspiloten.de/" target="_blank" rel="noopener" data-cursor="link">Live ansehen<span class="btn__arrow">↗</span></a>
           </div>
         </div>
       </article>
@@ -540,8 +547,8 @@
 
         <div class="person__text">
           <div class="label" data-reveal>Über mich</div>
-          <h2 class="section__title" data-split-lines>Jedes Projekt geht<br>durch meine&nbsp;Hände<span class="text-signal">.</span></h2>
-          <p class="section__lead" data-reveal>Ich bin Andrew Banoub&nbsp;— Ingenieur, Entwickler und seit Jahren mit Leidenschaft dabei. codeschliff ist mein Studio: Gestaltung und Entwicklung aus einer Hand, von Madeira aus, für den deutschsprachigen Raum in Hamburg ansprechbar. Was Sie mit mir besprechen, baue ich&nbsp;auch.</p>
+          <h2 class="section__title" data-split-lines>Mit vollem Herzblut<br>für Ihr&nbsp;Projekt<span class="text-signal">.</span></h2>
+          <p class="section__lead" data-reveal>Ich bin Andrew Banoub, Ingenieur und Entwickler. Aufgewachsen bin ich in Hamburg, heute arbeite ich von Madeira aus für Unternehmen im ganzen deutschsprachigen Raum. codeschliff ist mein Studio: Gestaltung und Entwicklung aus einer&nbsp;Hand.</p>
 
           <ol class="person__points" data-reveal-group>
             <li class="person__point">
@@ -788,7 +795,7 @@
       <nav class="footer__col" aria-label="Fußnavigation">
         <div class="footer__col-label">Navigation</div>
         <a href="#was" data-cursor="link">Was wir machen</a>
-        <a href="#arbeiten" data-cursor="link">Arbeiten</a>
+        <a href="#arbeiten" data-cursor="link">Portfolio</a>
         <a href="#studio" data-cursor="link">Über mich</a>
         <a href="#kontakt" data-cursor="link">Kontakt</a>
       </nav>

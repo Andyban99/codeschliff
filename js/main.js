@@ -51,6 +51,7 @@
       touchMultiplier: 1.6
     });
     lenis.on('scroll', ScrollTrigger.update);
+    window.csLenis = lenis;   // fuer die Grossansicht des Films (js/kino.js)
     gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
     gsap.ticker.lagSmoothing(0);
   }
@@ -398,31 +399,53 @@
     }
   }
 
-  /* ── Scramble-Effekt auf Mono-/Nav-Texten ──────────────────── */
+  /* ── Scramble-Effekt auf Mono-/Nav-Texten ──────────────────────
+     Beim Darueberfahren wird der Text erst zu Code-Zeichen (Mono,
+     Signalfarbe) und loest sich dann von links nach rechts wieder auf.
+     Bewusst langsam (gut eine Sekunde), damit man sieht, was passiert.
+     Die Breite bleibt waehrenddessen fest, nichts springt. */
   if (finePointer && !reduced) {
-    var CHARS = '{}[]<>/\\|=+*#';
+    var CHARS = '{}[]<>/\\|=+*#;:01';
+    var DAUER = 1100;   // ms, bis der Text wieder steht
+    var TAKT = 70;      // ms je Zeichenwechsel
+    var ESC = { '<': '&lt;', '>': '&gt;', '&': '&amp;' };
     Array.prototype.forEach.call(document.querySelectorAll('[data-scramble]'), function (el) {
       var original = el.textContent;
       var frame = null;
-      el.addEventListener('mouseenter', function () {
-        var i = 0;
-        var total = 14;
-        cancelAnimationFrame(frame);
-        (function tick() {
-          i++;
-          el.textContent = original.split('').map(function (ch, idx) {
-            if (ch === ' ') return ch;
-            var reveal = (idx / original.length) * total * 0.72;
-            return i > reveal + 3 ? ch : CHARS[Math.floor(Math.random() * CHARS.length)];
-          }).join('');
-          if (i < total) { frame = requestAnimationFrame(tick); }
-          else { el.textContent = original; }
-        })();
-      });
-      el.addEventListener('mouseleave', function () {
+      function zurueck() {
         cancelAnimationFrame(frame);
         el.textContent = original;
+        el.style.width = '';
+        el.style.display = '';
+        el.style.whiteSpace = '';
+      }
+      el.addEventListener('mouseenter', function () {
+        zurueck();
+        var breite = el.getBoundingClientRect().width;
+        el.style.display = 'inline-block';
+        el.style.whiteSpace = 'nowrap';
+        el.style.width = breite + 'px';
+        var start = performance.now();
+        var letzter = -TAKT;
+        (function tick(jetzt) {
+          var t = (jetzt || performance.now()) - start;
+          if (t - letzter >= TAKT) {
+            letzter = t;
+            var fortschritt = t / DAUER;
+            el.innerHTML = original.split('').map(function (ch, idx) {
+              if (ch === ' ') return ch;
+              // erst ein Viertel lang alles Code, dann loest es sich von links auf
+              var schwelle = 0.25 + 0.75 * (idx + 1) / original.length;
+              if (fortschritt >= schwelle) return ESC[ch] || ch;
+              var z = CHARS[Math.floor(Math.random() * CHARS.length)];
+              return '<i class="scramble__z">' + (ESC[z] || z) + '</i>';
+            }).join('');
+          }
+          if (t < DAUER) frame = requestAnimationFrame(tick);
+          else zurueck();
+        })();
       });
+      el.addEventListener('mouseleave', zurueck);
     });
   }
 

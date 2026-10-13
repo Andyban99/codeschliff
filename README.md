@@ -22,11 +22,23 @@ weil der Film eigene Ecklabels trägt. Autoplay stumm, großes helles Play-Zeich
 „Mit Ton abspielen", Klick aufs Bild pausiert. Pause außerhalb des Sichtfelds;
 bei `prefers-reduced-motion` Start erst auf Klick.
 
+**Großansicht:** Klick aufs Bild oder aufs Play-Zeichen holt den Player mittig nach
+vorn (FLIP-Flug aus der Spalte, Seite dahinter abgedunkelt und gesperrt). Beim
+ersten Mal startet der Film mit Ton von vorn, danach an der gemerkten Stelle.
+Zurück per Klick daneben, Esc, „Schließen" oder Weiterscrollen/Wischen; danach
+läuft wieder die stumme Vorschau („Weiter ansehen"). In der Großansicht pausiert
+ein Klick aufs Bild, die Leertaste ebenso. Ein Knopf unten rechts schaltet ins
+Vollbild (auf dem iPhone das Video-Vollbild).
+
+**Ton nur auf Klick:** Scrollt man weg oder wechselt den Tab, während Ton läuft,
+wird der Film stumm (klein) bzw. angehalten (Großansicht, Vollbild). Mit Ton
+läuft er nicht in Schleife, sondern bleibt am Ende stehen („Nochmal ansehen").
+
 Text und Player bilden einen Block: Der Chip steht bündig mit der Oberkante des
 Players, die Buttons mit der Unterkante (von 1180 bis 1920 px gemessen). Eine
 zwischenzeitliche Szenen-Animation anstelle des Films ist wieder entfernt.
 
-Seitenfolge seit 13.10.2026: Hero (mit Kundenlaufband am unteren Rand) → Was wir machen → Arbeiten → Stimmen → Über mich → Kontakt (Leistungen entfernt, war Doppelung zu „Was wir machen"). Kopfzeile: nummerierte Punkte (01 Was wir machen / 02 Arbeiten / 03 Über mich), Status „Frei für neue Projekte", Code-Knopf `{ Erstgespräch }` mit blinkendem Cursor.
+Seitenfolge seit 13.10.2026: Hero (mit Kundenlaufband am unteren Rand) → Was wir machen → Portfolio → Stimmen → Über mich → Kontakt (Leistungen entfernt, war Doppelung zu „Was wir machen"). Kopfzeile: nummerierte Punkte (01 Was wir machen / 02 Portfolio / 03 Über mich, 13,5 px, mittig zur Zeile), Status „Frei für neue Projekte", Code-Knopf `{ Erstgespräch }` mit blinkendem Cursor. Beim Darüberfahren werden die Texte erst zu roten Code-Zeichen (Mono) und lösen sich in gut einer Sekunde von links nach rechts auf; die Breite bleibt dabei fest.
 
 Am unteren Rand des Heros, unter der Zeile „Eine Auswahl unserer Kunden", läuft das **Kundenlaufband** mit den Wortmarken der Kunden in Grau:
 FreshWin, BESTEnergieLaden und reamotion/GRILLOMAX sind Aufnahmen ihrer
@@ -142,23 +154,24 @@ Antworten gehen per `Reply-To` direkt an den Interessenten.
 
 Die Domain selbst bleibt dabei auf GitHub Pages — nur die Subdomain wandert.
 
-## Arbeiten (Referenzen)
+## Portfolio (Referenzen)
 
 Sechs echte Projekte mit Bildschirmfotos in `assets/img/arbeiten/` (Desktop
 1440 px breit, Ganzseite bis 2600 px; Mobil 600 px breit). Die Fotos sind mit
 headless Chrome über das DevTools-Protokoll aufgenommen (Cookie-Banner
 weggeklickt, Lazy-Bilder vorgeladen) und mit `sips` zu JPEG (Qualität 78)
-gewandelt. Bei Hover scrollt das Foto im Rahmen (`js/main.js`, Abschnitt
-„Arbeiten").
+gewandelt. Bei Hover scrollt das Foto im Rahmen (`js/main.js`). Der Abschnitt
+heißt „Portfolio" (Anker bleibt `#arbeiten`) und ist in drei Gruppen mit kleiner
+Kopfzeile geteilt: Websites (01–02), Webshops (03–04), CRM & Systeme (05–06).
 
 | Projekt | Art | Bild |
 |---|---|---|
-| FreshWin Preisrechner | Web-App, öffentlich | Desktop + Mobil |
-| bestenergieladen.de | Shopware, B2B | Desktop |
-| grillomax.shop | Shopware, Direktvertrieb | Desktop |
-| CRM Zuschuss Piloten | intern | vorerst Anmeldeseite — Dashboard folgt nach gemeinsamer Aufnahme |
-| Erdelmeier Partner-Portal | intern | Anmeldeseite (zeigt die drei Checks) |
-| zuschusspiloten.de | Website | Desktop + Mobil |
+| 01 FreshWin Preisrechner | Web-App, öffentlich | Desktop + Mobil |
+| 02 zuschusspiloten.de | Website | Desktop + Mobil |
+| 03 bestenergieladen.de | Shopware, B2B | Desktop |
+| 04 grillomax.shop | Shopware, Direktvertrieb | Desktop |
+| 05 CRM Zuschuss Piloten | intern | Pipeline-Ansicht |
+| 06 Erdelmeier Partner-Portal | intern | Anmeldeseite (zeigt die drei Checks) |
 
 Kundenlogos liegen in `assets/img/kunden/` und werden einfarbig gezeigt
 (Brand Kit: ruhige Fläche), farbig bei Hover.
