@@ -12,16 +12,31 @@ der Teilen-Vorschau). Botschaft: individuelle IT-Projekte für Unternehmen —
 Websites, Webshops, Automatisierungen — zugeschnitten auf die Abläufe, mit KI
 dort, wo sie hilft.
 
-Der Hero ist zweispaltig: links Text (Überschrift bis 60 px, bei allen
-Breiten ohne ungewollten Umbruch gemessen), rechts der **Player** (`#kino`, `js/kino.js`): der Markenfilm
-(`assets/video/codeschliff.mp4`, 74 s, 6,2 MB, H.264, mit Tonspur) als
-Leinwand in einer Player-Karte aus Tinte (Glasrand, Radius), in der Inhaltsbreite, ohne Neigung. Leiste: Play/Pause, klickbarer Fortschrittsbalken (Spulen), Timecode, Ton. Infoleisten außerhalb des Bildes
-(der Film trägt eigene Ecklabels): Showreel, Kapitel, Timecode, Fortschritt,
-„Ton an". Autoplay stumm, Pause außerhalb des Sichtfelds; bei
-`prefers-reduced-motion` Start erst auf Klick. Die frühere SVG-Werkbank ist
-durch den Film ersetzt.
+Der Hero ist zweispaltig und so breit wie der Rest der Seite (`--cs-content-max`).
+Links Text (Überschrift bis 52 px, bei 1120 bis 1920 px ohne ungewollten Umbruch
+gemessen), rechts die **Bühne** (`#szenen`, `js/szenen.js`): eine Tintenfläche mit
+drei Szenen, die von selbst wechseln. Die Reiter darüber zeigen den Fortschritt
+und sind klickbar.
 
-Seitenfolge seit 13.10.2026: Hero → Was wir machen → Kundenlaufband → Arbeiten → Stimmen → Studio → Kontakt (Leistungen entfernt, war Doppelung zu „Was wir machen"). Kopfzeile: nummerierte Punkte (01 Was wir machen / 02 Arbeiten / 03 Über mich), Status „Frei für neue Projekte", Code-Knopf `{ Erstgespräch }` mit blinkendem Cursor.
+- **01 Websites & Shops:** Ein Zeiger legt zwei Produkte in den Korb, der Zähler
+  rollt hoch, die Bestellung #1048 geht ein („Rechnung und Versand laufen automatisch").
+- **02 CRM & ERP:** Kennzahlen laufen hoch, dieselbe Bestellung #1048 rutscht in
+  die Auftragsliste, das Lager zählt herunter, der Status wechselt bis „Versendet".
+- **03 Ihre Idee:** Ausgedachte Werkzeuge werden eingetippt und als „live"
+  markiert, am Ende steht „Ihre Idee" mit blinkendem Cursor.
+
+Alles in der Bühne ist in em gebaut und skaliert über die Containerbreite
+(44 em = Flächenbreite), deshalb funktioniert sie unverändert auf dem Handy.
+Außerhalb des Sichtfelds und im Hintergrund-Tab hält sie an. Ohne GSAP oder bei
+`prefers-reduced-motion` steht Szene 01 im Endzustand, die Reiter schalten nur um.
+
+Direkt unter dem Hero folgt der **Film** (`#film`, `js/kino.js`): der Markenfilm
+(`assets/video/codeschliff.mp4`, 74 s, 6,2 MB, H.264, mit Tonspur) im Player aus
+Tinte, in voller Inhaltsbreite. Leiste: Play/Pause, klickbarer Fortschrittsbalken,
+Timecode, Ton. Autoplay stumm, sobald er im Bild ist, Pause außerhalb des
+Sichtfelds; bei `prefers-reduced-motion` Start erst auf Klick.
+
+Seitenfolge seit 13.10.2026: Hero (mit Kundenlaufband am unteren Rand) → Film → Was wir machen → Arbeiten → Stimmen → Über mich → Kontakt (Leistungen entfernt, war Doppelung zu „Was wir machen"). Kopfzeile: nummerierte Punkte (01 Was wir machen / 02 Arbeiten / 03 Über mich), Status „Frei für neue Projekte", Code-Knopf `{ Erstgespräch }` mit blinkendem Cursor.
 
 Am unteren Rand des Heros, unter der Zeile „Eine Auswahl unserer Kunden", läuft das **Kundenlaufband** mit den Wortmarken der Kunden in Grau:
 FreshWin, BESTEnergieLaden und reamotion/GRILLOMAX sind Aufnahmen ihrer
@@ -38,7 +53,12 @@ Bewusst ohne Framework: statisches HTML + CSS + Vanilla-JS.
 - `js/main.js` — zwei getrennte Einheiten: Bewegungsschicht und Kontaktformular.
   Das Formular hängt bewusst nicht an GSAP — fällt die Animation aus, trägt es trotzdem.
 - `js/vendor/` — GSAP 3.12 + ScrollTrigger + Lenis 1.1 (lokal, kein CDN)
-- `js/kino.js` — Kino im Hero (Markenfilm, Timecode, Ton, Scroll-Öffnung)
+- `js/szenen.js` — Bühne im Hero: drei Szenen (Shop, ERP, Ideen), wechseln von selbst
+- `js/kino.js` — Player für den Markenfilm direkt unter dem Hero (Timecode, Ton, Spulen)
+- `js/was.js` — „Was wir machen": drei Glaskarten auf Tinte, jede mit einem kleinen System
+  im Betrieb (Posteingang sortiert sich, Besucher bucht Termin, Bestellung läuft bis zum
+  Versand). Szenen laufen nur im Sichtfeld; ohne JS oder bei `prefers-reduced-motion`
+  steht der Endzustand aus dem HTML. Pro Karte nur Problem (rot durchgestrichen) + Lösung.
 - `js/buchung.js` — Terminbuchung (Erstgespräch), spricht direkt mit dem CRM
 - `tools/contact-worker.js` — Endpunkt für den Formularversand (nicht Teil der Auslieferung)
 
