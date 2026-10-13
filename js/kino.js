@@ -22,6 +22,8 @@
   var kapitel = document.getElementById('kinoKapitel');
   var fortschritt = document.getElementById('kinoFortschritt');
   var ton = document.getElementById('kinoTon');
+  var pp = document.getElementById('kinoPP');
+  var spur = document.getElementById('kinoSpur');
   var overlay = document.getElementById('kinoOverlay');
   var overlayText = document.getElementById('kinoOverlayText');
   var leinwand = document.getElementById('kinoLeinwand');
@@ -74,6 +76,30 @@
   }
   function versteckeOverlay() { if (overlay) overlay.hidden = true; }
   function abspielen() { var p = video.play(); if (p) p.catch(function () {}); }
+  function zeigePP() {
+    if (!pp) return;
+    pp.classList.toggle('is-paused', video.paused);
+    pp.setAttribute('aria-label', video.paused ? 'Abspielen' : 'Pause');
+  }
+  video.addEventListener('play', zeigePP);
+  video.addEventListener('pause', zeigePP);
+  zeigePP();
+
+  if (pp) {
+    pp.addEventListener('click', function () {
+      if (video.paused) { userPaused = false; wunsch = true; versteckeOverlay(); abspielen(); }
+      else { userPaused = true; video.pause(); zeigeOverlay('Weiter'); }
+    });
+  }
+  // Fortschrittsbalken: Klick springt an die Stelle
+  if (spur) {
+    spur.addEventListener('click', function (e) {
+      if (!video.duration) return;
+      var r = spur.getBoundingClientRect();
+      var anteil = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+      try { video.currentTime = anteil * video.duration; } catch (err) { /* noch nicht geladen */ }
+    });
+  }
 
   // Grosses Play-Zeichen
   if (overlay) {

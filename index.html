@@ -187,14 +187,14 @@
         <!-- Das Kino: der Markenfilm als Leinwand. Die Infoleiste liegt
              ausserhalb des Bildes, weil der Film eigene Ecklabels tragt. -->
         <div class="hero__kino-wrap">
-        <div class="kino" id="kino" data-hero-panel data-tilt>
+        <div class="kino" id="kino" data-hero-panel>
           <div class="grain" aria-hidden="true"></div>
           <div class="glow glow--a" aria-hidden="true"></div>
           <div class="glow glow--b" aria-hidden="true"></div>
           <div class="kino__leiste kino__leiste--oben" aria-hidden="true">
             <span class="kino__label"><i></i>Showreel</span>
             <span class="kino__kapitel" id="kinoKapitel">01 — Auftakt</span>
-            <span class="kino__zeit"><span id="kinoZeit">00:00</span> / 01:14</span>
+            <span class="kino__dauer">74 Sek · ohne Ton gestartet</span>
           </div>
           <div class="kino__leinwand" id="kinoLeinwand">
             <video id="kinoVideo" src="assets/video/codeschliff.mp4" poster="assets/img/poster-film.jpg" autoplay muted loop playsinline preload="metadata" aria-label="codeschliff Showreel: Websites, Webshops und Automatisierungen, 74 Sekunden"></video>
@@ -206,7 +206,9 @@
             </button>
           </div>
           <div class="kino__leiste kino__leiste--unten">
-            <div class="kino__fortschritt" aria-hidden="true"><i id="kinoFortschritt"></i></div>
+            <button type="button" class="kino__pp" id="kinoPP" aria-label="Pause" data-cursor="button"><i aria-hidden="true"></i></button>
+            <button type="button" class="kino__fortschritt" id="kinoSpur" aria-label="Im Film springen" data-cursor="button"><i id="kinoFortschritt"></i></button>
+            <span class="kino__zeit kino__zeit--unten"><span id="kinoZeit">00:00</span> / 01:14</span>
             <button type="button" class="kino__ton" id="kinoTon" aria-pressed="false" data-cursor="button"><i aria-hidden="true"></i><span>Ton an</span></button>
           </div>
         </div>
