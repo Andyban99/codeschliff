@@ -593,11 +593,12 @@ body:has(.mobile-nav.is-open) .header__burger span { background: #FFFFFF; }
   width: 112px;
   height: 112px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  /* rauchiges Glas: lesbar auf hellen wie dunklen Filmbildern */
+  background: rgba(10, 10, 10, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transition: transform 160ms var(--cs-ease), background-color 160ms var(--cs-ease), border-color 160ms var(--cs-ease);
 }
 .kino__playzeichen::after {
@@ -608,19 +609,20 @@ body:has(.mobile-nav.is-open) .header__burger span { background: #FFFFFF; }
   border-bottom: 19px solid transparent;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
 }
-.kino__overlay:hover .kino__playzeichen { transform: scale(1.06); background: rgba(255, 255, 255, 0.22); border-color: rgba(255, 255, 255, 0.8); }
+.kino__overlay:hover .kino__playzeichen { transform: scale(1.06); background: rgba(10, 10, 10, 0.48); border-color: rgba(255, 255, 255, 0.85); }
 .kino__overlay-text {
-  padding: 9px 13px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--cs-radius-pill);
-  background: rgba(255, 255, 255, 0.12);
+  /* fast deckende Tinte: der Schriftzug muss auch auf weissen Bildern lesbar sein */
+  background: rgba(10, 10, 10, 0.78);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   font: 400 11px/1 'JetBrains Mono', monospace;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #FFFFFF;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
 }
 .kino__overlay:focus-visible { outline: none; }
 .kino__overlay:focus-visible .kino__playzeichen { outline: 2px solid #FFFFFF; outline-offset: 4px; }
@@ -1295,6 +1297,8 @@ html.js .system:not(.is-an) .system__vorher s::after { transform: scaleX(0); }
 .faelle > .faelle__gruppe:not(:first-child) { margin-top: 32px; }
 .fall { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
 .fall--breit { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+/* gespiegelt: Bild rechts, aber genauso breit wie beim ersten Projekt */
+.fall--spiegel { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); }
 .fall--spiegel .fall__media { order: 2; }
 .fall--spiegel .phone { right: auto; left: -18px; }
 .fall__media { position: relative; display: block; color: inherit; }
