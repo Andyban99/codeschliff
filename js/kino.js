@@ -22,7 +22,8 @@
   var kapitel = document.getElementById('kinoKapitel');
   var fortschritt = document.getElementById('kinoFortschritt');
   var ton = document.getElementById('kinoTon');
-  var play = document.getElementById('kinoPlay');
+  var overlay = document.getElementById('kinoOverlay');
+  var overlayText = document.getElementById('kinoOverlayText');
   var leinwand = document.getElementById('kinoLeinwand');
 
   // Kapitel, wie sie im Film eingeblendet werden (Sekunden ab Start)
@@ -50,23 +51,70 @@
     }
   });
 
-  /* ── Ton ──────────────────────────────────────────────────── */
-  if (ton) {
-    ton.addEventListener('click', function () {
-      video.muted = !video.muted;
-      var an = !video.muted;
+  /* ── Zustaende ────────────────────────────────────────────────
+     Autoplay laeuft stumm, darueber das grosse Play-Zeichen.
+     Play-Zeichen: Ton an, Film von vorn, Zeichen verschwindet.
+     Klick aufs Bild: Pause. Pausiert bleibt pausiert — auch wenn man
+     wegscrollt und zurueckkommt — bis man wieder klickt. */
+  var userPaused = false;    // vom Besucher angehalten
+  var wunsch = !reduced;     // soll der Film ueberhaupt laufen
+  var inView = true;
+
+  function setTon(an) {
+    video.muted = !an;
+    if (ton) {
       ton.setAttribute('aria-pressed', an ? 'true' : 'false');
       ton.querySelector('span').textContent = an ? 'Ton aus' : 'Ton an';
-      if (an && video.paused) { var p = video.play(); if (p) p.catch(function () {}); }
+    }
+  }
+  function zeigeOverlay(text) {
+    if (!overlay) return;
+    if (overlayText) overlayText.textContent = text;
+    overlay.hidden = false;
+  }
+  function versteckeOverlay() { if (overlay) overlay.hidden = true; }
+  function abspielen() { var p = video.play(); if (p) p.catch(function () {}); }
+
+  // Grosses Play-Zeichen
+  if (overlay) {
+    overlay.addEventListener('click', function (e) {
+      e.stopPropagation();
+      wunsch = true; userPaused = false;
+      if (video.muted) {
+        // Mit Ton: der Film beginnt von vorn, damit die Tonspur zum Bild passt
+        setTon(true);
+        try { video.currentTime = 0; } catch (err) { /* noch nicht geladen */ }
+      }
+      versteckeOverlay();
+      abspielen();
+    });
+  }
+
+  // Klick aufs Bild: Pause / Weiter
+  video.addEventListener('click', function () {
+    if (video.paused) {
+      userPaused = false; wunsch = true;
+      versteckeOverlay();
+      abspielen();
+    } else {
+      userPaused = true;
+      video.pause();
+      zeigeOverlay('Weiter');
+    }
+  });
+
+  // Ton-Schalter in der Leiste: nur den Ton, keine Rueckspulung
+  if (ton) {
+    ton.addEventListener('click', function () {
+      setTon(video.muted);
+      if (!video.muted && video.paused && !userPaused) { wunsch = true; abspielen(); }
     });
   }
 
   /* ── Sichtbarkeit: nur laufen, wenn man es sieht ───────────── */
-  var inView = true;
-  var wunsch = !reduced;   // ob der Film ueberhaupt laufen soll
   function sync() {
-    if (!wunsch) return;
-    if (inView && !document.hidden) { var p = video.play(); if (p) p.catch(function () {}); }
+    if (!wunsch || userPaused) return;
+    if (inView && !document.hidden) abspielen();
     else video.pause();
   }
   if ('IntersectionObserver' in window) {
@@ -74,17 +122,11 @@
   }
   document.addEventListener('visibilitychange', sync);
 
-  /* ── Reduzierte Bewegung: Film erst auf Klick ──────────────── */
+  /* ── Reduzierte Bewegung: kein Autoplay, Film erst auf Klick ── */
   if (reduced) {
     video.removeAttribute('autoplay');
     video.pause();
-    if (play) {
-      play.hidden = false;
-      play.addEventListener('click', function () {
-        wunsch = true; play.hidden = true;
-        var p = video.play(); if (p) p.catch(function () {});
-      });
-    }
+    zeigeOverlay('Mit Ton abspielen');
   }
 
   /* ── Scroll: Leinwand oeffnet sich ─────────────────────────── */

@@ -199,7 +199,12 @@
           </div>
           <div class="kino__leinwand" id="kinoLeinwand">
             <video id="kinoVideo" src="assets/video/codeschliff.mp4" poster="assets/img/poster-film.jpg" autoplay muted loop playsinline preload="metadata" aria-label="codeschliff Showreel: Websites, Webshops und Automatisierungen, 74 Sekunden"></video>
-            <button type="button" class="kino__play" id="kinoPlay" hidden data-cursor="button"><span>Film abspielen</span></button>
+            <!-- Grosses Play-Zeichen: schaltet den Ton ein und startet den Film von vorn.
+                 Klick auf das laufende Bild pausiert; pausiert bleibt pausiert. -->
+            <button type="button" class="kino__overlay" id="kinoOverlay" data-cursor="button" aria-label="Film mit Ton von vorn abspielen">
+              <span class="kino__playzeichen" aria-hidden="true"></span>
+              <span class="kino__overlay-text" id="kinoOverlayText">Mit Ton abspielen</span>
+            </button>
           </div>
           <div class="kino__leiste kino__leiste--unten">
             <div class="kino__fortschritt" aria-hidden="true"><i id="kinoFortschritt"></i></div>
