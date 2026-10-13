@@ -2087,6 +2087,9 @@ html.js .person__frame img { transform: scale(1.06); }
   width: 0.14em; height: 0.14em;
   background: var(--cs-signal);
   display: inline-block;
+  /* optisch mittig: die Klammer-Glyphen sitzen nicht mittig in ihrer
+     Zeichenbreite, deshalb ein Stueck nach rechts (im Browser gemessen) */
+  transform: translateX(0.058em);
 }
 .footer__grid {
   position: relative;
@@ -2098,6 +2101,8 @@ html.js .person__frame img { transform: scale(1.06); }
   gap: 48px;
 }
 .footer__brand { display: flex; flex-direction: column; gap: 22px; }
+.footer__logo { display: flex; align-items: center; gap: 12px; }
+.footer__wordmark { font: 700 22px/1 'Archivo', sans-serif; letter-spacing: -0.05em; color: #FFFFFF; }
 .footer__claim {
   font: 700 24px/1.1 'Archivo', sans-serif;
   letter-spacing: -0.05em;
