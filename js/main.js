@@ -35,6 +35,12 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
+  // Vorbereitete Abschnitte (z. B. Stimmen ohne Originaltexte) bleiben versteckt,
+  // bis die Inhalte da sind. Mit ?vorschau in der Adresse sieht man sie trotzdem.
+  if (/[?&]vorschau\b/.test(location.search)) {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-vorschau]'), function (el) { el.hidden = false; });
+  }
+
   /* ── Lenis Smooth Scroll ───────────────────────────────────── */
   var lenis = null;
   if (!reduced && typeof Lenis !== 'undefined') {
@@ -342,18 +348,6 @@
             scrub: 0.6
           }
         });
-      gsap.fromTo(manifestClip.querySelector('.manifest__video'),
-        { scale: 1.18 },
-        {
-          scale: 1,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: manifestClip,
-            start: 'top bottom',
-            end: 'top top',
-            scrub: 0.6
-          }
-        });
       gsap.to(words, {
         opacity: 1,
         stagger: 0.35,
@@ -395,13 +389,6 @@
           scrollTrigger: { trigger: el, start: 'top 86%', once: true }
         });
     });
-    // Werkstatt-Kacheln: Kaskade
-    gsap.fromTo('.werkstatt__item',
-      { opacity: 0, y: 22 },
-      {
-        opacity: 1, y: 0, duration: 0.5, stagger: 0.09, ease: GS_EASE,
-        scrollTrigger: { trigger: '.werkstatt__grid', start: 'top 82%', once: true }
-      });
     // Leistungs-Spalten: Kaskade
     gsap.fromTo('.leistung',
       { opacity: 0, y: 16 },
@@ -410,95 +397,65 @@
         scrollTrigger: { trigger: '.leistungen__grid', start: 'top 84%', once: true }
       });
   } else {
-    gsap.set('.werkstatt__item, .leistung', { opacity: 1 });
-  }
-
-  /* ── Videos: nur im Viewport abspielen ─────────────────────── */
-  var ambientVideos = Array.prototype.slice.call(
-    document.querySelectorAll('video[autoplay], video[data-ambient-video]'));
-  var visibleVideos = new Set();
-  var vidObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      var v = entry.target;
-      if (entry.isIntersecting) {
-        visibleVideos.add(v);
-        if (!reduced) { var p = v.play(); if (p) p.catch(function () {}); }
-      } else {
-        visibleVideos.delete(v);
-        v.pause();
-      }
-    });
-  }, { rootMargin: '120px' });
-  ambientVideos.forEach(function (v) {
-    if (reduced) { v.removeAttribute('autoplay'); v.pause(); }
-    vidObserver.observe(v);
-  });
-  // Nach Tab-Wechsel o. Ä. sichtbare Videos wieder anstoßen
-  document.addEventListener('visibilitychange', function () {
-    if (!document.hidden && !reduced) {
-      visibleVideos.forEach(function (v) { var p = v.play(); if (p) p.catch(function () {}); });
-    }
-  });
-
-  /* ── Werkstatt: Hover-Videos + Kartenneigung ───────────────── */
-  Array.prototype.forEach.call(document.querySelectorAll('.werkstatt__item'), function (item) {
-    var video = item.querySelector('video');
-    function start() { if (!reduced) { var p = video.play(); if (p) p.catch(function () {}); } }
-    function stop() { if (!item.matches(':hover')) video.pause(); }
-    item.addEventListener('mouseenter', start);
-    item.addEventListener('mouseleave', stop);
-    item.addEventListener('focus', start);
-    item.addEventListener('blur', stop);
-
-    if (finePointer && !reduced) {
-      var media = item.querySelector('.werkstatt__media');
-      var rx = gsap.quickTo(media, 'rotationX', { duration: 0.5, ease: 'power2.out' });
-      var ry = gsap.quickTo(media, 'rotationY', { duration: 0.5, ease: 'power2.out' });
-      item.addEventListener('mousemove', function (e) {
-        var r = media.getBoundingClientRect();
-        ry(((e.clientX - r.left) / r.width - 0.5) * 5);
-        rx(((e.clientY - r.top) / r.height - 0.5) * -5);
-      });
-      item.addEventListener('mouseleave', function () { rx(0); ry(0); });
-    }
-  });
-  // Ohne Hover (Touch): Werkstatt-Videos laufen im Viewport
-  if (!finePointer && !reduced) {
-    Array.prototype.forEach.call(document.querySelectorAll('[data-hover-video]'), function (v) {
-      vidObserver.observe(v);
-    });
+    gsap.set('.leistung', { opacity: 1 });
   }
 
   /* ── Leistungen: schwebende Vorschau folgt der Maus ────────── */
   var grid = document.getElementById('leistungenGrid');
   var preview = document.getElementById('preview');
   if (finePointer && !reduced && grid && preview) {
-    var previewVideo = document.getElementById('previewVideo');
+    var previewImg = document.getElementById('previewImg');
     var pX = gsap.quickTo(preview, 'x', { duration: 0.45, ease: 'power3.out' });
     var pY = gsap.quickTo(preview, 'y', { duration: 0.45, ease: 'power3.out' });
     var visible = false;
 
     grid.addEventListener('mousemove', function (e) {
       pX(e.clientX + 26);
-      pY(e.clientY - 190);
+      pY(e.clientY - 120);
       var col = e.target.closest('[data-preview]');
       if (col) {
         var src = col.getAttribute('data-preview');
-        if (previewVideo.getAttribute('src') !== src) {
-          previewVideo.setAttribute('src', src);
-          var p = previewVideo.play(); if (p) p.catch(function () {});
-        }
+        if (previewImg.getAttribute('src') !== src) previewImg.setAttribute('src', src);
         if (!visible) {
           visible = true;
           gsap.to(preview, { opacity: 1, scale: 1, duration: 0.32, ease: GS_EASE });
-          var pl = previewVideo.play(); if (pl) pl.catch(function () {});
         }
       }
     });
     grid.addEventListener('mouseleave', function () {
       visible = false;
       gsap.to(preview, { opacity: 0, scale: 0.82, duration: 0.28, ease: GS_EASE });
-      previewVideo.pause();
+    });
+  }
+
+  /* ── Arbeiten: Bildschirmfoto scrollt im Rahmen bei Hover ──── */
+  if (finePointer) {
+    Array.prototype.forEach.call(document.querySelectorAll('.fall__media'), function (media) {
+      var frames = Array.prototype.slice.call(media.querySelectorAll('[data-scroll-frame]'));
+      if (!frames.length) return;
+      function run() {
+        frames.forEach(function (frame) {
+          var img = frame.querySelector('img');
+          var overflow = img.offsetHeight - frame.clientHeight;
+          if (overflow <= 0) return;
+          // Gleichmaessiges Tempo: 140 px je Sekunde, egal wie lang die Seite ist.
+          img.style.transitionDuration = reduced ? '0ms' : Math.max(0.6, overflow / 140) + 's';
+          img.style.transitionTimingFunction = 'linear';
+          img.style.transform = 'translateY(' + (-overflow) + 'px)';
+        });
+      }
+      function reset() {
+        frames.forEach(function (frame) {
+          var img = frame.querySelector('img');
+          img.style.transitionDuration = reduced ? '0ms' : '600ms';
+          img.style.transitionTimingFunction = '';
+          img.style.transform = 'translateY(0)';
+        });
+      }
+      media.addEventListener('mouseenter', run);
+      media.addEventListener('mouseleave', reset);
+      media.addEventListener('focus', run, true);
+      media.addEventListener('blur', reset, true);
     });
   }
 
@@ -562,23 +519,6 @@
       personTl
         .fromTo(personFrame, { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: 0.9 }, 0)
         .fromTo(personFrame.querySelector('img'), { scale: 1.06 }, { scale: 1, duration: 1.2 }, 0);
-    }
-  }
-
-  /* ── Studio: Parallaxe im Medienrahmen ─────────────────────── */
-  if (!reduced) {
-    var pm = document.querySelector('[data-parallax-media] video');
-    if (pm) {
-      gsap.fromTo(pm, { yPercent: -8 }, {
-        yPercent: 8,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '[data-parallax-media]',
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 0.5
-        }
-      });
     }
   }
 

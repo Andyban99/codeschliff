@@ -107,30 +107,31 @@ Antworten gehen per `Reply-To` direkt an den Interessenten.
 
 Die Domain selbst bleibt dabei auf GitHub Pages — nur die Subdomain wandert.
 
-## Video-Assets
+## Arbeiten (Referenzen)
 
-Alle Filme wurden mit **Higgsfield** erzeugt: Stills mit Cinema Studio
-Image 2.5 (2K), animiert per Kling 3.0 Pro (Image-to-Video, 5 s, ohne Ton).
-Die Rohbilder liegen lokal unter `assets/img/src-*.png` (nicht im Repo).
+Sechs echte Projekte mit Bildschirmfotos in `assets/img/arbeiten/` (Desktop
+1440 px breit, Ganzseite bis 2600 px; Mobil 600 px breit). Die Fotos sind mit
+headless Chrome über das DevTools-Protokoll aufgenommen (Cookie-Banner
+weggeklickt, Lazy-Bilder vorgeladen) und mit `sips` zu JPEG (Qualität 78)
+gewandelt. Bei Hover scrollt das Foto im Rahmen (`js/main.js`, Abschnitt
+„Arbeiten").
 
-Für die Auslieferung sind sie mit `avconvert` (macOS, kein Zusatzprogramm)
-verkleinert — 48 MB auf 18 MB. Stufe nach Anzeigegröße:
-
-```bash
-# vollflächige Hintergründe
-avconvert -s roh.mp4 -p Preset1280x720 -o assets/video/seam.mp4 --multiPass --replace
-# Kacheln und Vorschau (nie größer als ~380 px dargestellt)
-avconvert -s roh.mp4 -p Preset960x540  -o assets/video/cubes.mp4 --multiPass --replace
-```
-
-| Datei | Motiv | Einsatz |
+| Projekt | Art | Bild |
 |---|---|---|
-| `seam.mp4` | Glühende Naht im Obsidian | Hero-Panel + Manifest |
-| `sparks.mp4` | Schleiffunken | Zahlen-Band |
-| `monolith.mp4` | Glasmonolith, rote Naht | Werkstatt 01 / Vorschau Websites |
-| `cubes.mp4` | Glaswürfel | Werkstatt 02 / Vorschau Shops |
-| `traces.mp4` | Rote Leiterbahnen | Werkstatt 03 / Vorschau Systeme |
-| `studio.mp4` | Lichtstrahl in der Werkstatt | Studio-Sektion |
+| FreshWin Preisrechner | Web-App, öffentlich | Desktop + Mobil |
+| bestenergieladen.de | Shopware, B2B | Desktop |
+| grillomax.shop | Shopware, Direktvertrieb | Desktop |
+| CRM Zuschuss Piloten | intern | vorerst Anmeldeseite — Dashboard folgt nach gemeinsamer Aufnahme |
+| Erdelmeier Partner-Portal | intern | Anmeldeseite (zeigt die drei Checks) |
+| zuschusspiloten.de | Website | Desktop + Mobil |
+
+Kundenlogos liegen in `assets/img/kunden/` und werden einfarbig gezeigt
+(Brand Kit: ruhige Fläche), farbig bei Hover.
+
+**Stimmen** (`#stimmen`) ist gebaut, aber mit `hidden` versteckt, bis die
+Originaltexte der drei Kunden vorliegen. Vorschau: `codeschliff.de/?vorschau`.
+
+Die früheren KI-generierten Videos sind entfernt (Stand 13.10.2026).
 
 ## Lokal starten
 
@@ -154,5 +155,6 @@ Jeder Push auf `main` geht live.
   `CONTACT.endpoint` setzen (siehe oben). Bis dahin läuft der Zwischenstand
   über das Mailprogramm des Absenders.
 - Anwaltliche Prüfung der Rechtstexte steht aus.
-- Die Werkstatt zeigt abstrakte Studien statt echter Referenzprojekte.
+- CRM- und Intranet-Bildschirmfotos von innen (Dashboard) nach gemeinsamer Aufnahme einsetzen.
+- Bewertungstexte von Timo Erdelmeier, Zuru Arifi, Vanessa Dues einsetzen und `#stimmen` einblenden.
 - Keine Preisangabe auf der Seite, obwohl „Festpreis" beworben wird.
