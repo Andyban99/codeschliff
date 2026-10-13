@@ -56,6 +56,8 @@ Bewusst ohne Framework: statisches HTML + CSS + Vanilla-JS.
   Das Formular hängt bewusst nicht an GSAP — fällt die Animation aus, trägt es trotzdem.
 - `js/vendor/` — GSAP 3.12 + ScrollTrigger + Lenis 1.1 (lokal, kein CDN)
 - `js/kino.js` — Player für den Markenfilm im Hero (Timecode, Ton, Spulen)
+- `js/stimmen.js` — Kundenstimmen schreiben sich beim Scrollen ein: rote Welle Wort für Wort
+  (Grau → Signal → Tinte, an den Scroll gebunden), danach ploppen die Sterne auf
 - `js/was.js` — „Was wir machen": drei Glaskarten auf Tinte, jede mit einem kleinen System
   im Betrieb (Posteingang sortiert sich, Besucher bucht Termin, Bestellung läuft bis zum
   Versand). Szenen laufen nur im Sichtfeld; ohne JS oder bei `prefers-reduced-motion`
