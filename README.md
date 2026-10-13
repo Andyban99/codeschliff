@@ -86,8 +86,22 @@ sips crop.jpg --resampleWidth 1200 -m "/System/Library/ColorSync/Profiles/Generi
 
 ## Terminbuchung (Erstgespräch)
 
-Der Kontaktbereich ist ein Buchungs-Widget: Tag → Uhrzeit → Daten → bestätigt.
-Es spricht die öffentliche Buchungs-API unseres CRM direkt an — **kein iframe**,
+Der Kontaktbereich (Überschrift „Ein Gespräch. Danach steht Ihr Plan.") ist eine
+breite Buchungskarte in drei Spalten, nach dem Vorbild der Buchung auf
+zuschusspiloten.de, aber in unserer Gestaltung (keine Rundungen, 1-px-Linien,
+Mono-Labels):
+
+1. **Wer und was:** Porträt (eng auf den Kopf geschnitten), „Kostenloses
+   Erstgespräch", Dauer, Google Meet, Zeitzonen-Auswahl, Kasten „Das klären wir".
+2. **Kalender:** Monatsansicht, freie Tage fett mit Signalpunkt, gewählter Tag
+   in Tinte, heute mit Rahmen.
+3. **Uhrzeiten:** nach Vormittag/Nachmittag gruppiert; die Wahl einer Zeit
+   schaltet „Weiter" frei (Doppelklick geht direkt weiter).
+
+Danach ersetzen Formular, Bestätigung oder Rückfall die Spalten 2 und 3; die
+erste Spalte bleibt stehen. Darunter: „Lieber schreiben statt buchen?",
+E-Mail und Telefon, AGB-Hinweis. Ablauf: Tag → Uhrzeit → Weiter → Daten → bestätigt.
+Die Karte spricht die öffentliche Buchungs-API unseres CRM direkt an — **kein iframe**,
 damit die Seite ihr eigenes Gesicht behält:
 
 | Aufruf | Zweck |

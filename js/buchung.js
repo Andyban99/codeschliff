@@ -25,7 +25,6 @@
 
   var $ = function (id) { return document.getElementById(id); };
   var el = {
-    steps: root.querySelectorAll('.buchung__steps li'),
     notice: $('buchungNotice'),
     pick: $('buchungPick'),
     form: $('buchungForm'),
@@ -39,6 +38,7 @@
     timesDay: $('timesDay'),
     timesTz: $('timesTz'),
     tzSelect: $('tzSelect'),
+    weiter: $('buchungWeiter'),
     state: $('buchungState'),
     chosenText: $('chosenText'),
     chosenChange: $('chosenChange'),
@@ -88,8 +88,15 @@
     var p = key.split('-');
     return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]), 12, 0, 0);
   }
-  function shortDate(key) {
-    return new Intl.DateTimeFormat('de-DE', { weekday: 'short', day: 'numeric', month: 'long' }).format(keyToLocalNoon(key));
+  function dayHead(key) {
+    return new Intl.DateTimeFormat('de-DE', { weekday: 'short', day: 'numeric', month: 'short' }).format(keyToLocalNoon(key));
+  }
+  function hourOf(iso, tz) {
+    return Number(new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', hourCycle: 'h23' }).format(new Date(iso)));
+  }
+  function tzText() {
+    var mins = state.meta ? state.meta.durationMinutes : 30;
+    return 'Alle Zeiten in ' + (state.tz === 'Europe/Berlin' ? 'deutscher Zeit' : tzLabel(state.tz)) + ' · ' + mins + ' Minuten';
   }
   function weekdayOfKey(key) {
     var wd = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(keyToLocalNoon(key));
@@ -104,20 +111,14 @@
   }
   function tzLabel(tz) { return tz.replace(/_/g, ' '); }
 
-  /* ── Schritte ────────────────────────────────────────────── */
-  var ORDER = ['pick', 'form', 'done'];
+  /* ── Schritte: pick → form → done (oder offline) ─────────── */
   function setStep(name) {
     state.step = name;
     el.pick.hidden = name !== 'pick';
     el.form.hidden = name !== 'form';
     el.done.hidden = name !== 'done';
     el.offline.hidden = name !== 'offline';
-    var idx = ORDER.indexOf(name);
-    Array.prototype.forEach.call(el.steps, function (li) {
-      var i = ORDER.indexOf(li.getAttribute('data-step'));
-      li.classList.toggle('is-active', i === idx);
-      li.classList.toggle('is-done', idx > -1 && i < idx);
-    });
+    root.setAttribute('data-schritt', name);
   }
 
   function notice(text, kind) {
@@ -178,14 +179,14 @@
       (state.byDay[k] = state.byDay[k] || []).push(iso);
     });
     state.dayKeys = Object.keys(state.byDay).sort();
-    el.timesTz.textContent = tzLabel(state.tz);
+    el.timesTz.textContent = tzText();
   }
 
   /* ── Kalender ────────────────────────────────────────────── */
   function renderMonth() {
     var y = state.view.y, m = state.view.m;
     var monthName = new Intl.DateTimeFormat('de-DE', { month: 'long' }).format(new Date(y, m - 1, 1));
-    el.calMonth.innerHTML = monthName + ' <em>' + y + '</em>';
+    el.calMonth.textContent = monthName + ' ' + y;
 
     var today = dateKey(new Date().toISOString(), state.tz);
     var now = new Date();
@@ -202,7 +203,7 @@
     for (var d = 1; d <= daysInMonth; d++) {
       var key = y + '-' + String(m).padStart(2, '0') + '-' + String(d).padStart(2, '0');
       var free = !!state.byDay[key];
-      var cls = 'buchung__day' + (key === today ? ' is-today' : '') + (key === state.day ? ' is-selected' : '');
+      var cls = 'buchung__day' + (free ? ' is-frei' : '') + (key === today ? ' is-today' : '') + (key === state.day ? ' is-selected' : '');
       var label = new Intl.DateTimeFormat('de-DE', { weekday: 'long', day: 'numeric', month: 'long' }).format(keyToLocalNoon(key));
       html += '<button type="button" class="' + cls + '" data-date="' + key + '"' +
         (free ? ' data-cursor="button" aria-pressed="' + (key === state.day) + '"' : ' disabled') +
@@ -211,19 +212,30 @@
     el.calDays.innerHTML = html;
   }
 
+  // Uhrzeiten nach Tageszeit gruppiert; Auswahl schaltet „Weiter" frei
+  var TAGESZEITEN = [['Vormittag', 0, 12], ['Nachmittag', 12, 24]];
   function renderSlots() {
+    el.timesTz.textContent = tzText();
+    if (el.weiter) el.weiter.disabled = !state.slot;
     if (!state.day) {
       el.timesDay.textContent = 'Tag wählen';
-      el.calSlots.innerHTML = '<p class="buchung__empty">Wählen Sie links einen Tag mit freien Zeiten.</p>';
+      el.calSlots.innerHTML = '<p class="buchung__empty">Wählen Sie einen Tag mit freien Zeiten.</p>';
       return;
     }
     var list = state.byDay[state.day] || [];
-    el.timesDay.textContent = shortDate(state.day);
-    el.calSlots.innerHTML = list.map(function (iso) {
-      return '<button type="button" class="buchung__slot' + (iso === state.slot ? ' is-selected' : '') +
-        '" data-slot="' + iso + '" data-cursor="button" aria-pressed="' + (iso === state.slot) + '">' +
-        timeOf(iso, state.tz) + '</button>';
-    }).join('') || '<p class="buchung__empty">Keine freien Zeiten an diesem Tag.</p>';
+    el.timesDay.textContent = dayHead(state.day);
+    var html = '';
+    TAGESZEITEN.forEach(function (t) {
+      var teil = list.filter(function (iso) { var h = hourOf(iso, state.tz); return h >= t[1] && h < t[2]; });
+      if (!teil.length) return;
+      html += '<div class="buchung__gruppe"><span class="buchung__mini">' + t[0] + '</span><div class="buchung__gruppe-slots">' +
+        teil.map(function (iso) {
+          return '<button type="button" class="buchung__slot' + (iso === state.slot ? ' is-selected' : '') +
+            '" data-slot="' + iso + '" data-cursor="button" aria-pressed="' + (iso === state.slot) + '">' +
+            timeOf(iso, state.tz) + '</button>';
+        }).join('') + '</div></div>';
+    });
+    el.calSlots.innerHTML = html || '<p class="buchung__empty">Keine freien Zeiten an diesem Tag.</p>';
   }
 
   el.calDays.addEventListener('click', function (e) {
@@ -240,8 +252,16 @@
     if (!b) return;
     state.slot = b.getAttribute('data-slot');
     renderSlots();
-    openForm();
+    var neu = el.calSlots.querySelector('[data-slot="' + state.slot + '"]');
+    if (neu) neu.focus({ preventScroll: true });
   });
+  // Doppelklick auf eine Zeit: direkt weiter
+  el.calSlots.addEventListener('dblclick', function (e) {
+    if (e.target.closest('button[data-slot]') && state.slot) openForm();
+  });
+  if (el.weiter) {
+    el.weiter.addEventListener('click', function () { if (state.slot) openForm(); });
+  }
 
   el.calPrev.addEventListener('click', function () {
     if (el.calPrev.disabled) return;
@@ -262,7 +282,7 @@
     el.tzSelect.innerHTML = zones.map(function (z) {
       return '<option value="' + z + '"' + (z === state.tz ? ' selected' : '') + '>' + tzLabel(z) + '</option>';
     }).join('');
-    el.timesTz.textContent = tzLabel(state.tz);
+    el.timesTz.textContent = tzText();
   })();
 
   el.tzSelect.addEventListener('change', function () {
