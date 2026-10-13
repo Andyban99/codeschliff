@@ -13,9 +13,9 @@ Websites, Webshops, Automatisierungen — zugeschnitten auf die Abläufe, mit KI
 dort, wo sie hilft.
 
 Der Hero ist zweispaltig: links Text (Überschrift bis 60 px, bei allen
-Breiten ohne ungewollten Umbruch gemessen), rechts das **Kino** (`#kino`, `js/kino.js`): der Markenfilm
+Breiten ohne ungewollten Umbruch gemessen), rechts der **Player** (`#kino`, `js/kino.js`): der Markenfilm
 (`assets/video/codeschliff.mp4`, 74 s, 6,2 MB, H.264, mit Tonspur) als
-Leinwand in einer Karte aus Tinte, die rechts bis an den Bildschirmrand läuft und sich der Maus leicht entgegenneigt. Infoleisten außerhalb des Bildes
+Leinwand in einer Player-Karte aus Tinte (Glasrand, Radius), in der Inhaltsbreite, ohne Neigung. Leiste: Play/Pause, klickbarer Fortschrittsbalken (Spulen), Timecode, Ton. Infoleisten außerhalb des Bildes
 (der Film trägt eigene Ecklabels): Showreel, Kapitel, Timecode, Fortschritt,
 „Ton an". Autoplay stumm, Pause außerhalb des Sichtfelds; bei
 `prefers-reduced-motion` Start erst auf Klick. Die frühere SVG-Werkbank ist
