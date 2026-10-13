@@ -7,7 +7,7 @@ Basis: Brand Kit v1.0 + Entwurf „4A Schnittstelle" aus dem Design-Handoff.
 
 Hero-Überschrift seit 13.10.2026: **„Software nach Maß, die Ihrem Unternehmen
 Arbeit abnimmt."** — explizit statt Slogan, auf Wunsch des Inhabers anstelle
-des Handoff-Claims „Gebaut, bis nichts mehr hakt." (der bleibt im Fuß und in
+des Handoff-Claims „Gebaut, bis nichts mehr hakt." (der Fuß sagt seit 13.10.2026 „Software nach Maß.", der alte Claim steht nur noch in
 der Teilen-Vorschau). Botschaft: individuelle IT-Projekte für Unternehmen —
 Websites, Webshops, Automatisierungen — zugeschnitten auf die Abläufe, mit KI
 dort, wo sie hilft.
