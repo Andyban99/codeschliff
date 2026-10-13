@@ -190,8 +190,10 @@ Kopfzeile geteilt: Websites (01–02), Webshops (03–04), CRM & Systeme (05–0
 Kundenlogos liegen in `assets/img/kunden/` und werden einfarbig gezeigt
 (Brand Kit: ruhige Fläche), farbig bei Hover.
 
-**Stimmen** (`#stimmen`) ist sichtbar; bis die Originaltexte vorliegen, steht
-dort ein neutraler Platzhalter (Klasse `is-platzhalter`, ohne Anführungszeichen).
+**Stimmen** (`#stimmen`): Originaltexte von Timo Erdelmeier, Zuri Arifi (FreshWin)
+und Tobias Meyer (BESTEnergieLaden). Fünf Sterne nur bei Zuri und Tobias, weil
+nur sie eine Sternebewertung abgegeben haben. In Zuris Text ist „Banub" zu
+„Banoub" korrigiert.
 
 Die früheren KI-generierten Videos sind entfernt (Stand 13.10.2026).
 

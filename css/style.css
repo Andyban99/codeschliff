@@ -1355,11 +1355,11 @@ html.js .system:not(.is-an) .system__vorher s::after { transform: scaleX(0); }
 }
 .phone__view { position: relative; overflow: hidden; aspect-ratio: 9 / 18.5; background: var(--cs-surface); }
 
-/* Plakette „Intern": bei allen internen Projekten unten links */
+/* Plakette „Intern": bei allen internen Projekten oben rechts, unter der Browserleiste */
 .fall__badge {
   position: absolute;
-  bottom: 14px;
-  left: 14px;
+  top: 44px;
+  right: 14px;
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -1415,12 +1415,19 @@ html.js .system:not(.is-an) .system__vorher s::after { transform: scaleX(0); }
 .stimme__quote p { font: 700 20px/1.3 'Archivo', sans-serif; letter-spacing: -0.04em; color: var(--cs-ink); }
 .stimme__quote p::before { content: '\201E'; }
 .stimme__quote p::after { content: '\201C'; }
-.stimme__quote.is-platzhalter p { font: 400 12px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.08em; color: var(--cs-grey-400); }
-.stimme__quote.is-platzhalter p::before, .stimme__quote.is-platzhalter p::after { content: none; }
 .stimme__who { display: flex; align-items: center; gap: 14px; }
 .stimme__logo { height: 32px; width: auto; max-width: 110px; object-fit: contain; filter: grayscale(1); opacity: 0.8; }
 .stimme__name { font: 500 15px/1.4 'Instrument Sans', sans-serif; color: var(--cs-ink); }
 .stimme__firma { font: 400 10px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cs-grey-400); }
+/* Sterne als Signal-Quadrate-Familie: kleine Sterne in Signalfarbe */
+.stimme__sterne { display: flex; gap: 3px; margin-top: 7px; }
+.stimme__sterne i {
+  width: 12px;
+  height: 12px;
+  background: var(--cs-signal);
+  -webkit-clip-path: polygon(50% 0, 61.8% 35.4%, 100% 38.2%, 69.1% 61.8%, 80.9% 100%, 50% 76.4%, 19.1% 100%, 30.9% 61.8%, 0 38.2%, 38.2% 35.4%);
+  clip-path: polygon(50% 0, 61.8% 35.4%, 100% 38.2%, 69.1% 61.8%, 80.9% 100%, 50% 76.4%, 19.1% 100%, 30.9% 61.8%, 0 38.2%, 38.2% 35.4%);
+}
 
 /* ═══════════════ DATENLISTE ═══════════════ */
 .datalist { margin: 0; width: 100%; max-width: 420px; }
