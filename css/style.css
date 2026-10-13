@@ -232,19 +232,6 @@ html:not(.js) .preloader { display: none; }
 .header__link.is-active { color: var(--cs-ink); border-bottom-color: var(--cs-signal); }
 .header__link.is-active .header__num { color: var(--cs-signal); }
 .header__side { display: flex; align-items: center; gap: 28px; }
-.header__status {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 10px 14px;
-  border: 1px solid #E4E2DC;
-  font: 400 10px/1 'JetBrains Mono', monospace;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--cs-grey);
-  white-space: nowrap;
-}
-.header__status i { width: 6px; height: 6px; border-radius: 50%; background: var(--cs-signal); animation: chip-pulse 2.4s var(--cs-ease) infinite; }
 .btn-code {
   display: inline-flex;
   align-items: center;
@@ -875,8 +862,8 @@ body:has(.mobile-nav.is-open) .header__burger span { background: #FFFFFF; }
 .was__kopf .label { grid-area: label; }
 .was__titel {
   grid-area: titel;
-  font: 700 clamp(44px, 7.4vw, 112px)/0.9 'Archivo', sans-serif;
-  letter-spacing: -0.065em;
+  font: 700 clamp(40px, 4.4vw, 64px)/0.94 'Archivo', sans-serif;
+  letter-spacing: -0.06em;
   color: #FFFFFF;
 }
 /* Maske etwas groesser als die enge Zeile, damit Ober- und Unterlaengen
@@ -1536,9 +1523,6 @@ html.js .person__frame img { transform: scale(1.06); }
 .person__point-body p { font: 400 15px/1.65 'Instrument Sans', sans-serif; color: var(--cs-grey); max-width: 58ch; }
 
 
-@media (max-width: 1199px) {
-  .header__status { display: none; }
-}
 /* Flache Bildschirme (z. B. 1280 x 720): weniger Luft, damit der Hero in eine Bildschirmhoehe passt */
 @media (min-width: 1120px) and (max-height: 780px) {
   .hero__inner { padding-top: 12px; padding-bottom: 32px; }
@@ -1571,7 +1555,7 @@ html.js .person__frame img { transform: scale(1.06); }
 @media (max-width: 767px) {
   .was__inner { padding: 88px var(--cs-page-pad) 72px; }
   .was__kopf { margin-bottom: 44px; }
-  .was__titel { font-size: clamp(40px, 12.6vw, 64px); }
+  .was__titel { font-size: clamp(36px, 10.4vw, 46px); }
   .system { display: flex; }
   .system__kopf { padding: 16px 18px; }
   .system__buehne { height: 244px; padding: 20px 16px; }
@@ -1604,10 +1588,10 @@ html.js .person__frame img { transform: scale(1.06); }
   align-items: start;
   margin-bottom: 56px;
 }
-.kontakt__kopf .label { padding-top: 14px; }
+.kontakt__kopf .label { padding-top: 10px; }
 .kontakt__kopf-text { display: flex; flex-direction: column; gap: 24px; padding-left: 40px; }
 .kontakt__title {
-  font: 700 clamp(44px, 5.2vw, 72px)/0.96 'Archivo', sans-serif;
+  font: 700 clamp(38px, 3.65vw, 52px)/0.98 'Archivo', sans-serif;
   letter-spacing: -0.06em;
   color: var(--cs-ink);
 }

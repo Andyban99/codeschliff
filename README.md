@@ -38,7 +38,7 @@ Text und Player bilden einen Block: Der Chip steht bündig mit der Oberkante des
 Players, die Buttons mit der Unterkante (von 1180 bis 1920 px gemessen). Eine
 zwischenzeitliche Szenen-Animation anstelle des Films ist wieder entfernt.
 
-Seitenfolge seit 13.10.2026: Hero (mit Kundenlaufband am unteren Rand) → Was wir machen → Portfolio → Stimmen → Über mich → Kontakt (Leistungen entfernt, war Doppelung zu „Was wir machen"). Kopfzeile: nummerierte Punkte (01 Was wir machen / 02 Portfolio / 03 Über mich, 13,5 px, mittig zur Zeile), Status „Frei für neue Projekte", Code-Knopf `{ Erstgespräch }` mit blinkendem Cursor. Beim Darüberfahren werden die Texte erst zu roten Code-Zeichen (Mono) und lösen sich in gut einer Sekunde von links nach rechts auf; die Breite bleibt dabei fest.
+Seitenfolge seit 13.10.2026: Hero (mit Kundenlaufband am unteren Rand) → Was wir machen → Portfolio → Stimmen → Über mich → Kontakt (Leistungen entfernt, war Doppelung zu „Was wir machen"). Kopfzeile: nummerierte Punkte (01 Was wir machen / 02 Portfolio / 03 Über mich, 13,5 px, mittig zur Zeile), Code-Knopf `{ Erstgespräch }` mit blinkendem Cursor. Beim Darüberfahren werden die Texte erst zu roten Code-Zeichen (Mono) und lösen sich in gut einer Sekunde von links nach rechts auf; die Breite bleibt dabei fest.
 
 Am unteren Rand des Heros, unter der Zeile „Eine Auswahl unserer Kunden", läuft das **Kundenlaufband** mit den Wortmarken der Kunden in Grau:
 FreshWin, BESTEnergieLaden und reamotion/GRILLOMAX sind Aufnahmen ihrer
