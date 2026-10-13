@@ -552,12 +552,12 @@ html:not(.js) .preloader { display: none; }
 /* Kunden: Logo einfarbig, Name daneben — ausser der Name steckt schon im Logo */
 .kunde { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; }
 .kunde img {
-  height: 30px;
+  height: 36px;
   width: auto;
-  max-width: 150px;
+  max-width: 260px;
   object-fit: contain;
   filter: grayscale(1);
-  opacity: 0.8;
+  opacity: 0.85;
 }
 .kunde b { font: 700 15px/1 'Archivo', sans-serif; letter-spacing: -0.02em; color: var(--cs-ink); text-transform: none; }
 .marquee__group { gap: 36px; padding-right: 36px; }
