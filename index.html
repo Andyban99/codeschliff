@@ -184,99 +184,34 @@
           </div>
         </div>
 
-        <!-- Die Buehne: drei Systeme im Betrieb, wechseln von selbst
-             (js/szenen.js). Die Reiter sind klickbar. Die Flaeche ist reine
-             Illustration und fuer Screenreader ausgeblendet. -->
-        <div class="hero__buehne">
-          <div class="szenen" id="szenen" data-hero-panel>
-            <div class="grain" aria-hidden="true"></div>
-            <div class="glow glow--a" aria-hidden="true"></div>
-            <div class="szenen__tabs" role="group" aria-label="Was wir bauen">
-              <button type="button" class="szenen__tab is-active" aria-pressed="true" data-cursor="button"><span class="szenen__nr">01</span><span class="szenen__name">Websites &amp; Shops</span><span class="szenen__spur" aria-hidden="true"><i class="szenen__lauf"></i></span></button>
-              <button type="button" class="szenen__tab" aria-pressed="false" data-cursor="button"><span class="szenen__nr">02</span><span class="szenen__name">CRM &amp; ERP</span><span class="szenen__spur" aria-hidden="true"><i class="szenen__lauf"></i></span></button>
-              <button type="button" class="szenen__tab" aria-pressed="false" data-cursor="button"><span class="szenen__nr">03</span><span class="szenen__name">Ihre Idee</span><span class="szenen__spur" aria-hidden="true"><i class="szenen__lauf"></i></span></button>
-            </div>
-
-            <div class="szenen__flaeche" aria-hidden="true">
-
-              <!-- 01 · Shop: zwei Produkte in den Korb, Bestellung geht ein -->
-              <div class="szene szene--shop is-active" data-szene="shop" data-caption="Bestellung, Rechnung, Versand: ohne einen Handgriff.">
-                <div class="app">
-                  <div class="app__bar"><i></i><i></i><i></i><em>nordhang.de</em></div>
-                  <div class="shop">
-                    <div class="shop__kopf">
-                      <b class="shop__marke">nordhang<span>.</span></b>
-                      <span class="shop__nav"><span>Neu</span><span>Wohnen</span><span>Licht</span></span>
-                      <span class="shop__korb" data-korb><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 6.5h12l-1 11H5z"/><path d="M7.5 8.5V5.5a2.5 2.5 0 0 1 5 0v3"/></svg><span class="shop__zahl"><span data-rolle><b>0</b><b>1</b><b>2</b></span></span></span>
-                    </div>
-                    <div class="shop__titel"><b>Neuheiten</b><em>Herbst 2026</em></div>
-                    <div class="shop__grid">
-                      <div class="produkt" data-produkt><div class="produkt__bild produkt__bild--a"></div><div class="produkt__info"><span>Leuchte Bogen</span><b>189 €</b></div><span class="produkt__btn" data-btn>In den Korb</span></div>
-                      <div class="produkt" data-produkt><div class="produkt__bild produkt__bild--b"></div><div class="produkt__info"><span>Vase Kante</span><b>64 €</b></div><span class="produkt__btn" data-btn>In den Korb</span></div>
-                      <div class="produkt" data-produkt><div class="produkt__bild produkt__bild--c"></div><div class="produkt__info"><span>Hocker Eiche</span><b>249 €</b></div><span class="produkt__btn" data-btn>In den Korb</span></div>
-                    </div>
-                  </div>
-                  <div class="shop__toast" data-toast><i>✓</i><span><b>Bestellung #1048 eingegangen</b>Rechnung und Versand laufen automatisch</span></div>
-                  <svg class="zeiger" data-zeiger viewBox="0 0 16 22"><path d="M1.5 1.5v15.2l4-3.6 2.7 6.4 2.6-1.1-2.7-6.3h5.4z" fill="#0A0A0A" stroke="#FFFFFF" stroke-width="1.3" stroke-linejoin="round"/></svg>
-                </div>
-              </div>
-
-              <!-- 02 · ERP: Zahlen laufen hoch, die Bestellung aus dem Shop wandert durch -->
-              <div class="szene szene--erp" data-szene="erp" data-caption="Aufträge, Kunden und Lager an einem Ort.">
-                <div class="app">
-                  <div class="app__bar"><i></i><i></i><i></i><em>erp.nordhang.de</em></div>
-                  <div class="erp">
-                    <div class="erp__nav">
-                      <b class="erp__logo">n.</b>
-                      <span class="is-an">Übersicht</span><span>Aufträge</span><span>Kunden</span><span>Lager</span><span>Rechnungen</span>
-                    </div>
-                    <div class="erp__main">
-                      <div class="erp__kopf"><b>Übersicht</b><em>Mittwoch, 14. Oktober</em></div>
-                      <div class="erp__kpis">
-                        <div class="erp__kpi"><span>Umsatz Oktober</span><b data-zahl="48250" data-einheit=" €">48.250 €</b><em>+12 %</em></div>
-                        <div class="erp__kpi"><span>Aufträge</span><b data-zahl="126">126</b><em>+8 heute</em></div>
-                        <div class="erp__kpi"><span>Pünktlich</span><b data-zahl="98" data-einheit=" %">98 %</b><em>Ziel 95 %</em></div>
-                      </div>
-                      <div class="erp__unten">
-                        <div class="erp__tabelle">
-                          <div class="erp__th"><b>Aufträge heute</b><em><i></i>Live</em></div>
-                          <div class="erp__zeile erp__zeile--neu" data-neu><span class="erp__nr">#1048</span><span class="erp__kunde">L. Hoffmann</span><span class="erp__lager" data-lager>Lager −2</span><span class="erp__chip is-ok" data-chip><em>Versendet</em></span></div>
-                          <div class="erp__zeile"><span class="erp__nr">#1047</span><span class="erp__kunde">Müller GmbH</span><span class="erp__chip is-lauf"><em>In Arbeit</em></span></div>
-                          <div class="erp__zeile"><span class="erp__nr">#1046</span><span class="erp__kunde">Praxis Dr. Lorenz</span><span class="erp__chip is-ok"><em>Versendet</em></span></div>
-                          <div class="erp__zeile"><span class="erp__nr">#1045</span><span class="erp__kunde">Haas &amp; Söhne</span><span class="erp__chip is-ok"><em>Versendet</em></span></div>
-                          <div class="erp__zeile"><span class="erp__nr">#1044</span><span class="erp__kunde">Café Ahoi</span><span class="erp__chip is-ok"><em>Versendet</em></span></div>
-                        </div>
-                        <div class="erp__chart">
-                          <span>Umsatz · 10 Wochen</span>
-                          <div class="erp__balken" data-balken><i style="--h:38%"></i><i style="--h:52%"></i><i style="--h:44%"></i><i style="--h:61%"></i><i style="--h:57%"></i><i style="--h:70%"></i><i style="--h:66%"></i><i style="--h:79%"></i><i style="--h:84%"></i><i class="is-jetzt" style="--h:96%"></i></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 03 · Werkstatt: Ideen werden getippt und als Werkzeug gebaut -->
-              <div class="szene szene--werk" data-szene="werk" data-caption="Was es noch nicht gibt, bauen wir.">
-                <div class="werk">
-                  <div class="werk__kopf"><span><i></i>werkstatt / ideen</span><em>{ gebaut von codeschliff }</em></div>
-                  <ol class="werk__liste">
-                    <li class="werk__zeile"><span class="werk__nr">01</span><span class="werk__text"><span class="werk__idee">Preisrechner, der Angebote schreibt</span></span><span class="werk__chip" data-chip>Rechner</span><span class="werk__stand">✓ live</span></li>
-                    <li class="werk__zeile"><span class="werk__nr">02</span><span class="werk__text"><span class="werk__idee">KI bucht Rechnungen von selbst</span></span><span class="werk__chip" data-chip>KI</span><span class="werk__stand">✓ live</span></li>
-                    <li class="werk__zeile"><span class="werk__nr">03</span><span class="werk__text"><span class="werk__idee">Kundenportal mit eigenem Login</span></span><span class="werk__chip" data-chip>Portal</span><span class="werk__stand">✓ live</span></li>
-                    <li class="werk__zeile"><span class="werk__nr">04</span><span class="werk__text"><span class="werk__idee">Tagesbericht jeden Morgen um 7</span></span><span class="werk__chip" data-chip>Automatik</span><span class="werk__stand">✓ live</span></li>
-                    <li class="werk__zeile werk__zeile--ihre"><span class="werk__nr">05</span><span class="werk__text"><span class="werk__idee">Ihre Idee</span><span class="werk__cursor"></span></span></li>
-                  </ol>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="szenen__fuss">
-              <span class="szenen__live"><i></i>Läuft</span>
-              <span class="szenen__caption" id="szenenCaption">Bestellung, Rechnung, Versand: ohne einen Handgriff.</span>
-            </div>
+        <!-- Das Kino: der Markenfilm als Leinwand. Die Infoleiste liegt
+             ausserhalb des Bildes, weil der Film eigene Ecklabels traegt. -->
+        <div class="hero__kino-wrap">
+        <div class="kino" id="kino" data-hero-panel>
+          <div class="grain" aria-hidden="true"></div>
+          <div class="glow glow--a" aria-hidden="true"></div>
+          <div class="glow glow--b" aria-hidden="true"></div>
+          <div class="kino__leiste kino__leiste--oben" aria-hidden="true">
+            <span class="kino__label"><i></i>Showreel</span>
+            <span class="kino__kapitel" id="kinoKapitel">01 — Auftakt</span>
+            <span class="kino__dauer">74 Sek · ohne Ton gestartet</span>
           </div>
+          <div class="kino__leinwand" id="kinoLeinwand">
+            <video id="kinoVideo" src="assets/video/codeschliff.mp4" poster="assets/img/poster-film.jpg" autoplay muted loop playsinline preload="metadata" aria-label="codeschliff Showreel: Websites, Webshops und Automatisierungen, 74 Sekunden"></video>
+            <!-- Grosses Play-Zeichen: schaltet den Ton ein und startet den Film von vorn.
+                 Klick auf das laufende Bild pausiert; pausiert bleibt pausiert. -->
+            <button type="button" class="kino__overlay" id="kinoOverlay" data-cursor="button" aria-label="Film mit Ton von vorn abspielen">
+              <span class="kino__playzeichen" aria-hidden="true"></span>
+              <span class="kino__overlay-text" id="kinoOverlayText">Mit Ton abspielen</span>
+            </button>
+          </div>
+          <div class="kino__leiste kino__leiste--unten">
+            <button type="button" class="kino__pp" id="kinoPP" aria-label="Pause" data-cursor="button"><i aria-hidden="true"></i></button>
+            <button type="button" class="kino__fortschritt" id="kinoSpur" aria-label="Im Film springen" data-cursor="button"><i id="kinoFortschritt"></i></button>
+            <span class="kino__zeit kino__zeit--unten"><span id="kinoZeit">00:00</span> / 01:14</span>
+            <button type="button" class="kino__ton" id="kinoTon" aria-pressed="false" data-cursor="button"><i aria-hidden="true"></i><span>Ton an</span></button>
+          </div>
+        </div>
         </div>
       </div>
       <!-- Kundenleiste am unteren Rand des Heros: verankert die Falz -->
@@ -307,40 +242,6 @@
         </div>
       </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════ FILM ══════════════════
-         Der Markenfilm direkt unter dem Hero, in Inhaltsbreite. Startet
-         stumm, sobald er im Bild ist (js/kino.js). Die Infoleiste liegt
-         ausserhalb des Bildes, weil der Film eigene Ecklabels traegt. -->
-    <section class="film" id="film" aria-label="Film">
-      <div class="film__inner">
-          <div class="kino" id="kino" data-reveal>
-            <div class="grain" aria-hidden="true"></div>
-            <div class="glow glow--a" aria-hidden="true"></div>
-            <div class="glow glow--b" aria-hidden="true"></div>
-            <div class="kino__leiste kino__leiste--oben" aria-hidden="true">
-              <span class="kino__label"><i></i>Showreel</span>
-              <span class="kino__kapitel" id="kinoKapitel">01 — Auftakt</span>
-              <span class="kino__dauer">74 Sek · ohne Ton gestartet</span>
-            </div>
-            <div class="kino__leinwand" id="kinoLeinwand">
-              <video id="kinoVideo" src="assets/video/codeschliff.mp4" poster="assets/img/poster-film.jpg" autoplay muted loop playsinline preload="metadata" aria-label="codeschliff Showreel: Websites, Webshops und Automatisierungen, 74 Sekunden"></video>
-              <!-- Grosses Play-Zeichen: schaltet den Ton ein und startet den Film von vorn.
-                   Klick auf das laufende Bild pausiert; pausiert bleibt pausiert. -->
-              <button type="button" class="kino__overlay" id="kinoOverlay" data-cursor="button" aria-label="Film mit Ton von vorn abspielen">
-                <span class="kino__playzeichen" aria-hidden="true"></span>
-                <span class="kino__overlay-text" id="kinoOverlayText">Mit Ton abspielen</span>
-              </button>
-            </div>
-            <div class="kino__leiste kino__leiste--unten">
-              <button type="button" class="kino__pp" id="kinoPP" aria-label="Pause" data-cursor="button"><i aria-hidden="true"></i></button>
-              <button type="button" class="kino__fortschritt" id="kinoSpur" aria-label="Im Film springen" data-cursor="button"><i id="kinoFortschritt"></i></button>
-              <span class="kino__zeit kino__zeit--unten"><span id="kinoZeit">00:00</span> / 01:14</span>
-              <button type="button" class="kino__ton" id="kinoTon" aria-pressed="false" data-cursor="button"><i aria-hidden="true"></i><span>Ton an</span></button>
-            </div>
-          </div>
       </div>
     </section>
 
@@ -913,7 +814,6 @@
   <script src="js/vendor/ScrollTrigger.min.js"></script>
   <script src="js/vendor/lenis.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/szenen.js"></script>
   <script src="js/kino.js"></script>
   <script src="js/was.js"></script>
   <script src="js/buchung.js"></script>
