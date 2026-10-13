@@ -20,7 +20,9 @@ Schleife pausiert außerhalb des Sichtfelds; Reiter springen zur Szene; bei
 `prefers-reduced-motion` Standbilder. Ohne JavaScript bleibt Szene 1 stehen.
 Mobil wird der viewBox-Ausschnitt enger gesetzt, damit Schrift lesbar bleibt.
 
-Darunter läuft ein **Kundenlaufband** mit den Wortmarken der Kunden in Grau:
+Seitenfolge seit 13.10.2026: Hero → Was wir machen → Kundenlaufband → Arbeiten → Stimmen → Studio → Kontakt (Leistungen entfernt, war Doppelung zu „Was wir machen"). Kopfzeile: nummerierte Punkte, Status „Frei für neue Projekte", Knopf „Erstgespräch".
+
+Nach „Was wir machen" läuft ein **Kundenlaufband** mit den Wortmarken der Kunden in Grau:
 FreshWin, BESTEnergieLaden und reamotion/GRILLOMAX sind Aufnahmen ihrer
 Seitenköpfe (3-fach, Text auf Tinte, Bilder entsättigt, `*-wortmarke.png`),
 Erdelmeier und Zuschuss Piloten liegen als Vektor-Logos vor. Die gezeigten Arbeiten sind eine

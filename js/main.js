@@ -233,7 +233,7 @@
     }
   });
 
-  ['arbeiten', 'leistungen', 'studio'].forEach(function (id) {
+  ['was', 'arbeiten', 'studio'].forEach(function (id) {
     var section = document.getElementById(id);
     var link = document.querySelector('.header__link[href="#' + id + '"]');
     if (!section || !link) return;
@@ -347,43 +347,6 @@
           yPercent: 0, duration: 0.8, stagger: 0.09, ease: GS_EASE,
           scrollTrigger: { trigger: el, start: 'top 86%', once: true }
         });
-    });
-    // Leistungs-Spalten: Kaskade
-    gsap.fromTo('.leistung',
-      { opacity: 0, y: 16 },
-      {
-        opacity: 1, y: 0, duration: 0.4, stagger: 0.08, ease: GS_EASE,
-        scrollTrigger: { trigger: '.leistungen__grid', start: 'top 84%', once: true }
-      });
-  } else {
-    gsap.set('.leistung', { opacity: 1 });
-  }
-
-  /* ── Leistungen: schwebende Vorschau folgt der Maus ────────── */
-  var grid = document.getElementById('leistungenGrid');
-  var preview = document.getElementById('preview');
-  if (finePointer && !reduced && grid && preview) {
-    var previewImg = document.getElementById('previewImg');
-    var pX = gsap.quickTo(preview, 'x', { duration: 0.45, ease: 'power3.out' });
-    var pY = gsap.quickTo(preview, 'y', { duration: 0.45, ease: 'power3.out' });
-    var visible = false;
-
-    grid.addEventListener('mousemove', function (e) {
-      pX(e.clientX + 26);
-      pY(e.clientY - 120);
-      var col = e.target.closest('[data-preview]');
-      if (col) {
-        var src = col.getAttribute('data-preview');
-        if (previewImg.getAttribute('src') !== src) previewImg.setAttribute('src', src);
-        if (!visible) {
-          visible = true;
-          gsap.to(preview, { opacity: 1, scale: 1, duration: 0.32, ease: GS_EASE });
-        }
-      }
-    });
-    grid.addEventListener('mouseleave', function () {
-      visible = false;
-      gsap.to(preview, { opacity: 0, scale: 0.82, duration: 0.28, ease: GS_EASE });
     });
   }
 

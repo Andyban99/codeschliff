@@ -130,11 +130,14 @@
         <span class="header__wordmark">codeschliff</span>
       </a>
       <nav class="header__nav" aria-label="Hauptnavigation">
-        <a href="#arbeiten" class="header__link" data-cursor="link" data-scramble>Arbeiten</a>
-        <a href="#leistungen" class="header__link" data-cursor="link" data-scramble>Leistungen</a>
-        <a href="#studio" class="header__link" data-cursor="link" data-scramble>Studio</a>
-        <a href="#kontakt" class="btn btn--secondary btn--small header__cta" data-cursor="button" data-magnetic>Projekt anfragen</a>
+        <a href="#was" class="header__link" data-cursor="link"><span class="header__num">01</span><span data-scramble>Was wir machen</span></a>
+        <a href="#arbeiten" class="header__link" data-cursor="link"><span class="header__num">02</span><span data-scramble>Arbeiten</span></a>
+        <a href="#studio" class="header__link" data-cursor="link"><span class="header__num">03</span><span data-scramble>Studio</span></a>
       </nav>
+      <div class="header__side">
+        <span class="header__status"><i aria-hidden="true"></i>Frei für neue Projekte</span>
+        <a href="#kontakt" class="btn btn--secondary btn--small header__cta" data-cursor="button" data-magnetic>Erstgespräch<span class="btn__arrow">→</span></a>
+      </div>
       <button class="header__burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span>
       </button>
@@ -144,10 +147,10 @@
   <!-- Mobile Navigation -->
   <div class="mobile-nav" id="mobileNav" aria-hidden="true">
     <nav class="mobile-nav__list" aria-label="Mobile Navigation">
-      <a href="#arbeiten" class="mobile-nav__link">Arbeiten</a>
-      <a href="#leistungen" class="mobile-nav__link">Leistungen</a>
-      <a href="#studio" class="mobile-nav__link">Studio</a>
-      <a href="#kontakt" class="mobile-nav__link mobile-nav__link--active">Projekt anfragen</a>
+      <a href="#was" class="mobile-nav__link"><span>01</span>Was wir machen</a>
+      <a href="#arbeiten" class="mobile-nav__link"><span>02</span>Arbeiten</a>
+      <a href="#studio" class="mobile-nav__link"><span>03</span>Studio</a>
+      <a href="#kontakt" class="mobile-nav__link mobile-nav__link--active"><span>04</span>Erstgespräch</a>
     </nav>
     <div class="mobile-nav__meta">
       <span>andrew.banoub@codeschliff.de</span>
@@ -343,33 +346,6 @@
       </div>
     </section>
 
-    <!-- ══════════════════ KUNDEN-LAUFBAND ══════════════════ -->
-    <div class="marquee" aria-label="Kunden">
-      <div class="marquee__track" id="marqueeTrack">
-        <div class="marquee__group">
-          <span class="kunde"><img src="assets/img/kunden/freshwin-wortmarke.png" alt="FreshWin Glas- und Gebäudereinigung" width="855" height="216" loading="lazy"></span><i></i>
-          <span class="kunde"><img src="assets/img/kunden/bestenergieladen-wortmarke.png" alt="BESTEnergieLaden" width="1083" height="216" loading="lazy"></span><i></i>
-          <span class="kunde"><img src="assets/img/kunden/grillomax-wortmarke.png" alt="reamotion GRILLOMAX" width="1005" height="204" loading="lazy"></span><i></i>
-          <span class="kunde"><img src="assets/img/kunden/erdelmeier.svg" alt="Erdelmeier Fördermittelmanagement"  loading="lazy"></span><i></i>
-          <span class="kunde"><img src="assets/img/kunden/zuschusspiloten.svg" alt="Zuschuss Piloten"  loading="lazy"></span><i></i>
-        </div>
-        <div class="marquee__group" aria-hidden="true">
-          <span class="kunde"><img src="assets/img/kunden/freshwin-wortmarke.png" alt="FreshWin Glas- und Gebäudereinigung" width="855" height="216" loading="lazy"></span><i></i>
-          <span class="kunde"><img src="assets/img/kunden/bestenergieladen-wortmarke.png" alt="BESTEnergieLaden" width="1083" height="216" loading="lazy"></span><i></i>
-          <span class="kunde"><img src="assets/img/kunden/grillomax-wortmarke.png" alt="reamotion GRILLOMAX" width="1005" height="204" loading="lazy"></span><i></i>
-          <span class="kunde"><img src="assets/img/kunden/erdelmeier.svg" alt="Erdelmeier Fördermittelmanagement"  loading="lazy"></span><i></i>
-          <span class="kunde"><img src="assets/img/kunden/zuschusspiloten.svg" alt="Zuschuss Piloten"  loading="lazy"></span><i></i>
-        </div>
-        <div class="marquee__group" aria-hidden="true">
-          <span class="kunde"><img src="assets/img/kunden/freshwin-wortmarke.png" alt="FreshWin Glas- und Gebäudereinigung" width="855" height="216" loading="lazy"></span><i></i>
-          <span class="kunde"><img src="assets/img/kunden/bestenergieladen-wortmarke.png" alt="BESTEnergieLaden" width="1083" height="216" loading="lazy"></span><i></i>
-          <span class="kunde"><img src="assets/img/kunden/grillomax-wortmarke.png" alt="reamotion GRILLOMAX" width="1005" height="204" loading="lazy"></span><i></i>
-          <span class="kunde"><img src="assets/img/kunden/erdelmeier.svg" alt="Erdelmeier Fördermittelmanagement"  loading="lazy"></span><i></i>
-          <span class="kunde"><img src="assets/img/kunden/zuschusspiloten.svg" alt="Zuschuss Piloten"  loading="lazy"></span><i></i>
-        </div>
-      </div>
-    </div>
-
     <!-- ══════════════════ WAS WIR MACHEN ══════════════════ -->
     <section class="was section" id="was">
       <div class="section__head">
@@ -404,6 +380,33 @@
         <a href="#kontakt" class="btn btn--text" data-cursor="link">Erstgespräch vereinbaren<span class="btn__arrow">→</span></a>
       </div>
     </section>
+
+    <!-- ══════════════════ KUNDEN-LAUFBAND ══════════════════ -->
+    <div class="marquee" aria-label="Kunden">
+      <div class="marquee__track" id="marqueeTrack">
+        <div class="marquee__group">
+          <span class="kunde"><img src="assets/img/kunden/freshwin-wortmarke.png" alt="FreshWin Glas- und Gebäudereinigung" width="855" height="216" loading="lazy"></span><i></i>
+          <span class="kunde"><img src="assets/img/kunden/bestenergieladen-wortmarke.png" alt="BESTEnergieLaden" width="1083" height="216" loading="lazy"></span><i></i>
+          <span class="kunde"><img src="assets/img/kunden/grillomax-wortmarke.png" alt="reamotion GRILLOMAX" width="1005" height="204" loading="lazy"></span><i></i>
+          <span class="kunde"><img src="assets/img/kunden/erdelmeier.svg" alt="Erdelmeier Fördermittelmanagement"  loading="lazy"></span><i></i>
+          <span class="kunde"><img src="assets/img/kunden/zuschusspiloten.svg" alt="Zuschuss Piloten"  loading="lazy"></span><i></i>
+        </div>
+        <div class="marquee__group" aria-hidden="true">
+          <span class="kunde"><img src="assets/img/kunden/freshwin-wortmarke.png" alt="FreshWin Glas- und Gebäudereinigung" width="855" height="216" loading="lazy"></span><i></i>
+          <span class="kunde"><img src="assets/img/kunden/bestenergieladen-wortmarke.png" alt="BESTEnergieLaden" width="1083" height="216" loading="lazy"></span><i></i>
+          <span class="kunde"><img src="assets/img/kunden/grillomax-wortmarke.png" alt="reamotion GRILLOMAX" width="1005" height="204" loading="lazy"></span><i></i>
+          <span class="kunde"><img src="assets/img/kunden/erdelmeier.svg" alt="Erdelmeier Fördermittelmanagement"  loading="lazy"></span><i></i>
+          <span class="kunde"><img src="assets/img/kunden/zuschusspiloten.svg" alt="Zuschuss Piloten"  loading="lazy"></span><i></i>
+        </div>
+        <div class="marquee__group" aria-hidden="true">
+          <span class="kunde"><img src="assets/img/kunden/freshwin-wortmarke.png" alt="FreshWin Glas- und Gebäudereinigung" width="855" height="216" loading="lazy"></span><i></i>
+          <span class="kunde"><img src="assets/img/kunden/bestenergieladen-wortmarke.png" alt="BESTEnergieLaden" width="1083" height="216" loading="lazy"></span><i></i>
+          <span class="kunde"><img src="assets/img/kunden/grillomax-wortmarke.png" alt="reamotion GRILLOMAX" width="1005" height="204" loading="lazy"></span><i></i>
+          <span class="kunde"><img src="assets/img/kunden/erdelmeier.svg" alt="Erdelmeier Fördermittelmanagement"  loading="lazy"></span><i></i>
+          <span class="kunde"><img src="assets/img/kunden/zuschusspiloten.svg" alt="Zuschuss Piloten"  loading="lazy"></span><i></i>
+        </div>
+      </div>
+    </div>
 
     <!-- ══════════════════ ARBEITEN ══════════════════ -->
     <section class="arbeiten section" id="arbeiten">
@@ -552,41 +555,6 @@
           <div><div class="stimme__name">Tobias Meyer</div><div class="stimme__firma">BESTEnergieLaden</div></div>
         </figcaption>
       </figure>
-      </div>
-    </section>
-
-    <!-- ══════════════════ LEISTUNGEN ══════════════════ -->
-    <section class="leistungen section" id="leistungen">
-      <div class="section__head">
-        <div class="label" data-reveal>Leistungen</div>
-        <h2 class="section__title" data-split-lines>Drei Dinge.<br>Richtig gemacht<span class="text-signal">.</span></h2>
-      </div>
-      <div class="leistungen__grid" id="leistungenGrid">
-        <a href="#kontakt" class="leistung" data-cursor="card" data-preview="assets/img/arbeiten/zuschusspiloten-desktop.jpg">
-          <span class="leistung__num">01</span>
-          <span class="leistung__title">Websites</span>
-          <span class="leistung__text">Auftritte mit klarer Struktur, hohem Tempo und Redaktion ohne&nbsp;Schulung.</span>
-          <span class="leistung__tags"><em>Struktur</em><em>Gestaltung</em><em>CMS</em></span>
-          <span class="leistung__refs">Gebaut: zuschusspiloten.de, FreshWin Preisrechner</span>
-        </a>
-        <a href="#kontakt" class="leistung" data-cursor="card" data-preview="assets/img/arbeiten/bestenergieladen-desktop.jpg">
-          <span class="leistung__num">02</span>
-          <span class="leistung__title">Shops</span>
-          <span class="leistung__text">Sortiment, Kasse und Versand, angebunden an Ihre&nbsp;Warenwirtschaft.</span>
-          <span class="leistung__tags"><em>Katalog</em><em>Kasse</em><em>Anbindung</em></span>
-          <span class="leistung__refs">Gebaut: bestenergieladen.de, grillomax.shop</span>
-        </a>
-        <a href="#kontakt" class="leistung" data-cursor="card" data-preview="assets/img/arbeiten/intranet-desktop.jpg">
-          <span class="leistung__num">03</span>
-          <span class="leistung__title">Prozesse</span>
-          <span class="leistung__text">Automatisierungen, Portale und interne Werkzeuge&nbsp;— mit KI dort, wo sie Arbeit&nbsp;abnimmt.</span>
-          <span class="leistung__tags"><em>Automation</em><em>Portale</em><em>KI</em></span>
-          <span class="leistung__refs">Gebaut: CRM Zuschuss Piloten, Erdelmeier Partner-Portal</span>
-        </a>
-      </div>
-      <!-- Schwebende Vorschau, folgt der Maus: echte Bildschirmfotos -->
-      <div class="preview" id="preview" aria-hidden="true">
-        <img id="previewImg" alt="" decoding="async">
       </div>
     </section>
 
@@ -873,8 +841,8 @@
       </div>
       <nav class="footer__col" aria-label="Fußnavigation">
         <div class="footer__col-label">Navigation</div>
+        <a href="#was" data-cursor="link">Was wir machen</a>
         <a href="#arbeiten" data-cursor="link">Arbeiten</a>
-        <a href="#leistungen" data-cursor="link">Leistungen</a>
         <a href="#studio" data-cursor="link">Studio</a>
         <a href="#kontakt" data-cursor="link">Kontakt</a>
       </nav>
