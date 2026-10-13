@@ -43,7 +43,7 @@ Bewusst ohne Framework: statisches HTML + CSS + Vanilla-JS.
 
 Preloader (Signet baut sich auf), Custom Cursor (Quadratpunkt), Lenis Smooth
 Scroll, ScrollTrigger-Reveals nach Brand-Kit-Werten (240 ms / 60 ms Kaskade),
-mausfolgende Bild-Vorschau in den Leistungen, gepinnter Horizontal-Lauf im Ablauf, Zähler, Marquees,
+mausfolgende Bild-Vorschau in den Leistungen, Marquees,
 3D-Neigungen. `prefers-reduced-motion: reduce` schaltet alles ab.
 
 ## Abschnitt „Wer baut" (Gründer)

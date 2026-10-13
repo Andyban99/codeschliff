@@ -418,52 +418,6 @@
     });
   }
 
-  /* ── Zahlen: Aufwärtszähler ────────────────────────────────── */
-  Array.prototype.forEach.call(document.querySelectorAll('[data-count]'), function (el) {
-    var target = parseFloat(el.getAttribute('data-count'));
-    if (reduced) { el.textContent = target; return; }
-    var obj = { v: 0 };
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top 86%',
-      once: true,
-      onEnter: function () {
-        gsap.to(obj, {
-          v: target,
-          duration: 1.4,
-          ease: 'power3.out',
-          onUpdate: function () { el.textContent = Math.round(obj.v); }
-        });
-      }
-    });
-  });
-
-  /* ── Prozess: gepinnter Horizontal-Lauf (nur Desktop) ──────── */
-  var mm = gsap.matchMedia();
-  mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', function () {
-    var track = document.getElementById('prozessTrack');
-    var bar = document.getElementById('prozessBar');
-    if (!track || !bar) return;
-    function amount() { return Math.max(0, track.scrollWidth - window.innerWidth); }
-    var tween = gsap.to(track, {
-      x: function () { return -amount(); },
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '#prozess',
-        start: 'top top',
-        end: function () { return '+=' + (amount() + window.innerHeight * 0.35); },
-        scrub: 0.7,
-        pin: '#prozessPin',
-        invalidateOnRefresh: true,
-        anticipatePin: 1,
-        onUpdate: function (self) {
-          bar.style.transform = 'scaleX(' + self.progress + ')';
-        }
-      }
-    });
-    return function () { tween.scrollTrigger && tween.scrollTrigger.kill(); tween.kill(); };
-  });
-
   /* ── Wer baut: Vorhang hebt sich, Bild setzt sich ──────────── */
   var personFrame = document.querySelector('[data-person-frame]');
   if (personFrame) {
