@@ -581,7 +581,7 @@ body:has(.mobile-nav.is-open) .header__burger span { background: #FFFFFF; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   background: transparent;
   color: #FFFFFF;
 }
@@ -590,8 +590,8 @@ body:has(.mobile-nav.is-open) .header__burger span { background: #FFFFFF; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 112px;
-  height: 112px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   /* rauchiges Glas: lesbar auf hellen wie dunklen Filmbildern */
   background: rgba(10, 10, 10, 0.34);
@@ -603,15 +603,15 @@ body:has(.mobile-nav.is-open) .header__burger span { background: #FFFFFF; }
 }
 .kino__playzeichen::after {
   content: '';
-  margin-left: 8px;
-  border-left: 32px solid #FFFFFF;
-  border-top: 19px solid transparent;
-  border-bottom: 19px solid transparent;
+  margin-left: 5px;
+  border-left: 21px solid #FFFFFF;
+  border-top: 12.5px solid transparent;
+  border-bottom: 12.5px solid transparent;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
 }
 .kino__overlay:hover .kino__playzeichen { transform: scale(1.06); background: rgba(10, 10, 10, 0.48); border-color: rgba(255, 255, 255, 0.85); }
 .kino__overlay-text {
-  padding: 10px 16px;
+  padding: 8px 13px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--cs-radius-pill);
   /* fast deckende Tinte: der Schriftzug muss auch auf weissen Bildern lesbar sein */
@@ -619,11 +619,14 @@ body:has(.mobile-nav.is-open) .header__burger span { background: #FFFFFF; }
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  font: 400 11px/1 'JetBrains Mono', monospace;
+  font: 400 10px/1 'JetBrains Mono', monospace;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #FFFFFF;
 }
+/* In der Grossansicht darf das Zeichen etwas groesser sein */
+.kino.is-gross .kino__playzeichen { width: 92px; height: 92px; }
+.kino.is-gross .kino__playzeichen::after { margin-left: 7px; border-left-width: 27px; border-top-width: 16px; border-bottom-width: 16px; }
 .kino__overlay:focus-visible { outline: none; }
 .kino__overlay:focus-visible .kino__playzeichen { outline: 2px solid #FFFFFF; outline-offset: 4px; }
 .kino__dauer { color: var(--cs-on-dark-faint); }
@@ -2161,8 +2164,10 @@ html.js [data-reveal-group] > * {
   .kino { padding: 10px; box-shadow: none; }
   .kino__kapitel, .kino__dauer { display: none; }
   .kino__leiste--unten { gap: 10px; }
-  .kino__playzeichen { width: 72px; height: 72px; }
-  .kino__playzeichen::after { border-left-width: 22px; border-top-width: 13px; border-bottom-width: 13px; margin-left: 6px; }
+  .kino__playzeichen { width: 56px; height: 56px; }
+  .kino__overlay { gap: 9px; }
+  .kino__overlay-text { padding: 6px 10px; font-size: 9px; letter-spacing: 0.14em; }
+  .kino__playzeichen::after { border-left-width: 17px; border-top-width: 10px; border-bottom-width: 10px; margin-left: 4px; }
   .header__burger { display: flex; }
   .hero__inner { padding: 40px var(--cs-page-pad) 36px; gap: 32px; }
   .hero__title { font-size: 44px; }
