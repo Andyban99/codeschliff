@@ -103,6 +103,8 @@ Mono-Labels):
 Danach ersetzen Formular, Bestätigung oder Rückfall die Spalten 2 und 3; die
 erste Spalte bleibt stehen. Darunter: „Lieber schreiben statt buchen?",
 E-Mail und Telefon, AGB-Hinweis. Ablauf: Tag → Uhrzeit → Weiter → Daten → bestätigt.
+Buchbar sind Termine mit **mindestens 12 Stunden Vorlauf** (im CRM: `minNoticeHours: 12`
+der Marke codeschliff in `lib/booking-brands.ts`; gilt für Anzeige und Buchung).
 Die Karte spricht die öffentliche Buchungs-API unseres CRM direkt an — **kein iframe**,
 damit die Seite ihr eigenes Gesicht behält:
 
