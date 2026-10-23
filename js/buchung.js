@@ -213,7 +213,8 @@
   }
 
   // Uhrzeiten nach Tageszeit gruppiert; Auswahl schaltet „Weiter" frei
-  var TAGESZEITEN = [['Vormittag', 0, 12], ['Nachmittag', 12, 24]];
+  // 12:00 zaehlt noch zum Vormittag
+  var TAGESZEITEN = [['Vormittag', 0, 13], ['Nachmittag', 13, 24]];
   function renderSlots() {
     el.timesTz.textContent = tzText();
     if (el.weiter) el.weiter.disabled = !state.slot;
