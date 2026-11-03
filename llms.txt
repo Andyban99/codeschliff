@@ -5,7 +5,7 @@
 ## Leistungen
 
 - **Websites:** klare Struktur, hohes Tempo, Terminbuchung und Anfragen direkt auf der Seite.
-- **Webshops:** Sortiment, Kasse und Versand, angebunden an Lager und Rechnung, zum Beispiel mit Shopware.
+- **Webshops:** Sortiment, Kasse und Versand, angebunden an Lager und Rechnung.
 - **Automatisierung:** Routine, die sich selbst erledigt, etwa Anfragen und Dokumente automatisch sortieren; KI dort, wo sie wirklich hilft.
 - **Individuelle Software:** CRM, Kundenportale, Partner-Portale und Rechner, zugeschnitten auf die Abläufe eines Unternehmens.
 
@@ -13,6 +13,7 @@
 
 - Gründer: Andrew Banoub, Ingenieur und Entwickler (Studium Ingenieurwesen und Informatik), aufgewachsen in Hamburg, arbeitet von Madeira aus; zweiter Wohnort Hamburg.
 - Anbieter: Zuschuss Piloten Consulting, Unipessoal Lda., Funchal, Madeira, Portugal.
+- Arbeitsweise: keine Festlegung auf bestimmte Werkzeuge; für jedes Projekt wird neu entschieden, was am besten geeignet ist. KI wird konsequent eingesetzt, um schneller zu besseren Ergebnissen zu kommen, auf Basis eines Studiums in Ingenieurwesen und Informatik und mehrjähriger Programmier- und IT-Erfahrung.
 - Leistungen ausschließlich für Unternehmen, Selbständige und Behörden.
 
 ## Ausgewählte Projekte
