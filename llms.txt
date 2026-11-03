@@ -1,6 +1,6 @@
 # codeschliff
 
-> codeschliff plant, gestaltet und programmiert individuelle IT-Projekte für Unternehmen im deutschsprachigen Raum (Deutschland, Österreich, Schweiz): Websites, Webshops und Automatisierungen, dazu eigene Systeme wie CRM, Kundenportale und Preisrechner. Software nach Maß, die Arbeit abnimmt. Alles aus einer Hand, von Andrew Banoub.
+> codeschliff plant, gestaltet und programmiert individuelle IT-Projekte für Unternehmen im deutschsprachigen Raum (Deutschland, Österreich, Schweiz): Websites, Webshops und Automatisierungen, dazu eigene Systeme wie CRM, Kundenportale und Preisrechner. Software nach Maß, die Arbeit abnimmt. KI und echtes Handwerk: schneller zu besseren Ergebnissen.
 
 ## Leistungen
 
@@ -13,7 +13,7 @@
 
 - Gründer: Andrew Banoub, Ingenieur und Entwickler (Studium Ingenieurwesen und Informatik), aufgewachsen in Hamburg, arbeitet von Madeira aus; zweiter Wohnort Hamburg.
 - Anbieter: Zuschuss Piloten Consulting, Unipessoal Lda., Funchal, Madeira, Portugal.
-- Arbeitsweise: keine Festlegung auf bestimmte Werkzeuge; für jedes Projekt wird neu entschieden, was am besten geeignet ist. KI wird konsequent eingesetzt, um schneller zu besseren Ergebnissen zu kommen, auf Basis eines Studiums in Ingenieurwesen und Informatik und mehrjähriger Programmier- und IT-Erfahrung.
+- Arbeitsweise: keine Festlegung auf bestimmte Werkzeuge; für jedes Projekt wird neu entschieden, was am besten geeignet ist. KI wird konsequent eingesetzt, um schneller zu besseren Ergebnissen zu kommen, auf Basis von fundiertem Wissen aus dem Studium in Ingenieurwesen und Informatik und jahrelanger Programmier- und IT-Erfahrung.
 - Leistungen ausschließlich für Unternehmen, Selbständige und Behörden.
 
 ## Ausgewählte Projekte
