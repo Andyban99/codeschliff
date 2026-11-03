@@ -59,7 +59,7 @@ Erdelmeier und Zuschuss Piloten liegen als Vektor-Logos vor. Die gezeigten Arbei
   ItemList (Portfolio). Bewertungen stehen bewusst **nicht** im Graphen: Google
   zeigt keine Sterne für Bewertungen, die ein Unternehmen auf der eigenen Seite
   über sich selbst veröffentlicht.
-- **Häufige Fragen** (`#fragen`): sichtbarer Abschnitt vor dem Kontakt, Fragen und
+- **Häufige Fragen** (`#fragen`): sichtbarer Abschnitt nach der Terminbuchung, Fragen und
   Antworten wortgleich im FAQPage-Eintrag. Bei Textänderungen beides anpassen.
 - **Laufband:** nur die erste Logo-Gruppe trägt Bildtexte, die Kopien sind leer
   (sonst stünde jedes Logo dreifach im Index).
