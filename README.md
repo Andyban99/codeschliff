@@ -46,6 +46,31 @@ Seitenköpfe (3-fach, Text auf Tinte, Bilder entsättigt, `*-wortmarke.png`),
 Erdelmeier und Zuschuss Piloten liegen als Vektor-Logos vor. Die gezeigten Arbeiten sind eine
 **Auswahl**, nicht die Gesamtzahl. Die frühere „Naht"-Sektion ist entfernt.
 
+## SEO (Stand 3.11.2026)
+
+- **Kopf:** Titel „Websites, Webshops & Software nach Maß | codeschliff" (52 Zeichen),
+  Beschreibung 154 Zeichen, Canonical, `hreflang` de/x-default, Robots mit
+  `max-image-preview:large`, Vorschau-Tags (Open Graph, Twitter, `og:video`).
+- **Vorschaubild:** `assets/img/og-codeschliff.png` (1200 × 630, „Software nach Maß.",
+  Leistungen, Erstgespräch). Das alte `og.png` wird nicht mehr verwendet.
+- **Strukturierte Daten:** ein JSON-LD-Graph im Kopf von `index.html` mit
+  ProfessionalService/Organization (Adresse laut Impressum, Leistungen, Kontakt),
+  Person (Andrew Banoub), WebSite, WebPage + FAQPage, VideoObject (Film) und
+  ItemList (Portfolio). Bewertungen stehen bewusst **nicht** im Graphen: Google
+  zeigt keine Sterne für Bewertungen, die ein Unternehmen auf der eigenen Seite
+  über sich selbst veröffentlicht.
+- **Häufige Fragen** (`#fragen`): sichtbarer Abschnitt vor dem Kontakt, Fragen und
+  Antworten wortgleich im FAQPage-Eintrag. Bei Textänderungen beides anpassen.
+- **Laufband:** nur die erste Logo-Gruppe trägt Bildtexte, die Kopien sind leer
+  (sonst stünde jedes Logo dreifach im Index).
+- **Dateien:** `sitemap.xml` mit Bild- und Video-Einträgen, `robots.txt`,
+  `site.webmanifest` mit Icons 48/192/512 px, `llms.txt` (Kurzprofil für
+  KI-Suchmaschinen), IndexNow-Schlüssel `b689ce0ed80d64a0ffed4dc3e2cf7b1d.txt`
+  (für Bing und Yandex: neue Inhalte per IndexNow melden).
+- **Ladezeit:** Schriften und Film-Startbild vorab geladen, Verbindung zum
+  Buchungs-CRM vorbereitet. Gemessen mobil gedrosselt: größter Inhalt nach 2,6 s,
+  keine Layoutsprünge, 0,56 MB.
+
 ## Stack
 
 Bewusst ohne Framework: statisches HTML + CSS + Vanilla-JS.

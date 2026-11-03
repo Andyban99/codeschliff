@@ -1604,6 +1604,62 @@ html.js .person__frame img { transform: scale(1.06); }
   .person__caption-meta { margin-left: 0; flex-basis: 100%; padding-left: 20px; }
 }
 
+/* ═══════════════ HÄUFIGE FRAGEN ═══════════════
+   Links Überschrift (klebt beim Scrollen), rechts aufklappbare Fragen.
+   Helle Fläche: 1-px-Linien, Mono-Nummern in Signal, Plus wird zum Minus. */
+.faq { border-top: 1px solid var(--cs-line); }
+.faq__grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 64px; align-items: start; }
+.faq__kopf { position: sticky; top: calc(var(--cs-header-height) + 32px); display: flex; flex-direction: column; gap: 24px; }
+.faq__kopf .section__lead a,
+.faq__antwort a { color: var(--cs-ink); border-bottom: 1px solid var(--cs-line); transition: color 160ms var(--cs-ease), border-color 160ms var(--cs-ease); }
+.faq__kopf .section__lead a:hover,
+.faq__antwort a:hover { color: var(--cs-signal); border-color: var(--cs-signal); }
+.faq__liste { border-top: 1px solid var(--cs-line); }
+.faq__item { border-bottom: 1px solid var(--cs-line); }
+.faq__item summary {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 20px;
+  align-items: center;
+  gap: 12px;
+  padding: 26px 0;
+  cursor: pointer;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary:focus-visible { outline: 2px solid var(--cs-ink); outline-offset: 4px; }
+.faq__nr { font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.08em; color: var(--cs-signal); }
+.faq__frage { font: 700 21px/1.25 'Archivo', sans-serif; letter-spacing: -0.035em; color: var(--cs-ink); transition: color 160ms var(--cs-ease); }
+.faq__item summary:hover .faq__frage { color: #3A3935; }
+.faq__plus { position: relative; justify-self: end; width: 16px; height: 16px; }
+.faq__plus::before,
+.faq__plus::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1.5px;
+  margin-top: -0.75px;
+  background: var(--cs-ink);
+  transition: transform 260ms var(--cs-ease), background-color 160ms var(--cs-ease);
+}
+.faq__plus::after { transform: rotate(90deg); }
+.faq__item[open] .faq__plus::after { transform: rotate(0deg); }
+.faq__item summary:hover .faq__plus::before,
+.faq__item summary:hover .faq__plus::after { background: var(--cs-signal); }
+.faq__antwort { padding: 0 40px 28px 56px; }
+.faq__antwort p { font: 400 16px/1.65 'Instrument Sans', sans-serif; color: #55534D; max-width: 62ch; }
+@media (max-width: 1119px) {
+  .faq__grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .faq__kopf { position: static; }
+}
+@media (max-width: 767px) {
+  .faq__item summary { grid-template-columns: 32px minmax(0, 1fr) 18px; gap: 10px; padding: 20px 0; }
+  .faq__frage { font-size: 18px; }
+  .faq__antwort { padding: 0 0 22px 42px; }
+  .faq__antwort p { font-size: 15px; }
+}
+
 /* ═══════════════ KONTAKT ═══════════════
    Kopf wie die Buchungskarte gegliedert: Label in der Breite der ersten
    Kartenspalte, Ueberschrift und Einleitung daneben. */

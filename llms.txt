@@ -1,0 +1,38 @@
+# codeschliff
+
+> codeschliff plant, gestaltet und programmiert individuelle IT-Projekte für Unternehmen im deutschsprachigen Raum (Deutschland, Österreich, Schweiz): Websites, Webshops und Automatisierungen, dazu eigene Systeme wie CRM, Kundenportale und Preisrechner. Software nach Maß, die Arbeit abnimmt. Alles aus einer Hand, von Andrew Banoub.
+
+## Leistungen
+
+- **Websites:** klare Struktur, hohes Tempo, Terminbuchung und Anfragen direkt auf der Seite.
+- **Webshops:** Sortiment, Kasse und Versand, angebunden an Lager und Rechnung, zum Beispiel mit Shopware.
+- **Automatisierung:** Routine, die sich selbst erledigt, etwa Anfragen und Dokumente automatisch sortieren; KI dort, wo sie wirklich hilft.
+- **Individuelle Software:** CRM, Kundenportale, Partner-Portale und Rechner, zugeschnitten auf die Abläufe eines Unternehmens.
+
+## Über
+
+- Gründer: Andrew Banoub, Ingenieur und Entwickler (Studium Ingenieurwesen und Informatik), aufgewachsen in Hamburg, arbeitet von Madeira aus; zweiter Wohnort Hamburg.
+- Anbieter: Zuschuss Piloten Consulting, Unipessoal Lda., Funchal, Madeira, Portugal.
+- Leistungen ausschließlich für Unternehmen, Selbständige und Behörden.
+
+## Ausgewählte Projekte
+
+- [FreshWin Preisrechner](https://freshwin-preisrechner.vercel.app/): Web-App, Angebot in zwei Minuten mit PDF-Angebot.
+- [zuschusspiloten.de](https://zuschusspiloten.de/): Website einer Fördermittelberatung mit Fördercheck und Terminbuchung aus dem eigenen CRM.
+- [bestenergieladen.de](https://bestenergieladen.de/): B2B-Webshop für PV-Zubehör auf Shopware.
+- [grillomax.shop](https://grillomax.shop/): Webshop im Direktvertrieb auf Shopware.
+- Internes CRM für Zuschuss Piloten (Next.js, Supabase, Vercel) und ein Partner-Portal für Erdelmeier Fördermittelmanagement.
+
+## Kontakt
+
+- [Kostenloses Erstgespräch buchen](https://codeschliff.de/#kontakt): 30 Minuten per Google Meet.
+- E-Mail: andrew.banoub@codeschliff.de
+- Telefon: +49 176 98970060
+
+## Seiten
+
+- [Startseite](https://codeschliff.de/)
+- [Häufige Fragen](https://codeschliff.de/#fragen)
+- [Impressum](https://codeschliff.de/impressum.html)
+- [Datenschutz](https://codeschliff.de/datenschutz.html)
+- [AGB](https://codeschliff.de/agb.html)

@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://codeschliff.de/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-03</lastmod>
+    <image:image><image:loc>https://codeschliff.de/assets/img/og-codeschliff.png</image:loc></image:image>
+    <image:image><image:loc>https://codeschliff.de/assets/img/andrew-banoub.jpg</image:loc></image:image>
+    <image:image><image:loc>https://codeschliff.de/assets/img/arbeiten/freshwin-desktop.jpg</image:loc></image:image>
+    <image:image><image:loc>https://codeschliff.de/assets/img/arbeiten/zuschusspiloten-desktop.jpg</image:loc></image:image>
+    <image:image><image:loc>https://codeschliff.de/assets/img/arbeiten/bestenergieladen-desktop.jpg</image:loc></image:image>
+    <image:image><image:loc>https://codeschliff.de/assets/img/arbeiten/grillomax-desktop.jpg</image:loc></image:image>
+    <image:image><image:loc>https://codeschliff.de/assets/img/arbeiten/crm-desktop.jpg</image:loc></image:image>
+    <image:image><image:loc>https://codeschliff.de/assets/img/arbeiten/intranet-desktop.jpg</image:loc></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://codeschliff.de/assets/img/poster-film.jpg</video:thumbnail_loc>
+      <video:title>codeschliff Showreel: Software nach Maß in 74 Sekunden</video:title>
+      <video:description>Kurzfilm über codeschliff: Websites, Webshops und Automatisierungen, die Routine erledigen und Unternehmen Arbeit abnehmen.</video:description>
+      <video:content_loc>https://codeschliff.de/assets/video/codeschliff.mp4</video:content_loc>
+      <video:duration>74</video:duration>
+      <video:publication_date>2026-10-13T12:00:00+02:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://codeschliff.de/impressum.html</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://codeschliff.de/datenschutz.html</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://codeschliff.de/agb.html</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-11-03</lastmod>
   </url>
 </urlset>
