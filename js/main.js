@@ -279,6 +279,20 @@
     if (lenis) { open ? lenis.stop() : lenis.start(); }
   });
 
+  /* ── Mobiler Termin-Knopf ──────────────────────────────────── */
+  // Weg, solange der Kontaktbereich im Bild ist: Dort ist die Buchung selbst,
+  // und der Knopf wuerde Kalender, Uhrzeiten und Formular verdecken.
+  var cta = document.getElementById('ctaMobil');
+  var kontaktBereich = document.getElementById('kontakt');
+  if (cta && kontaktBereich && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) {
+      var weg = e[0].isIntersecting;
+      cta.classList.toggle('is-weg', weg);
+      cta.setAttribute('aria-hidden', String(weg));
+      cta.tabIndex = weg ? -1 : 0;
+    }, { rootMargin: '0px 0px -25% 0px' }).observe(kontaktBereich);
+  }
+
   /* ── Hero-Panel: 3D-Neigung ────────────────────────────────── */
   if (finePointer && !reduced && panel && panel.hasAttribute('data-tilt')) {
     var rx = gsap.quickTo(panel, 'rotationX', { duration: 0.6, ease: 'power2.out' });

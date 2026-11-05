@@ -113,6 +113,12 @@ sips crop.jpg --resampleWidth 1200 -m "/System/Library/ColorSync/Profiles/Generi
 
 ## Terminbuchung (Erstgespräch)
 
+**Mobiler Termin-Knopf** (`#ctaMobil`, nur bis 767 px): fester orangefarbener
+Knopf „Gespräch vereinbaren · Kostenlos · 30 Minuten" am unteren Rand, führt zu
+`#kontakt`. Er blendet sich aus, solange der Kontaktbereich im Bild ist (sonst
+verdeckt er Kalender und Formular), außerdem bei offenem Menü, im Preloader und
+in der Großansicht des Films. Die Fußzeile hat unten 88 px Platz dafür.
+
 Der Kontaktbereich (Überschrift „Ein Gespräch. Danach steht Ihr Plan.") ist eine
 breite Buchungskarte in drei Spalten, nach dem Vorbild der Buchung auf
 zuschusspiloten.de, aber in unserer Gestaltung (keine Rundungen, 1-px-Linien,

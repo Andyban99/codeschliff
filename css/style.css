@@ -2248,6 +2248,74 @@ html.js [data-reveal-group] > * {
   .footer__meta { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 
+/* ═══════════════ MOBILER TERMIN-KNOPF ═══════════════
+   Fest am unteren Rand, nur bis 767px. Signal-Orange, eckig wie alle
+   Buttons auf hellem Grund. Weg bei offenem Menue, Preloader, Grossansicht
+   des Films und solange der Kontaktbereich im Bild ist (.is-weg, main.js). */
+.cta-mobil { display: none; }
+@media (max-width: 767px) {
+  .cta-mobil {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    z-index: 130;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 64px;
+    padding: 10px 10px 10px 20px;
+    overflow: hidden;
+    background: var(--cs-signal);
+    color: #FFFFFF;
+    box-shadow: 0 14px 34px rgba(10, 10, 10, 0.26), 0 2px 6px rgba(10, 10, 10, 0.16);
+    transition: transform 460ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 300ms ease-out, background-color 160ms ease-out;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cta-mobil:active { background: var(--cs-signal-800); }
+  /* Lichtkante, die alle paar Sekunden ueber den Knopf zieht */
+  .cta-mobil::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -40%;
+    width: 30%;
+    background: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0));
+    transform: skewX(-18deg);
+    animation: cta-glanz 5.5s ease-in-out 2.5s infinite;
+    pointer-events: none;
+  }
+  .cta-mobil__text { position: relative; display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+  .cta-mobil__text strong { font: 700 19px/1.05 'Archivo', sans-serif; letter-spacing: -0.035em; }
+  .cta-mobil__text small { font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cs-ink); }
+  .cta-mobil__pfeil {
+    position: relative;
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    background: var(--cs-ink);
+    color: #FFFFFF;
+    font: 600 18px/1 'Archivo', sans-serif;
+  }
+  .cta-mobil.is-weg,
+  body.is-locked .cta-mobil,
+  body:has(.kino.is-gross) .cta-mobil {
+    transform: translateY(calc(100% + 24px + env(safe-area-inset-bottom, 0px)));
+    opacity: 0;
+    pointer-events: none;
+  }
+  /* Platz, damit der Knopf das Ende der Fusszeile nicht verdeckt */
+  .footer { padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); }
+}
+@keyframes cta-glanz {
+  0%, 62% { left: -40%; }
+  100% { left: 120%; }
+}
+
 /* ═══════════════ REDUZIERTE BEWEGUNG ═══════════════ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
