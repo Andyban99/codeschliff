@@ -4,7 +4,7 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://codeschliff.de/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <image:image><image:loc>https://codeschliff.de/assets/img/og-codeschliff.png</image:loc></image:image>
     <image:image><image:loc>https://codeschliff.de/assets/img/andrew-banoub.jpg</image:loc></image:image>
     <image:image><image:loc>https://codeschliff.de/assets/img/arbeiten/freshwin-desktop.jpg</image:loc></image:image>
@@ -25,14 +25,14 @@
   </url>
   <url>
     <loc>https://codeschliff.de/impressum.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-05</lastmod>
   </url>
   <url>
     <loc>https://codeschliff.de/datenschutz.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-05</lastmod>
   </url>
   <url>
     <loc>https://codeschliff.de/agb.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-05</lastmod>
   </url>
 </urlset>
